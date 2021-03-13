@@ -43,6 +43,46 @@ nav {
   padding: 1rem;
 }
 
+nav a {
+  padding: 4px;
+  border: solid;
+  border-color: #282828;
+  border-radius: 4px;
+  text-decoration: none;
+  color: whitesmoke;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav a:hover, nav a:active {
+  border-color: #e43232;
+}
+
+nav #tContainer {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  width: 100%;
+}
+
+@media (min-width: 750px) {
+  nav #tContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+  }
+}
+
+nav #title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  width: 100%;
+}
+
 nav #menuIcon {
   width: 30px;
   -ms-grid-column-align: end;
@@ -54,35 +94,48 @@ nav #menuIcon {
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
 
-nav a {
-  text-decoration: none;
-  color: whitesmoke;
-}
-
-nav #title {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1 / span 2;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+@media (min-width: 750px) {
+  nav #menuIcon {
+    display: none;
+  }
 }
 
 nav #menu {
   position: absolute;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-nav #menu ul {
+nav #menu ul li, nav #menu a {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4px;
   list-style: none;
+  font-size: 22px;
+}
+
+@media (min-width: 750px) {
+  nav #menu ul li, nav #menu a {
+    display: inline;
+  }
+}
+
+@media (min-width: 750px) {
+  nav #menu {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
