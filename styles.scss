@@ -1,0 +1,113 @@
+/* 
+=======================================
+
+Settings, Variables and Functions Setup
+
+=======================================
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+
+@mixin desktop {
+    @media (min-width: 1080px) {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @media (min-width: 750px) {
+        @content;
+    }
+}
+
+
+$colors: (
+    1: rgb(245, 245, 245),
+    2: rgb(40, 40, 40),
+    accent: rgb(228, 50, 50)
+);
+
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+$fonts: (
+    1: 14px,
+    2: 28px,
+    primary: Quicksand,
+);
+
+
+@function ff($ff) {
+    @return map-get($fonts, $ff);
+}
+
+
+/* 
+=======================================
+
+        Body and Navigation setup
+
+=======================================
+*/
+
+
+body {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    color: color(1);
+    background-color: color(2);
+    font-family: ff(primary);
+    font-size: ff(2);
+}
+
+
+nav {
+    position: relative;
+    grid-column: 1 / span 6;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 1rem;
+
+    #menuIcon {
+        width: 30px;
+        justify-self: end;
+        align-self: center;
+        filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+    }
+
+    a {
+        text-decoration: none;
+        color: color(1);
+    }
+
+    #title {
+        grid-column: 1 / span 2;
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+
+    #menu {
+        position: absolute;
+        grid-column: 1 / span 6;
+        display: grid;
+        width: 100%;
+        justify-content: center;
+        ul {
+            list-style: none;
+        }
+    }
+}
