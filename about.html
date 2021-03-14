@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JUUN</title>
+</head>
+<body>
+    <nav>
+        <div id="tContainer">
+            <div id="title">
+                <a href="index.html">JUUN - <span>About Me</span></a>
+                <img id="menuIcon" src="Social Icons/Menu Icon.svg" alt="menu icon" onclick="menu()">
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="webdes.html">Designs</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="summarycard" class="card" style="margin-top: 2rem;">
+        <div class="border borderTop"></div>
+        <div class="border borderBottom"></div>
+        <div class="border borderLeft"></div>
+        <div class="border borderRight"></div>
+        <h1>Nicholas Ho<br><span>College Student</span></h1>
+        <ul>
+            <li>
+                Web Developer
+            </li>
+            <li>
+                Programmer
+            </li>
+            <li style="margin-bottom: 1rem;">
+                Photographer
+            </li>
+        </ul>
+    </div>
+    <div class="card c2" style="border: none;">
+        <h2>A summary</h2>
+        <p>
+            My name is Nicholas and Juun is my other nickname. I am currently a college student aiming to enroll into Newcastle University to study Cyber Security.<br><br>
+
+            I am primarily focusing on building my knowledge foundation on various IT fields from Web development to Database management to help me prepare for my uni course.<br><br>
+            
+            To put my knowledge to practise, I have set up my own local web server on a Raspberry Pi to create and secure my own website. In the future I am hoping to include PHP for dynamic content and a MYSQL database for future projects.<br><br>
+            
+            Learning these skills will help me understand how certain systems work, what security vulnerabilties could be exploited, and how to prevent or counter them.
+        </p>
+    </div>
+</body>
+<script>
+    function menu() {
+        var x = document.getElementById("menu");
+        if (x.style.display === "none") {
+            x.style.display = "grid";
+        } 
+        
+        else {
+            x.style.display = "none";
+        }
+    }
+</script>
+</html>

@@ -56,6 +56,11 @@ nav a {
   transition: 250ms;
 }
 
+nav a span {
+  font-size: 24px;
+  color: #e43232;
+}
+
 nav a:hover, nav a:active {
   border-color: #e43232;
 }
@@ -114,21 +119,24 @@ nav #menu {
       align-content: center;
   z-index: 1;
   background-color: #282828;
+  border-bottom: solid;
 }
 
-nav #menu ul li, nav #menu a {
+nav #menu ul, nav #menu li, nav #menu a {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-grid-row-align: center;
+      align-self: center;
   padding: 4px;
   list-style: none;
   font-size: 24px;
 }
 
 @media (min-width: 750px) {
-  nav #menu ul li, nav #menu a {
+  nav #menu ul, nav #menu li, nav #menu a {
     display: inline;
   }
 }
@@ -141,6 +149,7 @@ nav #menu ul li, nav #menu a {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
+    border-bottom: none;
   }
 }
 
@@ -161,6 +170,7 @@ nav #menu ul li, nav #menu a {
 /* Custom Borders */
 .border {
   position: absolute;
+  background-color: #e43232;
   border: solid 2px;
   border-color: #e43232;
 }
@@ -191,7 +201,6 @@ nav #menu ul li, nav #menu a {
   display: -ms-grid;
   display: grid;
   padding: 1rem;
-  max-width: 500px;
   -ms-grid-column-align: center;
       justify-self: center;
 }
@@ -237,6 +246,7 @@ nav #menu ul li, nav #menu a {
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 0 2rem 2rem 2rem;
+  max-width: 500px;
   height: 38vh;
   text-align: center;
 }
@@ -254,6 +264,9 @@ nav #menu ul li, nav #menu a {
   grid-column: 2 / span 4;
   display: -ms-grid;
   display: grid;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 500px;
   border-top: solid;
   border-color: #e43232;
 }
@@ -274,5 +287,34 @@ nav #menu ul li, nav #menu a {
 .c2 a {
   margin-bottom: 2rem;
   font-size: 18px;
+}
+
+/* 
+
+------------------------
+    Custom Styles 
+------------------------
+
+*/
+#summarycard {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  margin: 0 1rem 1rem 1rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+#summarycard ul {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#summarycard li {
+  margin-top: 1rem;
+  list-style-position: inside;
+  list-style-type: circle;
+  font-size: 24px;
+  text-align: start;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -31,6 +31,7 @@ Settings, Variables and Functions Setup
 $colors: (
     1: rgb(245, 245, 245),
     2: rgb(40, 40, 40),
+    3: rgb(20, 20, 20),
     accent: rgb(228, 50, 50)
 );
 
@@ -93,6 +94,10 @@ nav {
         text-decoration: none;
         color: color(1);
         transition: 250ms;
+        span {
+            font-size: ff(2);
+            color: color(accent);
+        }
     }
 
     a:hover, a:active {
@@ -136,10 +141,12 @@ nav {
         align-content: center;
         z-index: 1;
         background-color: color(2);
+        border-bottom: solid;
 
-        ul li, a {
+        ul, li, a {
             display: grid;
             justify-content: center;
+            align-self: center;
             padding: 4px;
             list-style: none;
             font-size: ff(2);
@@ -153,6 +160,7 @@ nav {
             position: relative;
             display: grid;
             justify-content: end;
+            border-bottom: none;
         }
     }
 }
@@ -181,6 +189,7 @@ nav {
 
 .border {
     position: absolute;
+    background-color: color(accent);
     border: solid 2px;
     border-color: color(accent);
 }
@@ -217,7 +226,6 @@ nav {
     position: relative;
     display: grid;
     padding: 1rem;
-    max-width: 500px;
     justify-self: center;
     h1, h2, h3 {
         font-weight: 500;
@@ -249,6 +257,7 @@ nav {
     grid-column: 1 / span 6;
     align-content: center;
     margin: 0 2rem 2rem 2rem;
+    max-width: 500px;
     height: 38vh;
     text-align: center;
     a {
@@ -261,6 +270,9 @@ nav {
     position: relative;
     grid-column: 2 / span 4;
     display: grid;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 500px;
     border-top: solid;
     border-color: color(accent);
     h2, p, a {
@@ -276,5 +288,32 @@ nav {
     a {
         margin-bottom: 2rem;
         font-size: ff(1);
+    }
+}
+
+
+/* 
+
+------------------------
+    Custom Styles 
+------------------------
+
+*/
+
+
+#summarycard {
+    grid-column: 1 / span 6;
+    margin: 0 1rem 1rem 1rem;
+    padding: 2rem 0;
+    text-align: center;
+    ul {
+        justify-self: center;
+    }
+    li {
+        margin-top: 1rem;
+        list-style-position: inside;
+        list-style-type:circle;
+        font-size: ff(2);
+        text-align: start;
     }
 }
