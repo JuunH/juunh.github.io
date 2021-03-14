@@ -57,11 +57,11 @@ $fonts: (
 
 
 /* 
-=======================================
+============================================
 
         Body and Navigation setup
 
-=======================================
+============================================
 */
 
 
@@ -73,6 +73,7 @@ body {
     background-color: color(2);
     font-family: ff(primary);
     font-size: ff(3);
+    letter-spacing: 2px;
 }
 
 
@@ -81,11 +82,12 @@ nav {
     grid-column: 1 / span 6;
     display: grid;
     grid-template-columns: auto 1fr;
-    padding: 1rem;
+    margin: 1rem;
+    background-color: color(2);
 
     a {
         padding: 4px;
-        border: solid;
+        border-bottom: solid;
         border-color: color(2);
         border-radius: 4px;
         text-decoration: none;
@@ -100,6 +102,7 @@ nav {
     #tContainer {
         position: relative;
         grid-column: 1 / span 6;
+        display: block;
         width: 100%;
 
         @include tablet {
@@ -131,6 +134,8 @@ nav {
         width: 100%;
         justify-content: center;
         align-content: center;
+        z-index: 1;
+        background-color: color(2);
 
         ul li, a {
             display: grid;
@@ -151,3 +156,109 @@ nav {
         }
     }
 }
+
+
+/* 
+============================================
+
+                Page Content
+
+============================================
+*/
+
+
+/* 
+
+------------------------
+    Universal Styles 
+------------------------
+
+*/
+
+
+/* Borders */
+
+
+.border {
+    position: absolute;
+    border: solid 2px;
+    border-color: color(accent);
+}
+
+
+.borderTop {
+    width: 50%;
+}
+
+
+.borderLeft {
+    height: 20%;
+}
+
+
+.borderBottom {
+    width: 50%;
+    bottom: 0;
+    right: 0;
+}
+
+
+.borderRight {
+    height: 20%;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* Card Containers */
+
+
+.card {
+    position: relative;
+    display: grid;
+    margin: 0 2rem 2rem 2rem;
+    padding: 1rem;
+    max-width: 500px;
+    justify-self: center;
+    h1, h2, h3 {
+        font-weight: 500;
+        height: max-content;
+    }
+    a {
+        justify-self: center;
+        margin: 1rem;
+        padding: 1rem;
+        width: max-content;
+        height: max-content;
+        border: solid;
+        border-color: color(accent);
+        border-radius: 8px;
+        text-decoration: none;
+        color: color(accent);
+        transition: 250ms;
+    }
+    a:hover, a:active {
+        background-color: color(accent);
+        color: color(1);
+    }
+    span {
+        color: color(accent);
+    }
+}
+
+.c1 {
+    position: relative;
+    grid-column: 1 / span 6;
+    align-content: center;
+    height: 38vh;
+    text-align: center;
+}
+
+
+/* 
+
+------------------------
+        Home Page 
+------------------------
+
+*/

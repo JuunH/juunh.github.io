@@ -13,11 +13,11 @@ Settings, Variables and Functions Setup
 }
 
 /* 
-=======================================
+============================================
 
         Body and Navigation setup
 
-=======================================
+============================================
 */
 body {
   position: relative;
@@ -29,6 +29,7 @@ body {
   background-color: #282828;
   font-family: Quicksand;
   font-size: 28px;
+  letter-spacing: 2px;
 }
 
 nav {
@@ -40,12 +41,13 @@ nav {
   display: grid;
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
-  padding: 1rem;
+  margin: 1rem;
+  background-color: #282828;
 }
 
 nav a {
   padding: 4px;
-  border: solid;
+  border-bottom: solid;
   border-color: #282828;
   border-radius: 4px;
   text-decoration: none;
@@ -63,6 +65,7 @@ nav #tContainer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
+  display: block;
   width: 100%;
 }
 
@@ -109,6 +112,8 @@ nav #menu {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  z-index: 1;
+  background-color: #282828;
 }
 
 nav #menu ul li, nav #menu a {
@@ -138,4 +143,112 @@ nav #menu ul li, nav #menu a {
             justify-content: end;
   }
 }
+
+/* 
+============================================
+
+                Page Content
+
+============================================
+*/
+/* 
+
+------------------------
+    Universal Styles 
+------------------------
+
+*/
+/* Borders */
+.border {
+  position: absolute;
+  border: solid 2px;
+  border-color: #e43232;
+}
+
+.borderTop {
+  width: 50%;
+}
+
+.borderLeft {
+  height: 20%;
+}
+
+.borderBottom {
+  width: 50%;
+  bottom: 0;
+  right: 0;
+}
+
+.borderRight {
+  height: 20%;
+  bottom: 0;
+  right: 0;
+}
+
+/* Card Containers */
+.card {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 2rem 2rem 2rem;
+  padding: 1rem;
+  max-width: 500px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.card h1, .card h2, .card h3 {
+  font-weight: 500;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.card a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 1rem;
+  padding: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border: solid;
+  border-color: #e43232;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #e43232;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.card a:hover, .card a:active {
+  background-color: #e43232;
+  color: whitesmoke;
+}
+
+.card span {
+  color: #e43232;
+}
+
+.c1 {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 38vh;
+  text-align: center;
+}
+
+/* 
+
+------------------------
+        Home Page 
+------------------------
+
+*/
 /*# sourceMappingURL=styles.css.map */
