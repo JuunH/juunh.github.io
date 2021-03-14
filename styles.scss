@@ -44,9 +44,9 @@ $colors: (
 
 
 $fonts: (
-    1: 14px,
-    2: 22px,
-    3: 28px,
+    1: 18px,
+    2: 24px,
+    3: 30px,
     primary: Quicksand,
 );
 
@@ -176,7 +176,7 @@ nav {
 */
 
 
-/* Borders */
+/* Custom Borders */
 
 
 .border {
@@ -216,7 +216,6 @@ nav {
 .card {
     position: relative;
     display: grid;
-    margin: 0 2rem 2rem 2rem;
     padding: 1rem;
     max-width: 500px;
     justify-self: center;
@@ -225,12 +224,10 @@ nav {
         height: max-content;
     }
     a {
-        justify-self: center;
-        margin: 1rem;
         padding: 1rem;
         width: max-content;
         height: max-content;
-        border: solid;
+        border: solid 4px;
         border-color: color(accent);
         border-radius: 8px;
         text-decoration: none;
@@ -246,19 +243,38 @@ nav {
     }
 }
 
+
 .c1 {
     position: relative;
     grid-column: 1 / span 6;
     align-content: center;
+    margin: 0 2rem 2rem 2rem;
     height: 38vh;
     text-align: center;
+    a {
+        justify-self: center;
+        margin: 1rem;
+    }
 }
 
-
-/* 
-
-------------------------
-        Home Page 
-------------------------
-
-*/
+.c2 {
+    position: relative;
+    grid-column: 2 / span 4;
+    display: grid;
+    border-top: solid;
+    border-color: color(accent);
+    h2, p, a {
+        margin-top: 1rem;
+    }
+    h2 {
+        font-size: ff(2);
+    }
+    p {
+        font-size: ff(1);
+        line-height: 2rem;
+    }
+    a {
+        margin-bottom: 2rem;
+        font-size: ff(1);
+    }
+}

@@ -28,7 +28,7 @@ body {
   color: whitesmoke;
   background-color: #282828;
   font-family: Quicksand;
-  font-size: 28px;
+  font-size: 30px;
   letter-spacing: 2px;
 }
 
@@ -124,7 +124,7 @@ nav #menu ul li, nav #menu a {
           justify-content: center;
   padding: 4px;
   list-style: none;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 @media (min-width: 750px) {
@@ -158,7 +158,7 @@ nav #menu ul li, nav #menu a {
 ------------------------
 
 */
-/* Borders */
+/* Custom Borders */
 .border {
   position: absolute;
   border: solid 2px;
@@ -190,7 +190,6 @@ nav #menu ul li, nav #menu a {
   position: relative;
   display: -ms-grid;
   display: grid;
-  margin: 0 2rem 2rem 2rem;
   padding: 1rem;
   max-width: 500px;
   -ms-grid-column-align: center;
@@ -205,9 +204,6 @@ nav #menu ul li, nav #menu a {
 }
 
 .card a {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin: 1rem;
   padding: 1rem;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -215,7 +211,7 @@ nav #menu ul li, nav #menu a {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  border: solid;
+  border: solid 4px;
   border-color: #e43232;
   border-radius: 8px;
   text-decoration: none;
@@ -240,15 +236,43 @@ nav #menu ul li, nav #menu a {
   grid-column: 1 / span 6;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin: 0 2rem 2rem 2rem;
   height: 38vh;
   text-align: center;
 }
 
-/* 
+.c1 a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 1rem;
+}
 
-------------------------
-        Home Page 
-------------------------
+.c2 {
+  position: relative;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2 / span 4;
+  display: -ms-grid;
+  display: grid;
+  border-top: solid;
+  border-color: #e43232;
+}
 
-*/
+.c2 h2, .c2 p, .c2 a {
+  margin-top: 1rem;
+}
+
+.c2 h2 {
+  font-size: 24px;
+}
+
+.c2 p {
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+.c2 a {
+  margin-bottom: 2rem;
+  font-size: 18px;
+}
 /*# sourceMappingURL=styles.css.map */
