@@ -15,7 +15,7 @@ Settings, Variables and Functions Setup
 /* 
 ============================================
 
-        Body and Navigation setup
+    Body, Navigation and Footer setup
 
 ============================================
 */
@@ -151,6 +151,45 @@ nav #menu ul, nav #menu li, nav #menu a {
             justify-content: end;
     border-bottom: none;
   }
+}
+
+footer {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 1rem;
+  background-color: #141414;
+}
+
+footer p, footer ul, footer li {
+  margin: 1rem;
+}
+
+footer p {
+  font-size: 18px;
+  text-align: center;
+}
+
+footer ul, footer li {
+  display: inline-block;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  list-style: none;
+}
+
+footer img {
+  width: 50px;
+  height: auto;
+  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
 
 /* 
