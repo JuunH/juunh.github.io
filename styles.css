@@ -25,6 +25,7 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
+  min-height: 100vh;
   color: whitesmoke;
   background-color: #282828;
   font-family: Quicksand;
@@ -37,10 +38,6 @@ nav {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
   margin: 1rem;
   background-color: #282828;
 }
@@ -305,8 +302,9 @@ footer img {
   display: grid;
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
   max-width: 500px;
-  border-top: solid;
+  border-top: solid 2px;
   border-color: #e43232;
 }
 
@@ -336,12 +334,22 @@ footer img {
 
 */
 #summarycard {
+  position: relative;
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
-  margin: 0 1rem 1rem 1rem;
-  padding: 2rem 0;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 2rem 2rem 2rem;
+  max-width: 500px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   text-align: center;
+}
+
+#summarycard h1 {
+  margin: 2rem 0;
 }
 
 #summarycard ul {
@@ -355,5 +363,21 @@ footer img {
   list-style-type: circle;
   font-size: 24px;
   text-align: start;
+}
+
+#cSooncard {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 2rem 2rem 2rem;
+  max-width: 500px;
+  text-align: center;
+}
+
+#cSooncard h1 {
+  margin: 2rem 0;
 }
 /*# sourceMappingURL=styles.css.map */
