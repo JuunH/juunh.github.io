@@ -374,6 +374,7 @@ footer {
     grid-column: 2 / span 4;
     position: relative;
     columns: 1;
+    margin-bottom: 2rem;
     @include tablet {
         columns: 2;
     }
