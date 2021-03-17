@@ -255,6 +255,7 @@ footer {
     display: grid;
     padding: 1rem;
     justify-self: center;
+    min-width: 264px;
     h1, h2, h3 {
         font-weight: 500;
         height: max-content;
@@ -298,6 +299,7 @@ footer {
     position: relative;
     grid-column: 2 / span 4;
     display: grid;
+    margin-bottom: 2rem;
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -305,7 +307,7 @@ footer {
     border-top: solid 2px;
     border-color: color(accent);
     h2, p, a {
-        margin-top: 1rem;
+        margin-top: 2.5rem;
     }
     h2 {
         font-size: ff(2);
@@ -363,5 +365,33 @@ footer {
     text-align: center;
     h1 {
         margin: 2rem 0;
+    }
+}
+
+/* Gallery Formatting */
+
+#gallery {
+    grid-column: 2 / span 4;
+    position: relative;
+    columns: 1;
+    @include tablet {
+        columns: 2;
+    }
+    @include desktop {
+        columns: 4;
+    }
+    .imagecontainer {
+        display: grid;
+        width: 100%;
+        margin-bottom: 24px;
+        transition: 250ms;
+        img {
+            justify-self: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .imagecontainer:hover {
+        transform: scale(95%);
     }
 }

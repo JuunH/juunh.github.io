@@ -239,6 +239,7 @@ footer img {
   padding: 1rem;
   -ms-grid-column-align: center;
       justify-self: center;
+  min-width: 264px;
 }
 
 .card h1, .card h2, .card h3 {
@@ -300,6 +301,7 @@ footer img {
   grid-column: 2 / span 4;
   display: -ms-grid;
   display: grid;
+  margin-bottom: 2rem;
   padding-left: 0;
   padding-right: 0;
   width: 100%;
@@ -309,7 +311,7 @@ footer img {
 }
 
 .c2 h2, .c2 p, .c2 a {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
 }
 
 .c2 h2 {
@@ -379,5 +381,50 @@ footer img {
 
 #cSooncard h1 {
   margin: 2rem 0;
+}
+
+/* Gallery Formatting */
+#gallery {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2 / span 4;
+  position: relative;
+  -webkit-columns: 1;
+          columns: 1;
+}
+
+@media (min-width: 750px) {
+  #gallery {
+    -webkit-columns: 2;
+            columns: 2;
+  }
+}
+
+@media (min-width: 1080px) {
+  #gallery {
+    -webkit-columns: 4;
+            columns: 4;
+  }
+}
+
+#gallery .imagecontainer {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  margin-bottom: 24px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+#gallery .imagecontainer img {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#gallery .imagecontainer:hover {
+  -webkit-transform: scale(95%);
+          transform: scale(95%);
 }
 /*# sourceMappingURL=styles.css.map */
