@@ -275,9 +275,6 @@ footer {
         background-color: color(accent);
         color: color(1);
     }
-    span {
-        color: color(accent);
-    }
 }
 
 
@@ -319,6 +316,33 @@ footer {
     a {
         margin-bottom: 2rem;
         font-size: ff(1);
+    }
+}
+
+.c3 {
+    position: relative;
+    display: grid;
+    padding: 1rem;
+    justify-self: center;
+    min-width: 264px;
+    h1, h2, h3 {
+        font-weight: 500;
+        height: max-content;
+    }
+    a {
+        width: max-content;
+        height: max-content;
+        padding: 4px;
+        border: solid 4px;
+        border-color: color(accent);
+        border-radius: 8px;
+        text-decoration: none;
+        color: color(accent);
+        transition: 250ms;
+    }
+    a:hover, a:active {
+        background-color: color(accent);
+        color: color(1);
     }
 }
 

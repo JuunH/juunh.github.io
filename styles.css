@@ -271,10 +271,6 @@ footer img {
   color: whitesmoke;
 }
 
-.card span {
-  color: #e43232;
-}
-
 .c1 {
   position: relative;
   -ms-grid-column: 1;
@@ -326,6 +322,45 @@ footer img {
 .c2 a {
   margin-bottom: 2rem;
   font-size: 18px;
+}
+
+.c3 {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  padding: 1rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  min-width: 264px;
+}
+
+.c3 h1, .c3 h2, .c3 h3 {
+  font-weight: 500;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.c3 a {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 4px;
+  border: solid 4px;
+  border-color: #e43232;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #e43232;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.c3 a:hover, .c3 a:active {
+  background-color: #e43232;
+  color: whitesmoke;
 }
 
 /* 
