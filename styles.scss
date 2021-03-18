@@ -126,6 +126,11 @@ nav {
         justify-self: end;
         align-self: center;
         filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        transition: 250ms;
+
+        &.active {
+            transform: rotate(180deg);
+        }
 
         @include tablet() {
             display: none;
@@ -141,6 +146,10 @@ nav {
         z-index: 1;
         background-color: color(2);
         border-bottom: solid;
+
+        &.active {
+            display: grid;
+        }
 
         ul, li, a {
             display: grid;

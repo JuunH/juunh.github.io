@@ -97,6 +97,13 @@ nav #menuIcon {
       align-self: center;
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav #menuIcon.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 @media (min-width: 750px) {
@@ -117,6 +124,11 @@ nav #menu {
   z-index: 1;
   background-color: #282828;
   border-bottom: solid;
+}
+
+nav #menu.active {
+  display: -ms-grid;
+  display: grid;
 }
 
 nav #menu ul, nav #menu li, nav #menu a {
