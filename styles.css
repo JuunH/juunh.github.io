@@ -280,6 +280,7 @@ footer img {
       align-content: center;
   margin: 0 2rem 2rem 2rem;
   max-width: 500px;
+  max-height: 450px;
   height: 38vh;
   text-align: center;
 }
@@ -379,9 +380,7 @@ footer img {
       align-content: center;
   margin: 0 2rem 2rem 2rem;
   max-width: 500px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  max-height: 450px;
   text-align: center;
 }
 
