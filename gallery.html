@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JUUN</title>
+</head>
+<body>
+    <nav>
+        <div id="tContainer">
+            <div id="title">
+                <a href="index.html">JUUN - <span>Gallery</span></a>
+                <img id="menuIcon" src="Social Icons/Menu Icon.svg" alt="menu icon" onclick="menu()">
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="projects.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="webdes.html">Designs</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="card c1" style="margin-top: 2rem;">
+        <div class="border borderTop"></div>
+        <div class="border borderBottom"></div>
+        <div class="border borderLeft"></div>
+        <div class="border borderRight"></div>
+        <h1>Photo<br><span>Gallery</span></h1>
+    </div>
+    <div class="card c2" style="border: none; text-align: center;">
+        <h2>Welcome to my personal photography page</h2>
+        <p>
+            As a small hobby, I like taking and editing photos to a moody, monochrome look.<br><span> Have a look down below.</span>
+        </p>
+    </div>
+    <div id="gallery">
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Contrast.jpeg" alt="Contrast Image" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Hut.jpeg" alt="Beach Hut" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/London Bridge.jpeg" alt="London Bridge" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Chandelier.jpeg" alt="Chandelier" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Curves.jpeg" alt="Southhampton Curve Architecture" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Piano Wire.jpeg" alt="Piano Wire" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Edges.jpeg" alt="Line photography" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Bus seats.jpeg" alt="Bus seats" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Metro.jpeg" alt="Metro Station" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Carpark.jpeg" alt="Carpark" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/White Blossom.jpeg" alt="" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Pho.jpeg" alt="Pho store" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Bomb.png" alt="Bombs" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/Carpark2.jpg" alt="Carpark image 2" >
+        </div>
+        <div class="imagecontainer">
+            <img src="Gallery Compressed/arc.jpeg" alt="Arcs" >
+        </div>
+    </div>
+    <footer>
+        <p>Marked up by Nicholas Ho</p>
+        <ul>
+            <li>
+                <a href="https://discord.gg/PbqgZQ9Hv9"><img src="/Social Icons/discord.svg" alt="Discord Logo"></a>
+            </li>
+            <li>
+                <a href="#"><img src="/Social Icons/instagram.svg" alt="Instagram Logo"></a>
+            </li>
+            <li>
+                <a href="https://github.com/JuunH"><img src="/Social Icons/github icon.svg" alt="Github Logo"></a>
+            </li>
+        </ul>
+    </footer>
+</body>
+<script>
+    function menu() {
+        var x = document.getElementById("menu");
+        if (x.style.display === "none") {
+            x.style.display = "grid";
+        } 
+        
+        else {
+            x.style.display = "none";
+        }
+    }
+</script>
+</html>
