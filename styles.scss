@@ -47,7 +47,7 @@ $colors: (
 $fonts: (
     1: 18px,
     2: 24px,
-    3: 30px,
+    3: 32px,
     primary: Quicksand,
 );
 
@@ -212,6 +212,163 @@ footer {
 */
 
 
+/* Card Containers */
+
+
+.card {
+    position: relative;
+    display: grid;
+    justify-self: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 264px;
+    min-height: 264px;
+    font-size: ff(2);
+    h1, h2, h3 {
+        font-size: ff(3);
+        font-weight: 525;
+        height: max-content;
+    }
+    ul {
+        justify-self: center;
+        margin-bottom: 1.5em;
+    }
+    li {
+        margin-top: 1rem;
+        list-style-position: inside;
+        list-style-type:circle;
+        font-size: ff(2);
+        text-align: start;
+    }
+    span {
+        color: color(accent);
+    }
+}
+
+
+.c1 {
+    grid-column: 2 / span 4;
+    align-content: center;
+    max-width: 500px;
+    max-height: 450px;
+    text-align: center;
+    h1 {
+        padding: 1em 0.5em;
+    }
+}
+
+.c2 {
+    grid-column: 2 / span 4;
+    width: 100%;
+    max-width: 500px;
+    border-top: solid 2px;
+    border-color: color(accent);
+    h2, p, a {
+        margin-top: 2.5rem;
+    }
+    h2 {
+        font-size: ff(2);
+    }
+    p, a {
+        font-size: ff(1);
+        line-height: 2rem;
+    }
+}
+
+
+.c4 {
+    grid-column: 2 / span 4;
+    align-content: center;
+    max-width: 500px;
+    text-align: center;
+    p, a {
+        justify-self: center;
+        margin: 2rem 0;
+    }
+}
+
+
+/* Buttons and Links */
+
+
+.button {
+    padding: 1rem;
+    width: max-content;
+    height: max-content;
+    border: solid 4px;
+    border-color: color(accent);
+    border-radius: 8px;
+    text-decoration: none;
+    color: color(accent);
+    transition: 250ms;
+}
+
+
+.button:hover,
+.button:active {
+    background-color: color(accent);
+    color: color(1);
+}
+
+
+.link {
+    width: max-content;
+    height: max-content;
+    padding: 4px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: color(accent);
+    transition: 250ms;
+}
+
+
+.link:hover, 
+.link:active {
+    background-color: color(accent);
+    color: color(1);
+}
+
+
+/* 
+
+------------------------
+    Custom Styles 
+------------------------
+
+*/
+
+
+/* Gallery Formatting */
+
+
+#gallery {
+    grid-column: 2 / span 4;
+    position: relative;
+    columns: 1;
+    margin-bottom: 2rem;
+    @include tablet {
+        columns: 2;
+    }
+    @include desktop {
+        columns: 4;
+    }
+    .imagecontainer {
+        display: grid;
+        width: 100%;
+        margin-bottom: 24px;
+        transition: 250ms;
+        img {
+            justify-self: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .imagecontainer:hover {
+        transform: scale(95%);
+    }
+}
+
+
 /* Custom Borders */
 
 
@@ -246,178 +403,3 @@ footer {
     right: 0;
 }
 
-
-/* Card Containers */
-
-
-.card {
-    position: relative;
-    display: grid;
-    padding: 1rem;
-    justify-self: center;
-    min-width: 264px;
-    h1, h2, h3 {
-        font-weight: 500;
-        height: max-content;
-    }
-    a {
-        padding: 1rem;
-        width: max-content;
-        height: max-content;
-        border: solid 4px;
-        border-color: color(accent);
-        border-radius: 8px;
-        text-decoration: none;
-        color: color(accent);
-        transition: 250ms;
-    }
-    a:hover, a:active {
-        background-color: color(accent);
-        color: color(1);
-    }
-}
-
-
-.c1 {
-    position: relative;
-    grid-column: 1 / span 6;
-    align-content: center;
-    margin: 0 2rem 2rem 2rem;
-    max-width: 500px;
-    max-height: 450px;
-    height: 38vh;
-    text-align: center;
-    a {
-        justify-self: center;
-        margin: 1rem;
-    }
-}
-
-.c2 {
-    position: relative;
-    grid-column: 2 / span 4;
-    display: grid;
-    margin-bottom: 2rem;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    max-width: 500px;
-    border-top: solid 2px;
-    border-color: color(accent);
-    h2, p, a {
-        margin-top: 2.5rem;
-    }
-    h2 {
-        font-size: ff(2);
-    }
-    p {
-        font-size: ff(1);
-        line-height: 2rem;
-    }
-    a {
-        margin-bottom: 2rem;
-        font-size: ff(1);
-    }
-}
-
-.c3 {
-    position: relative;
-    display: grid;
-    padding: 1rem;
-    justify-self: center;
-    min-width: 264px;
-    h1, h2, h3 {
-        font-weight: 500;
-        height: max-content;
-    }
-    a {
-        width: max-content;
-        height: max-content;
-        padding: 4px;
-        border: solid 4px;
-        border-color: color(accent);
-        border-radius: 8px;
-        text-decoration: none;
-        color: color(accent);
-        transition: 250ms;
-    }
-    a:hover, a:active {
-        background-color: color(accent);
-        color: color(1);
-    }
-}
-
-
-/* 
-
-------------------------
-    Custom Styles 
-------------------------
-
-*/
-
-
-#summarycard {
-    position: relative;
-    grid-column: 1 / span 6;
-    align-content: center;
-    margin: 0 2rem 2rem 2rem;
-    max-width: 500px;
-    max-height: 450px;
-    text-align: center;
-    h1 {
-        margin: 2rem 0;
-    }
-    ul {
-        justify-self: center;
-    }
-    li {
-        margin-top: 1rem;
-        list-style-position: inside;
-        list-style-type:circle;
-        font-size: ff(2);
-        text-align: start;
-    }
-}
-
-
-#cSooncard {
-    position: relative;
-    grid-column: 1 / span 6;
-    align-content: center;
-    margin: 0 2rem 2rem 2rem;
-    max-width: 500px;
-    text-align: center;
-    h1 {
-        margin: 2rem 0;
-    }
-}
-
-/* Gallery Formatting */
-
-#gallery {
-    grid-column: 2 / span 4;
-    position: relative;
-    columns: 1;
-    margin-bottom: 2rem;
-    @include tablet {
-        columns: 2;
-    }
-    @include desktop {
-        columns: 4;
-    }
-    .imagecontainer {
-        display: grid;
-        width: 100%;
-        margin-bottom: 24px;
-        transition: 250ms;
-        img {
-            justify-self: center;
-            width: 100%;
-            border-radius: 5px;
-        }
-    }
-    .imagecontainer:hover {
-        transform: scale(95%);
-    }
-}
