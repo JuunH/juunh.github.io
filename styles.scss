@@ -388,7 +388,7 @@ footer {
     height: 100vh;
     opacity: 0;
     transition: 250ms;
-    transform: scaleX(0) scaleY(0);
+    transform: scaleY(0);
 
     &.active {
         opacity: 1;
@@ -408,6 +408,7 @@ footer {
     }
 
     .imagecontainer {
+        z-index: 9999;
         justify-self: center;
         align-self: center;
         display: grid;
@@ -415,6 +416,7 @@ footer {
         height: 80vh;
         transition: 250ms;
         #imageClicked {
+            z-index: 99999;
             justify-self: center;
             align-self: center;
             max-width: 100%;

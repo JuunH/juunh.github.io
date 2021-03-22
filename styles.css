@@ -421,8 +421,8 @@ footer img {
   opacity: 0;
   -webkit-transition: 250ms;
   transition: 250ms;
-  -webkit-transform: scaleX(0) scaleY(0);
-          transform: scaleX(0) scaleY(0);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
 }
 
 #gallerylightbox.active {
@@ -450,6 +450,7 @@ footer img {
 }
 
 #gallerylightbox .imagecontainer {
+  z-index: 9999;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row-align: center;
@@ -463,6 +464,7 @@ footer img {
 }
 
 #gallerylightbox .imagecontainer #imageClicked {
+  z-index: 99999;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
