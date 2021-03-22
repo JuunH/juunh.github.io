@@ -406,6 +406,7 @@ footer img {
 #gallery .imagecontainer:hover {
   -webkit-transform: scale(95%);
           transform: scale(95%);
+  cursor: pointer;
 }
 
 #gallerylightbox {
