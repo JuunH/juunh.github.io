@@ -28,16 +28,42 @@ Settings, Variables and Functions Setup
 }
 
 
-$colors: (
+$lightmode: (
+    1: rgb(26, 26, 26),
+    2: rgb(245, 245, 245),
+    3: rgb(255, 255, 255),
+    accent: rgb(179, 40, 40)
+);
+
+
+$darkmode: (
     1: rgb(245, 245, 245),
-    2: rgb(40, 40, 40),
-    3: rgb(20, 20, 20),
+    2: rgb(26, 26, 26),
+    3: rgb(18, 18, 18),
     accent: rgb(228, 50, 50)
 );
 
 
-@function color($color-name) {
-    @return map-get($colors, $color-name);
+@function lm($color-name) {
+    @return map-get($lightmode, $color-name);
+}
+
+@function dm($color-name) {
+    @return map-get($darkmode, $color-name);
+}
+
+
+.lightmode {
+    color: lm(1);
+}
+
+
+.darkmode {
+    color: dm(1);
+}
+
+.darkmode-background {
+    background-color: dm(2)
 }
 
 
@@ -45,9 +71,9 @@ $colors: (
 
 
 $fonts: (
-    1: 18px,
-    2: 24px,
-    3: 32px,
+    1: 16px,
+    2: 28px,
+    3: 40px,
     primary: Quicksand,
 );
 
@@ -57,416 +83,180 @@ $fonts: (
 }
 
 
+.font {
+    font-family: ff(primary);
+    letter-spacing: 2px;
+    h1 {
+        font-size: ff(2);
+        font-weight: 400;
+    }
+    p {
+        font-size: ff(1);
+    }
+}
+
+
 /* 
-============================================
+=======================================
 
-    Body, Navigation and Footer setup
+Body, Header, Navigation and Footer
 
-============================================
+=======================================
 */
 
 
 body {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     min-height: 100vh;
-    color: color(1);
-    background-color: color(2);
-    font-family: ff(primary);
-    font-size: ff(3);
-    letter-spacing: 2px;
 }
 
 
 nav {
-    position: relative;
-    grid-column: 1 / span 6;
+    position: fixed;
+    z-index: 2;
+    justify-self: end;
+    display: grid;
+    grid-template-columns: max-content max-content;
     margin: 1rem;
-    background-color: color(2);
+    width: max-content;
+    overflow: hidden;
 
-    a {
-        padding: 4px;
-        border-bottom: solid;
-        border-color: color(2);
-        border-radius: 4px;
-        text-decoration: none;
-        color: color(1);
+    #menu {
+        align-self: center;
+        opacity: 0;
+        transform: translateX(110%);
         transition: 250ms;
-        span {
+
+        &.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    li {
+        display: inline;
+        height: max-content;
+        list-style: none;
+        margin: 0 0.1rem;
+        overflow: wrap;
+        @include tablet() {
+            margin: 0 0.5rem;
             font-size: ff(2);
-            color: color(accent);
         }
-    }
-
-    a:hover, a:active {
-        border-color: color(accent);
-    }
-    
-    #tContainer {
-        position: relative;
-        grid-column: 1 / span 6;
-        display: block;
-        width: 100%;
-
-        @include tablet {
-            display: grid;
-            grid-template-columns: auto 1fr;
+        a {
+            text-decoration: none;
         }
-    }
-
-    #title {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        width: 100%;
     }
 
     #menuIcon {
         width: 30px;
-        justify-self: end;
-        align-self: center;
+        height: 30px;
+        opacity: 1;
         filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        cursor: pointer;
         transition: 250ms;
+
+        @include tablet() {
+            width: 40px;
+            height: 40px;
+        }
 
         &.active {
             transform: rotate(180deg);
         }
-
-        @include tablet() {
-            display: none;
-        }
-    }
-
-    #menu {
-        position: absolute;
-        display: none;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-        z-index: 1;
-        background-color: color(2);
-        border-bottom: solid;
-
-        &.active {
-            display: grid;
-        }
-
-        ul, li, a {
-            display: grid;
-            justify-content: center;
-            align-self: center;
-            padding: 4px;
-            list-style: none;
-            font-size: ff(2);
-
-            @include tablet {
-                display: inline;
-            }
-        }
-
-        @include tablet {
-            position: relative;
-            display: grid;
-            justify-content: end;
-            border-bottom: none;
-        }
     }
 }
 
-footer {
-    position: relative;
-    grid-column: 1 / span 6;
+
+main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+
+/* 
+=======================================
+
+            Custom Styles
+
+=======================================
+*/
+
+
+.darkmode-span {
+    span {
+        color: dm(accent);
+    }
+}
+
+
+.lightmode-span {
+    span {
+        color: lm(accent);
+    }
+}
+
+
+#landing {
+    position: absolute;
+    z-index: 1;
     display: grid;
     justify-content: center;
     align-content: center;
-    padding: 1rem;
-    background-color: color(3);
-
-    p, ul, li {
-        margin: 1rem;
-    }
-
-    p {
-        font-size: ff(1);
-        text-align: center;
-    }
-    ul, li {
-        display: inline-block;
-        justify-self: center;
-        list-style: none;
-    }
-    img {
-        width: 50px;
-        height: auto;
-        filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-    }
+    width: 100%;
+    height: 100vh;
 }
 
 
-/* 
-============================================
-
-                Page Content
-
-============================================
-*/
-
-
-/* 
-
-------------------------
-    Universal Styles 
-------------------------
-
-*/
-
-
-/* Card Containers */
+#landing-image {
+    grid-column: 1 / span 6;
+    min-height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: opacity(0.25);
+}
 
 
 .card {
-    position: relative;
+    grid-column: 2 / span 4;
     display: grid;
-    justify-self: center;
-    margin-bottom: 2rem;
-    width: 100%;
-    min-width: 264px;
-    min-height: 264px;
-    font-size: ff(2);
-    h1, h2, h3 {
-        font-size: ff(3);
-        font-weight: 525;
-        height: max-content;
-    }
-    ul {
-        justify-self: center;
-        margin-bottom: 1.5em;
-    }
-    li {
-        margin-top: 1rem;
-        list-style-position: inside;
-        list-style-type:circle;
-        font-size: ff(2);
-        text-align: start;
-    }
-    span {
-        color: color(accent);
+    margin: 2rem;
+    max-width: 400px;
+    h1, p {
+        margin-bottom: 2rem;
     }
 }
 
 
-.c1 {
-    grid-column: 2 / span 4;
-    align-content: center;
-    max-width: 500px;
-    min-height: 400px;
-    max-height: 450px;
-    text-align: center;
-    h1 {
-        padding: 1em 0.5em;
-    }
-}
-
-.c2 {
-    grid-column: 2 / span 4;
-    width: 100%;
-    max-width: 500px;
-    border-top: solid 2px;
-    border-color: color(accent);
-    h2, p, a {
-        margin-top: 2.5rem;
-    }
-    h2 {
-        font-size: ff(2);
-    }
-    p, a {
-        font-size: ff(1);
-        line-height: 2rem;
-    }
+.card-image {
+    grid-column: 1 / span 6;
+    min-height: 50vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: opacity(0.25);
 }
 
 
-.c4 {
-    grid-column: 2 / span 4;
-    align-content: center;
-    max-width: 500px;
-    text-align: center;
-    p, a {
-        justify-self: center;
-        margin: 2rem 0;
-    }
+.bgGradient {
+    background: linear-gradient(-45deg, dm(2), dm(accent), dm(2), dm(2));
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
 }
 
 
-/* Buttons and Links */
-
-
-.button {
-    padding: 1rem;
-    width: max-content;
-    height: max-content;
-    border: solid 4px;
-    border-color: color(accent);
-    border-radius: 8px;
-    text-decoration: none;
-    color: color(accent);
-    transition: 250ms;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
-
-
-.button:hover,
-.button:active {
-    background-color: color(accent);
-    color: color(1);
-}
-
-
-.link {
-    width: max-content;
-    height: max-content;
-    padding: 4px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: color(accent);
-    transition: 250ms;
-}
-
-
-.link:hover, 
-.link:active {
-    background-color: color(accent);
-    color: color(1);
-}
-
-
-/* 
-
-------------------------
-    Custom Styles 
-------------------------
-
-*/
-
-
-/* Gallery Formatting */
-
-
-#gallery {
-    grid-column: 2 / span 4;
-    position: relative;
-    columns: 1;
-    margin-bottom: 2rem;
-    @include tablet {
-        columns: 2;
-    }
-    @include desktop {
-        columns: 4;
-    }
-    .imagecontainer {
-        display: grid;
-        width: 100%;
-        margin-bottom: 24px;
-        transition: 250ms;
-        img {
-            justify-self: center;
-            width: 100%;
-            border-radius: 5px;
-        }
-    }
-    .imagecontainer:hover {
-        transform: scale(95%);
-        cursor: pointer;
-    }
-}
-
-#gallerylightbox {
-    position: fixed;
-    z-index: 999;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    transition: 250ms;
-    transform: scaleY(0);
-
-    &.active {
-        opacity: 1;
-        transform: scale(100%);
-    }
-
-    #topbar {
-        display: grid;
-        height: fit-content;
-        img {
-            justify-self: end;
-            padding: 2rem;
-            width: 50px;
-            height: 50px;
-            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-        }
-    }
-
-    .imagecontainer {
-        z-index: 9999;
-        justify-self: center;
-        align-self: center;
-        display: grid;
-        width: 80vw;
-        height: 80vh;
-        transition: 250ms;
-        #imageClicked {
-            z-index: 99999;
-            justify-self: center;
-            align-self: center;
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 5px;
-        }
-    }
-
-    #gBackground {
-    position: fixed;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background-color: color(3);
-    opacity: 0.85;
-    }
-}
-
-
-/* Custom Borders */
-
-
-.border {
-    position: absolute;
-    background-color: color(accent);
-    border: solid 2px;
-    border-color: color(accent);
-}
-
-
-.borderTop {
-    width: 50%;
-}
-
-
-.borderLeft {
-    height: 20%;
-}
-
-
-.borderBottom {
-    width: 50%;
-    bottom: 0;
-    right: 0;
-}
-
-
-.borderRight {
-    height: 20%;
-    bottom: 0;
-    right: 0;
-}
-
