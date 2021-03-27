@@ -317,17 +317,6 @@ footer {
         font-weight: 525;
         height: max-content;
     }
-    ul {
-        justify-self: center;
-        margin-bottom: 1.5em;
-    }
-    li {
-        margin-top: 1rem;
-        list-style-position: inside;
-        list-style-type:circle;
-        font-size: ff(2);
-        text-align: start;
-    }
     span {
         color: color(accent);
     }
@@ -438,6 +427,9 @@ footer {
     padding: 1rem;
     background-color: color(4);
     border-radius: 8px;
+    &.darkmode {
+        background-color: dm(3);
+    }
     @include tablet {
         columns: 2;
     }

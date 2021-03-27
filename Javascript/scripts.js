@@ -50,7 +50,7 @@ for (var i = 0 ; i < everyImg.length; i++) {
 }
 
 
-//  Menu Icon Function  //
+//  Darkmode Function  //
 
 
 const dmicon = document.getElementById('darkmodeIcon');

@@ -321,20 +321,6 @@ footer img.darkmode {
   height: max-content;
 }
 
-.card ul {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin-bottom: 1.5em;
-}
-
-.card li {
-  margin-top: 1rem;
-  list-style-position: inside;
-  list-style-type: circle;
-  font-size: 24px;
-  text-align: start;
-}
-
 .card span {
   color: #ad2727;
 }
@@ -458,6 +444,10 @@ footer img.darkmode {
   padding: 1rem;
   background-color: #c5c5c5;
   border-radius: 8px;
+}
+
+#gallery.darkmode {
+  background-color: #121212;
 }
 
 @media (min-width: 750px) {
