@@ -96,8 +96,8 @@ nav #tContainer {
   nav #tContainer {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto 1fr;
-        grid-template-columns: auto 1fr;
+    -ms-grid-columns: 1fr auto;
+        grid-template-columns: 1fr auto;
   }
 }
 
@@ -129,16 +129,20 @@ nav #darkmodeIcon {
   cursor: pointer;
 }
 
+@media (min-width: 1080px) {
+  nav #darkmodeIcon {
+    margin-right: 1rem;
+  }
+}
+
 nav #darkmodeIcon.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
 
-@media (min-width: 750px) {
-  nav #darkmodeIcon {
-    width: 40px;
-    height: 40px;
-  }
+nav #darkmodeIcon.active {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 nav #menuIcon {
@@ -227,6 +231,8 @@ nav #menu ul, nav #menu li, nav #menu a {
         -ms-flex-pack: end;
             justify-content: end;
     border-bottom: none;
+    -webkit-transform: none;
+            transform: none;
   }
 }
 

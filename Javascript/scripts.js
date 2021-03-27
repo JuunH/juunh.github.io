@@ -69,6 +69,7 @@ function darkmode(elements) {
 dmicon.addEventListener('click', () => {
 
   darkmode(page)
+  dmicon.classList.toggle('active')
 
 })
 
