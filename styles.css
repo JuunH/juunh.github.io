@@ -122,7 +122,6 @@ nav #darkmodeIcon {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-right: 0.75rem;
   width: 30px;
   height: 30px;
   -webkit-transition: 250ms;
@@ -143,7 +142,7 @@ nav #darkmodeIcon.darkmode {
 }
 
 nav #menuIcon {
-  margin: 1rem;
+  margin: 1rem 0.75rem;
   width: 30px;
   -ms-grid-column-align: end;
       justify-self: end;
@@ -589,5 +588,38 @@ footer img.darkmode {
   height: 20%;
   bottom: 0;
   right: 0;
+}
+
+/* 
+
+------------------------
+        Animations 
+------------------------
+
+*/
+.FadeIn {
+  -webkit-animation: fadein 1s;
+          animation: fadein 1s;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
