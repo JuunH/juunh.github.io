@@ -180,6 +180,10 @@ nav {
         transition: 250ms;
         cursor: pointer;
 
+        &.active {
+            transform: scaleX(-1);
+        }
+
         &.darkmode {
             filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
         }
@@ -202,71 +206,32 @@ main {
 /* 
 =======================================
 
-            Custom Styles
+            Containers
 
 =======================================
 */
 
 
-.card {
-    grid-column: 1 / span 3;
-    display: grid;
-    margin: 2rem;
-    max-width: 400px;
-    overflow: none;
-    h1, p {
-        margin-bottom: 2rem;
-    }
+.card-1 {
+    grid-column: 1 / span 6;
+    position: relative;
+    display: flex;
+}
+
+
+.card-2 {
+    grid-column: 2 / span 4;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
 }
 
 
 .card-image {
-    grid-column: 4 / span 3;
-    margin: 2rem 0;
     min-height: 50vh;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     filter: opacity(0.75);
-}
-
-
-#welcomeCard {
-    position: relative;
-    grid-column: 1 / span 6;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    min-height: 100vh;
-    width: 100%;
-
-    #welcomeMessage {
-        grid-column: 2 / span 2;
-        justify-self: center;
-        align-self: center;
-        padding: 1rem;
-        height: max-content;
-        border-radius: 10px;
-        text-align: center;
-    }
-}
-
-
-.bgGradient {
-    background: linear-gradient(-45deg, dm(2), dm(accent), dm(2), dm(2));
-	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
-}
-
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }

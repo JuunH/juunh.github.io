@@ -152,6 +152,11 @@ nav #darkmodeIcon {
   cursor: pointer;
 }
 
+nav #darkmodeIcon.active {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 nav #darkmodeIcon.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
@@ -175,30 +180,34 @@ main {
 /* 
 =======================================
 
-            Custom Styles
+            Containers
 
 =======================================
 */
-.card {
+.card-1 {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-  display: -ms-grid;
-  display: grid;
-  margin: 2rem;
-  max-width: 400px;
-  overflow: none;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.card h1, .card p {
-  margin-bottom: 2rem;
+.card-2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2 / span 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
 }
 
 .card-image {
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 3;
-  grid-column: 4 / span 3;
-  margin: 2rem 0;
   min-height: 50vh;
   background-position: center;
   background-attachment: fixed;
@@ -206,66 +215,5 @@ main {
   background-repeat: no-repeat;
   -webkit-filter: opacity(0.75);
           filter: opacity(0.75);
-}
-
-#welcomeCard {
-  position: relative;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  min-height: 100vh;
-  width: 100%;
-}
-
-#welcomeCard #welcomeMessage {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-column: 2 / span 2;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding: 1rem;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.bgGradient {
-  background: linear-gradient(-45deg, #1a1a1a, #e43232, #1a1a1a, #1a1a1a);
-  background-size: 400% 400%;
-  -webkit-animation: gradient 10s ease infinite;
-          animation: gradient 10s ease infinite;
-}
-
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 /*# sourceMappingURL=styles.css.map */

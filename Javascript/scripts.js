@@ -20,6 +20,7 @@ const allElements = document.getElementsByTagName('*')
 function toggleDarkmode (allElements) {
   for (var i = 0 ; i < allElements.length; i++) {
     allElements[i].classList.toggle('darkmode');
+    dmIcon.classList.toggle('active')
   }
 }
 
