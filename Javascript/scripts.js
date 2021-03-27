@@ -55,6 +55,12 @@ for (var i = 0 ; i < everyImg.length; i++) {
 
 const dmicon = document.getElementById('darkmodeIcon');
 const page = document.getElementsByTagName('*')
+let mode = localStorage.getItem("darkmode");
+
+
+if (mode == 'enabled') {
+  darkmode(page)
+}
 
 
 function darkmode(elements) {
@@ -70,6 +76,13 @@ dmicon.addEventListener('click', () => {
 
   darkmode(page)
   dmicon.classList.toggle('active')
+
+  if (mode == 'disabled') {
+    localStorage.setItem("darkmode", "enabled")
+  }
+  else if (mode == 'enabled') {
+    localStorage.setItem("darkmode", "disabled")
+  }
 
 })
 
