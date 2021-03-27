@@ -50,18 +50,11 @@ body {
   display: -ms-grid;
   display: grid;
   min-height: 100vh;
-  color: #0f0f0f;
-  background-color: #eeeeee;
+  color: whitesmoke;
+  background-color: #282828;
   font-family: Quicksand;
   font-size: 32px;
   letter-spacing: 2px;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-body.darkmode {
-  color: whitesmoke;
-  background-color: #282828;
 }
 
 nav {
@@ -69,49 +62,27 @@ nav {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
-  background-color: #eeeeee;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-nav.darkmode {
-  color: whitesmoke;
+  margin: 1rem;
   background-color: #282828;
 }
 
 nav a {
-  margin-left: 1rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  padding: 4px;
   border-bottom: solid;
-  border-color: #eeeeee;
+  border-color: #282828;
   border-radius: 4px;
   text-decoration: none;
-  color: #0f0f0f;
+  color: whitesmoke;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 nav a span {
   font-size: 24px;
-  color: #a03131;
-}
-
-nav a span.darkmode {
   color: #e43232;
 }
 
-nav a.darkmode {
-  color: whitesmoke;
-  border-color: #282828;
-}
-
 nav a:hover, nav a:active {
-  border-color: #a03131;
-}
-
-nav a:hover.darkmode, nav a:active.darkmode {
   border-color: #e43232;
 }
 
@@ -133,40 +104,24 @@ nav li {
 }
 
 nav #title {
-  position: relative;
-  z-index: 999;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto auto;
-      grid-template-columns: 1fr auto auto;
-  padding: 1rem 0;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
   width: 100%;
-  background-color: #eeeeee;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-nav #title.darkmode {
-  background-color: #282828;
 }
 
 nav #menuIcon {
-  margin-right: 1rem;
   width: 30px;
   -ms-grid-column-align: end;
       justify-self: end;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-filter: none;
-          filter: none;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-nav #menuIcon.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+  -webkit-transition: 250ms;
+  transition: 250ms;
 }
 
 nav #menuIcon.active {
@@ -183,33 +138,21 @@ nav #menuIcon.active {
 
 nav #menu {
   position: absolute;
-  z-index: 1;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: #eeeeee;
-  border-bottom: solid;
-  opacity: 1;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-nav #menu.darkmode {
-  color: whitesmoke;
+  z-index: 1;
   background-color: #282828;
+  border-bottom: solid;
 }
 
 nav #menu.active {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  display: -ms-grid;
+  display: grid;
 }
 
 /* 
@@ -227,34 +170,6 @@ nav #menu.active {
   color: #b32828;
 }
 
-nav #darkmodeIcon {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin: 0 1rem;
-  width: 30px;
-  height: 30px;
-  -webkit-filter: none;
-          filter: none;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-  cursor: pointer;
-}
-
-nav #darkmodeIcon.darkmode {
-  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-}
-
-@media (min-width: 750px) {
-  nav #darkmodeIcon {
-    width: 40px;
-    height: 40px;
-  }
-}
-
 footer {
   position: relative;
   -ms-grid-column: 1;
@@ -268,13 +183,6 @@ footer {
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 1rem;
-  background-color: #d8d8d8;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-footer.darkmode {
-  color: whitesmoke;
   background-color: #141414;
 }
 
@@ -297,11 +205,6 @@ footer ul, footer li {
 footer img {
   width: 50px;
   height: auto;
-  -webkit-filter: none;
-          filter: none;
-}
-
-footer img.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
@@ -357,10 +260,6 @@ footer img.darkmode {
 }
 
 .card span {
-  color: #a03131;
-}
-
-.card span.darkmode {
   color: #e43232;
 }
 
@@ -387,7 +286,7 @@ footer img.darkmode {
   width: 100%;
   max-width: 500px;
   border-top: solid 2px;
-  border-color: #a03131;
+  border-color: #e43232;
 }
 
 .c2 h2, .c2 p, .c2 a {
@@ -429,18 +328,18 @@ footer img.darkmode {
   height: -moz-max-content;
   height: max-content;
   border: solid 4px;
-  border-color: #a03131;
+  border-color: #e43232;
   border-radius: 8px;
   text-decoration: none;
-  color: #a03131;
+  color: #e43232;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 .button:hover,
 .button:active {
-  background-color: #a03131;
-  color: #d8d8d8;
+  background-color: #e43232;
+  color: whitesmoke;
 }
 
 .link {
@@ -453,15 +352,15 @@ footer img.darkmode {
   padding: 4px;
   border-radius: 8px;
   text-decoration: none;
-  color: #a03131;
+  color: #e43232;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 .link:hover,
 .link:active {
-  background-color: #a03131;
-  color: #0f0f0f;
+  background-color: #e43232;
+  color: whitesmoke;
 }
 
 .card {
@@ -529,22 +428,15 @@ footer img.darkmode {
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-color: #d8d8d8;
+  background-color: #141414;
   opacity: 0.85;
 }
 
 /* Custom Borders */
 .border {
   position: absolute;
-  background-color: #a03131;
-  border: solid 2px;
-  border-color: #a03131;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-.border.darkmode {
   background-color: #e43232;
+  border: solid 2px;
   border-color: #e43232;
 }
 
