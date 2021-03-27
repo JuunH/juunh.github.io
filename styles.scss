@@ -30,32 +30,14 @@ Settings, Variables and Functions Setup
 
 $colors: (
     1: rgb(245, 245, 245),
-    2: rgb(26, 26, 26),
-    3: rgb(18, 18, 18),
+    2: rgb(40, 40, 40),
+    3: rgb(20, 20, 20),
     accent: rgb(228, 50, 50)
 );
 
 
-@function lm($color-name) {
-    @return map-get($lightmode, $color-name);
-}
-
-@function dm($color-name) {
-    @return map-get($darkmode, $color-name);
-}
-
-
-.lightmode {
-    color: lm(1);
-}
-
-
-.darkmode {
-    color: dm(1);
-}
-
-.darkmode-background {
-    background-color: dm(2)
+@function color($color-name) {
+    @return map-get($colors, $color-name);
 }
 
 
@@ -63,9 +45,9 @@ $colors: (
 
 
 $fonts: (
-    1: 16px,
-    2: 28px,
-    3: 40px,
+    1: 18px,
+    2: 24px,
+    3: 32px,
     primary: Quicksand,
 );
 
@@ -75,31 +57,19 @@ $fonts: (
 }
 
 
-.font {
-    font-family: ff(primary);
-    letter-spacing: 2px;
-    h1 {
-        font-size: ff(2);
-        font-weight: 400;
-    }
-    p {
-        font-size: ff(1);
-    }
-}
-
-
 /* 
-=======================================
+============================================
 
-Body, Header, Navigation and Footer
+    Body, Navigation and Footer setup
 
-=======================================
+============================================
 */
 
 
 body {
     position: relative;
     display: grid;
+    grid-template-columns: repeat(6, 1fr);
     min-height: 100vh;
     color: color(1);
     background-color: color(2);
@@ -163,8 +133,7 @@ nav {
         }
 
         @include tablet() {
-            width: 40px;
-            height: 40px;
+            display: none;
         }
     }
 
@@ -235,33 +204,90 @@ footer {
 
 
 /* 
-=======================================
+============================================
 
-            Custom Styles
+                Page Content
 
-=======================================
+============================================
 */
 
 
-.darkmode-span {
+/* 
+
+------------------------
+    Universal Styles 
+------------------------
+
+*/
+
+
+/* Card Containers */
+
+
+.card {
+    position: relative;
+    display: grid;
+    justify-self: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    min-width: 264px;
+    min-height: 264px;
+    font-size: ff(2);
+    h1, h2, h3 {
+        font-size: ff(3);
+        font-weight: 525;
+        height: max-content;
+    }
+    ul {
+        justify-self: center;
+        margin-bottom: 1.5em;
+    }
+    li {
+        margin-top: 1rem;
+        list-style-position: inside;
+        list-style-type:circle;
+        font-size: ff(2);
+        text-align: start;
+    }
     span {
         color: color(accent);
     }
 }
 
 
-.lightmode-span {
-    span {
-        color: lm(accent);
+.c1 {
+    grid-column: 2 / span 4;
+    align-content: center;
+    max-width: 500px;
+    min-height: 400px;
+    max-height: 450px;
+    text-align: center;
+    h1 {
+        padding: 1em 0.5em;
+    }
+}
+
+.c2 {
+    grid-column: 2 / span 4;
+    width: 100%;
+    max-width: 500px;
+    border-top: solid 2px;
+    border-color: color(accent);
+    h2, p, a {
+        margin-top: 2.5rem;
+    }
+    h2 {
+        font-size: ff(2);
+    }
+    p, a {
+        font-size: ff(1);
+        line-height: 2rem;
     }
 }
 
 
-#landing {
-    position: absolute;
-    z-index: 1;
-    display: grid;
-    justify-content: center;
+.c4 {
+    grid-column: 2 / span 4;
     align-content: center;
     max-width: 500px;
     text-align: center;
@@ -306,24 +332,106 @@ footer {
 }
 
 
-#landing-image {
-    grid-column: 1 / span 6;
-    min-height: 100vh;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: opacity(0.25);
+.link:hover, 
+.link:active {
+    background-color: color(accent);
+    color: color(1);
 }
 
 
-.card {
+/* 
+
+------------------------
+    Custom Styles 
+------------------------
+
+*/
+
+
+/* Gallery Formatting */
+
+
+#gallery {
     grid-column: 2 / span 4;
+    position: relative;
+    columns: 1;
+    margin-bottom: 2rem;
+    @include tablet {
+        columns: 2;
+    }
+    @include desktop {
+        columns: 4;
+    }
+    .imagecontainer {
+        display: grid;
+        width: 100%;
+        margin-bottom: 24px;
+        transition: 250ms;
+        img {
+            justify-self: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .imagecontainer:hover {
+        transform: scale(95%);
+        cursor: pointer;
+    }
+}
+
+#gallerylightbox {
+    position: fixed;
+    z-index: 999;
     display: grid;
-    margin: 2rem;
-    max-width: 400px;
-    h1, p {
-        margin-bottom: 2rem;
+    grid-template-rows: auto 1fr;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: 250ms;
+    transform: scaleY(0);
+
+    &.active {
+        opacity: 1;
+        transform: scale(100%);
+    }
+
+    #topbar {
+        display: grid;
+        height: fit-content;
+        img {
+            justify-self: end;
+            padding: 2rem;
+            width: 50px;
+            height: 50px;
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
+    }
+
+    .imagecontainer {
+        z-index: 9999;
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        width: 80vw;
+        height: 80vh;
+        transition: 250ms;
+        #imageClicked {
+            z-index: 99999;
+            justify-self: center;
+            align-self: center;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    #gBackground {
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: color(3);
+    opacity: 0.85;
     }
 }
 
@@ -349,21 +457,16 @@ footer {
 }
 
 
-.bgGradient {
-    background: linear-gradient(-45deg, dm(2), dm(accent), dm(2), dm(2));
-	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
+.borderBottom {
+    width: 50%;
+    bottom: 0;
+    right: 0;
 }
 
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.borderRight {
+    height: 20%;
+    bottom: 0;
+    right: 0;
 }
+
