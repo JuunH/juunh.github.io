@@ -12,18 +12,6 @@ Settings, Variables and Functions Setup
   scroll-behavior: smooth;
 }
 
-.lightmode {
-  color: #1a1a1a;
-}
-
-.darkmode {
-  color: whitesmoke;
-}
-
-.darkmode-background {
-  background-color: #1a1a1a;
-}
-
 .font {
   font-family: Quicksand;
   letter-spacing: 2px;
@@ -50,6 +38,24 @@ body {
   display: -ms-grid;
   display: grid;
   min-height: 100vh;
+  color: #1a1a1a;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+}
+
+body a {
+  color: #1a1a1a;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+body.darkmode {
+  color: whitesmoke;
+  background-color: #1a1a1a;
+}
+
+body.darkmode a {
+  color: whitesmoke;
 }
 
 nav {
@@ -111,8 +117,6 @@ nav #menuIcon {
   width: 30px;
   height: 30px;
   opacity: 1;
-  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
   cursor: pointer;
   -webkit-transition: 250ms;
   transition: 250ms;
@@ -125,12 +129,43 @@ nav #menuIcon {
   }
 }
 
+nav #menuIcon.darkmode {
+  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+}
+
 nav #menuIcon.active {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
+nav #darkmodeIcon {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 1rem;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+nav #darkmodeIcon.darkmode {
+  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+}
+
+@media (min-width: 750px) {
+  nav #darkmodeIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 main {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[6];
@@ -144,49 +179,15 @@ main {
 
 =======================================
 */
-.darkmode-span span {
-  color: #e43232;
-}
-
-.lightmode-span span {
-  color: #b32828;
-}
-
-#landing {
-  position: absolute;
-  z-index: 1;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 100%;
-  height: 100vh;
-}
-
-#landing-image {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  min-height: 100vh;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-filter: opacity(0.25);
-          filter: opacity(0.25);
-}
-
 .card {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-column: 2 / span 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
   display: -ms-grid;
   display: grid;
   margin: 2rem;
   max-width: 400px;
+  overflow: none;
 }
 
 .card h1, .card p {
@@ -194,16 +195,47 @@ main {
 }
 
 .card-image {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4 / span 3;
+  margin: 2rem 0;
   min-height: 50vh;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-filter: opacity(0.25);
-          filter: opacity(0.25);
+  -webkit-filter: opacity(0.75);
+          filter: opacity(0.75);
+}
+
+#welcomeCard {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  min-height: 100vh;
+  width: 100%;
+}
+
+#welcomeCard #welcomeMessage {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / span 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 1rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .bgGradient {

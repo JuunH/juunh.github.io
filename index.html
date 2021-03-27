@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="Javascript/scripts.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="Javascript/scripts.js" defer></script>
     <title>JUUN</title>
 </head>
-<body class="darkmode darkmode-background font">  
+<body class="font">  
     <nav>
         <ul id="menu">
             <li><a class="darkmode" href="#">About</a></li>
@@ -17,34 +17,17 @@
             <li><a class="darkmode" href="#">Gallery</a></li>
         </ul>
         <img id="menuIcon" src="Social Icons/Menu Icon.svg" alt="Menu Icon">
+        <img id="darkmodeIcon" src="Social Icons/Darkmode Icon.svg" alt="Darkmode Icon">
     </nav>
 
     <main>
-        <div id="landing">
-            <h1>Welcome</h1>
+        <div id="welcomeCard">
+            <div id="welcomeMessage" class="backgroundfilter">
+                <h1>Welcome</h1>
+                <p>Learn more about me and see what I've been up to.</p>
+                <a href="#">Learn More</a>
+            </div>
         </div>
-        <div id="landing-image" style="background-image: url('/Gallery Compressed/Edges.jpeg');">
-        </div>
-        <div class="card darkmode-background font darkmode-span">
-            <h1><span>Hello there,</span></h1>
-            <p>Scroll down to learn more about me and see what I've been up to.</p>
-        </div>
-        <div class="card-image" style="background-image: url('/Gallery Compressed/Bomb.png');"></div>
-        <div class="card darkmode-background font darkmode-span">
-            <h1><span>Projects</span></h1>
-            <p>By educating myself in fields such as Web Development, and related topics like databases, I have created some basic starter projects that allowed me to develop my skills along the way.</p>
-        </div>
-        <div class="card-image" style="background-image: url('/Gallery Compressed/GitHub\ SS.png');"></div>
-        <div class="card darkmode-background font darkmode-span">
-            <h1><span>Designs</span></h1>
-            <p>During lockdown, I started learning web development using basic HTML and CSS. I took a liking to it, and from then on, I set up my own local web server, and created various websites to practise my newly learned skill. In the future, I want to take it a step further to become a front-end web developer.</p>
-        </div>
-        <div class="card-image" style="background-image: url('/Gallery Compressed/Coding\ SS.png');"></div>
-        <div class="card darkmode-background font darkmode-span">
-            <h1><span>Gallery</span></h1>
-            <p>Photography has been a favourite hobby of mine for a while. Shooting at different angles while adjusting specific settings, almost gives a new perspective everytime. Along with this hobby, I learned to edit my results using Adobe Lightroom to bring my photos to life.</p>
-        </div>
-        <div class="card-image" style="background-image: url('/Gallery Compressed/Gallery\ SS.png');"></div>
     </main>
 
     <footer>
