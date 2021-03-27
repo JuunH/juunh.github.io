@@ -26,11 +26,18 @@ body {
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
   min-height: 100vh;
-  color: whitesmoke;
-  background-color: #282828;
+  color: #0f0f0f;
+  background-color: #eeeeee;
   font-family: Quicksand;
   font-size: 32px;
   letter-spacing: 2px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+body.darkmode {
+  color: whitesmoke;
+  background-color: #282828;
 }
 
 nav {
@@ -38,27 +45,49 @@ nav {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
-  margin: 1rem;
+  background-color: #eeeeee;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav.darkmode {
+  color: whitesmoke;
   background-color: #282828;
 }
 
 nav a {
-  padding: 4px;
+  margin-left: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   border-bottom: solid;
-  border-color: #282828;
+  border-color: #eeeeee;
   border-radius: 4px;
   text-decoration: none;
-  color: whitesmoke;
+  color: #0f0f0f;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 nav a span {
   font-size: 24px;
+  color: #a03131;
+}
+
+nav a span.darkmode {
   color: #e43232;
 }
 
+nav a.darkmode {
+  color: whitesmoke;
+  border-color: #282828;
+}
+
 nav a:hover, nav a:active {
+  border-color: #a03131;
+}
+
+nav a:hover.darkmode, nav a:active.darkmode {
   border-color: #e43232;
 }
 
@@ -81,24 +110,40 @@ nav #tContainer {
 }
 
 nav #title {
+  position: relative;
+  z-index: 999;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  -ms-grid-columns: 1fr auto auto;
+      grid-template-columns: 1fr auto auto;
+  padding: 1rem 0;
   width: 100%;
+  background-color: #eeeeee;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav #title.darkmode {
+  background-color: #282828;
 }
 
 nav #menuIcon {
+  margin-right: 1rem;
   width: 30px;
   -ms-grid-column-align: end;
       justify-self: end;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+  -webkit-filter: none;
+          filter: none;
   -webkit-transition: 250ms;
   transition: 250ms;
+}
+
+nav #menuIcon.darkmode {
+  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
 
 nav #menuIcon.active {
@@ -114,21 +159,33 @@ nav #menuIcon.active {
 
 nav #menu {
   position: absolute;
-  display: none;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  z-index: 1;
-  background-color: #282828;
+  background-color: #eeeeee;
   border-bottom: solid;
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav #menu.darkmode {
+  color: whitesmoke;
+  background-color: #282828;
 }
 
 nav #menu.active {
-  display: -ms-grid;
-  display: grid;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 nav #menu ul, nav #menu li, nav #menu a {
@@ -162,6 +219,34 @@ nav #menu ul, nav #menu li, nav #menu a {
   }
 }
 
+nav #darkmodeIcon {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 0 1rem;
+  width: 30px;
+  height: 30px;
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+nav #darkmodeIcon.darkmode {
+  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+}
+
+@media (min-width: 750px) {
+  nav #darkmodeIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 footer {
   position: relative;
   -ms-grid-column: 1;
@@ -175,6 +260,13 @@ footer {
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 1rem;
+  background-color: #d8d8d8;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+footer.darkmode {
+  color: whitesmoke;
   background-color: #141414;
 }
 
@@ -197,6 +289,11 @@ footer ul, footer li {
 footer img {
   width: 50px;
   height: auto;
+  -webkit-filter: none;
+          filter: none;
+}
+
+footer img.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
@@ -252,6 +349,10 @@ footer img {
 }
 
 .card span {
+  color: #a03131;
+}
+
+.card span.darkmode {
   color: #e43232;
 }
 
@@ -278,7 +379,7 @@ footer img {
   width: 100%;
   max-width: 500px;
   border-top: solid 2px;
-  border-color: #e43232;
+  border-color: #a03131;
 }
 
 .c2 h2, .c2 p, .c2 a {
@@ -320,18 +421,18 @@ footer img {
   height: -moz-max-content;
   height: max-content;
   border: solid 4px;
-  border-color: #e43232;
+  border-color: #a03131;
   border-radius: 8px;
   text-decoration: none;
-  color: #e43232;
+  color: #a03131;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 .button:hover,
 .button:active {
-  background-color: #e43232;
-  color: whitesmoke;
+  background-color: #a03131;
+  color: #d8d8d8;
 }
 
 .link {
@@ -344,15 +445,15 @@ footer img {
   padding: 4px;
   border-radius: 8px;
   text-decoration: none;
-  color: #e43232;
+  color: #a03131;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 .link:hover,
 .link:active {
-  background-color: #e43232;
-  color: whitesmoke;
+  background-color: #a03131;
+  color: #0f0f0f;
 }
 
 /* 
@@ -480,15 +581,22 @@ footer img {
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-color: #141414;
+  background-color: #d8d8d8;
   opacity: 0.85;
 }
 
 /* Custom Borders */
 .border {
   position: absolute;
-  background-color: #e43232;
+  background-color: #a03131;
   border: solid 2px;
+  border-color: #a03131;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.border.darkmode {
+  background-color: #e43232;
   border-color: #e43232;
 }
 
