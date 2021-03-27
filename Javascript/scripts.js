@@ -48,3 +48,28 @@ for (var i = 0 ; i < everyImg.length; i++) {
 
   })
 }
+
+
+//  Menu Icon Function  //
+
+
+const dmicon = document.getElementById('darkmodeIcon');
+const page = document.getElementsByTagName('*')
+
+
+function darkmode(elements) {
+  for (var i = 0 ; i < elements.length; i++) {
+
+    elements[i].classList.toggle('darkmode');
+  
+  }
+}
+
+
+dmicon.addEventListener('click', () => {
+
+  darkmode(page)
+
+})
+
+

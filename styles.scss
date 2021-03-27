@@ -29,15 +29,28 @@ Settings, Variables and Functions Setup
 
 
 $colors: (
+    1: rgb(41, 41, 41),
+    2: rgb(240, 240, 240),
+    3: rgb(224, 224, 224),
+    accent: rgb(173, 39, 39)
+);
+
+
+$darkmode: (
     1: rgb(245, 245, 245),
-    2: rgb(40, 40, 40),
-    3: rgb(20, 20, 20),
+    2: rgb(26, 26, 26),
+    3: rgb(18, 18, 18),
     accent: rgb(228, 50, 50)
 );
 
 
 @function color($color-name) {
     @return map-get($colors, $color-name);
+}
+
+
+@function dm($color-name) {
+    @return map-get($darkmode, $color-name);
 }
 
 
@@ -76,6 +89,12 @@ body {
     font-family: ff(primary);
     font-size: ff(3);
     letter-spacing: 2px;
+    transition: 250ms;
+
+    &.darkmode {
+        color: dm(1);
+        background-color: dm(2);
+    }
 }
 
 
@@ -84,9 +103,15 @@ nav {
     grid-column: 1 / span 6;
     margin: 1rem;
     background-color: color(2);
+    transition: 250ms;
+
+    &.darkmode {
+        background-color: dm(2);
+    }
 
     a {
         padding: 4px;
+        width: max-content;
         border-bottom: solid;
         border-color: color(2);
         border-radius: 4px;
@@ -96,6 +121,10 @@ nav {
         span {
             font-size: ff(2);
             color: color(accent);
+        }
+        &.darkmode {
+            color: dm(1);
+            border-color: dm(2);
         }
     }
 
@@ -109,7 +138,7 @@ nav {
         display: block;
         width: 100%;
 
-        @include tablet {
+        @include desktop() {
             display: grid;
             grid-template-columns: auto 1fr;
         }
@@ -117,22 +146,42 @@ nav {
 
     #title {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 1fr auto auto;
         width: 100%;
+    }
+
+    #darkmodeIcon {
+        align-self: center;
+        margin-right: 0.75rem;
+        width: 30px;
+        height: 30px;
+        transition: 250ms;
+        cursor: pointer;
+
+        &.darkmode {
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
+
+        @include tablet() {
+            width: 40px;
+            height: 40px;
+        }
     }
 
     #menuIcon {
         width: 30px;
         justify-self: end;
         align-self: center;
-        filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-        transition: 250ms;
+
+        &.darkmode {
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
 
         &.active {
             transform: rotate(180deg);
         }
 
-        @include tablet() {
+        @include desktop() {
             display: none;
         }
     }
@@ -146,6 +195,12 @@ nav {
         z-index: 1;
         background-color: color(2);
         border-bottom: solid;
+        transition: 250ms;
+
+        &.darkmode {
+            color: dm(1);
+            background-color: dm(2);
+        }
 
         &.active {
             display: grid;
@@ -159,12 +214,12 @@ nav {
             list-style: none;
             font-size: ff(2);
 
-            @include tablet {
+            @include desktop() {
                 display: inline;
             }
         }
 
-        @include tablet {
+        @include desktop() {
             position: relative;
             display: grid;
             justify-content: end;
@@ -181,6 +236,12 @@ footer {
     align-content: center;
     padding: 1rem;
     background-color: color(3);
+    transition: 250ms;
+
+    &.darkmode {
+        color: dm(1);
+        background-color: dm(3);
+    }
 
     p, ul, li {
         margin: 1rem;
@@ -198,7 +259,10 @@ footer {
     img {
         width: 50px;
         height: auto;
-        filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        
+        &.darkmode {
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
     }
 }
 

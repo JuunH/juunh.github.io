@@ -26,11 +26,18 @@ body {
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
   min-height: 100vh;
-  color: whitesmoke;
-  background-color: #282828;
+  color: #292929;
+  background-color: #f0f0f0;
   font-family: Quicksand;
   font-size: 32px;
   letter-spacing: 2px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+body.darkmode {
+  color: whitesmoke;
+  background-color: #1a1a1a;
 }
 
 nav {
@@ -39,27 +46,41 @@ nav {
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
   margin: 1rem;
-  background-color: #282828;
+  background-color: #f0f0f0;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav.darkmode {
+  background-color: #1a1a1a;
 }
 
 nav a {
   padding: 4px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   border-bottom: solid;
-  border-color: #282828;
+  border-color: #f0f0f0;
   border-radius: 4px;
   text-decoration: none;
-  color: whitesmoke;
+  color: #292929;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 nav a span {
   font-size: 24px;
-  color: #e43232;
+  color: #ad2727;
+}
+
+nav a.darkmode {
+  color: whitesmoke;
+  border-color: #1a1a1a;
 }
 
 nav a:hover, nav a:active {
-  border-color: #e43232;
+  border-color: #ad2727;
 }
 
 nav #tContainer {
@@ -71,7 +92,7 @@ nav #tContainer {
   width: 100%;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1080px) {
   nav #tContainer {
     display: -ms-grid;
     display: grid;
@@ -83,9 +104,33 @@ nav #tContainer {
 nav #title {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  -ms-grid-columns: 1fr auto auto;
+      grid-template-columns: 1fr auto auto;
   width: 100%;
+}
+
+nav #darkmodeIcon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 0.75rem;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+nav #darkmodeIcon.darkmode {
+  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+}
+
+@media (min-width: 750px) {
+  nav #darkmodeIcon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 nav #menuIcon {
@@ -95,10 +140,11 @@ nav #menuIcon {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+nav #menuIcon.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-  -webkit-transition: 250ms;
-  transition: 250ms;
 }
 
 nav #menuIcon.active {
@@ -106,7 +152,7 @@ nav #menuIcon.active {
           transform: rotate(180deg);
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1080px) {
   nav #menuIcon {
     display: none;
   }
@@ -122,8 +168,15 @@ nav #menu {
   -ms-flex-line-pack: center;
       align-content: center;
   z-index: 1;
-  background-color: #282828;
+  background-color: #f0f0f0;
   border-bottom: solid;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+nav #menu.darkmode {
+  color: whitesmoke;
+  background-color: #1a1a1a;
 }
 
 nav #menu.active {
@@ -144,13 +197,13 @@ nav #menu ul, nav #menu li, nav #menu a {
   font-size: 24px;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1080px) {
   nav #menu ul, nav #menu li, nav #menu a {
     display: inline;
   }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 1080px) {
   nav #menu {
     position: relative;
     display: -ms-grid;
@@ -175,7 +228,14 @@ footer {
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 1rem;
-  background-color: #141414;
+  background-color: #e0e0e0;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+footer.darkmode {
+  color: whitesmoke;
+  background-color: #121212;
 }
 
 footer p, footer ul, footer li {
@@ -197,6 +257,9 @@ footer ul, footer li {
 footer img {
   width: 50px;
   height: auto;
+}
+
+footer img.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
@@ -252,7 +315,7 @@ footer img {
 }
 
 .card span {
-  color: #e43232;
+  color: #ad2727;
 }
 
 .c1 {
@@ -278,7 +341,7 @@ footer img {
   width: 100%;
   max-width: 500px;
   border-top: solid 2px;
-  border-color: #e43232;
+  border-color: #ad2727;
 }
 
 .c2 h2, .c2 p, .c2 a {
@@ -320,18 +383,18 @@ footer img {
   height: -moz-max-content;
   height: max-content;
   border: solid 4px;
-  border-color: #e43232;
+  border-color: #ad2727;
   border-radius: 8px;
   text-decoration: none;
-  color: #e43232;
+  color: #ad2727;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 .button:hover,
 .button:active {
-  background-color: #e43232;
-  color: whitesmoke;
+  background-color: #ad2727;
+  color: #292929;
 }
 
 .link {
@@ -344,15 +407,15 @@ footer img {
   padding: 4px;
   border-radius: 8px;
   text-decoration: none;
-  color: #e43232;
+  color: #ad2727;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
 .link:hover,
 .link:active {
-  background-color: #e43232;
-  color: whitesmoke;
+  background-color: #ad2727;
+  color: #292929;
 }
 
 /* 
@@ -480,16 +543,16 @@ footer img {
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-color: #141414;
+  background-color: #e0e0e0;
   opacity: 0.85;
 }
 
 /* Custom Borders */
 .border {
   position: absolute;
-  background-color: #e43232;
+  background-color: #ad2727;
   border: solid 2px;
-  border-color: #e43232;
+  border-color: #ad2727;
 }
 
 .borderTop {
