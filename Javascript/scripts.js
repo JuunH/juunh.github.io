@@ -13,6 +13,7 @@ menuicon.addEventListener('click', () => {
 
 //  Dark Mode Function  //
 
+
 const dmIcon = document.getElementById('darkmodeIcon');
 const allElements = document.getElementsByTagName('*')
 
@@ -20,11 +21,16 @@ const allElements = document.getElementsByTagName('*')
 function toggleDarkmode (allElements) {
   for (var i = 0 ; i < allElements.length; i++) {
     allElements[i].classList.toggle('darkmode');
-    dmIcon.classList.toggle('active')
   }
 }
 
 
 dmIcon.addEventListener('click', () => {
   toggleDarkmode(allElements)
+  dmIcon.classList.toggle('active')
 })
+
+
+//  Switch Content Function  //
+
+

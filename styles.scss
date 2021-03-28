@@ -71,19 +71,6 @@ $fonts: (
 }
 
 
-.font {
-    font-family: ff(primary);
-    letter-spacing: 2px;
-    h1 {
-        font-size: ff(2);
-        font-weight: 400;
-    }
-    p {
-        font-size: ff(1);
-    }
-}
-
-
 /* 
 =======================================
 
@@ -99,10 +86,12 @@ body {
     min-height: 100vh;
     color: lm(1);
     transition: 350ms;
+
     a {
         color: lm(1);
         transition: 250ms;
     }
+
     &.darkmode {
         color: dm(1);
         background-color: dm(2);
@@ -143,7 +132,7 @@ nav {
         overflow: wrap;
         @include tablet() {
             margin: 0 0.5rem;
-            font-size: ff(2);
+            font-size: ff(1);
         }
         a {
             text-decoration: none;
@@ -212,26 +201,124 @@ main {
 */
 
 
-.card-1 {
-    grid-column: 1 / span 6;
-    position: relative;
-    display: flex;
-}
-
-
-.card-2 {
+.con-1 {
     grid-column: 2 / span 4;
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
+    display: none;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    transition: 1s;
+
+    &.display {
+        display: flex;
+    }
 }
 
 
-.card-image {
+.con-image {
     min-height: 50vh;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     filter: opacity(0.75);
+}
+
+
+/* 
+=======================================
+
+                Cards
+
+=======================================
+*/
+
+
+.fullheight {
+    min-height: 100vh;
+}
+
+
+/* 
+=======================================
+
+            Text Formatting
+
+=======================================
+*/
+
+
+.font {
+    font-family: ff(primary);
+    letter-spacing: 2px;
+}
+
+
+.heading {
+    margin-bottom: 4rem;
+    font-size: ff(3);
+    font-weight: 400;
+}
+
+
+.text {
+    max-width: 300px;
+    line-height: 2em;
+}
+
+
+.link {
+    margin: 1rem;
+    color: lm(accent);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover, &:active {
+        transform: translateX(1em);
+    }
+
+    &.darkmode {
+        color: dm(accent);
+    }
+}
+
+
+.button {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    color: lm(accent);
+    border: solid;
+    border-radius: 1rem;
+    border-color: lm(accent);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+        color: lm(2);
+        background-color: lm(accent);
+    }
+
+    &.darkmode {
+        color: dm(accent);
+        &:hover {
+            color: dm(1);
+            background-color: lm(accent);
+        }
+    }
+}
+
+
+/* 
+=======================================
+
+                Settings
+
+=======================================
+*/
+
+
+.bordertop {
+    border-top: solid;
+    border-color: lm(accent);
 }

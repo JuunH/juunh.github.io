@@ -12,20 +12,6 @@ Settings, Variables and Functions Setup
   scroll-behavior: smooth;
 }
 
-.font {
-  font-family: Quicksand;
-  letter-spacing: 2px;
-}
-
-.font h1 {
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.font p {
-  font-size: 16px;
-}
-
 /* 
 =======================================
 
@@ -105,7 +91,7 @@ nav li {
 @media (min-width: 750px) {
   nav li {
     margin: 0 0.5rem;
-    font-size: 28px;
+    font-size: 16px;
   }
 }
 
@@ -184,30 +170,34 @@ main {
 
 =======================================
 */
-.card-1 {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.card-2 {
+.con-1 {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / span 4;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.con-1.display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 100vh;
 }
 
-.card-image {
+.con-image {
   min-height: 50vh;
   background-position: center;
   background-attachment: fixed;
@@ -215,5 +205,92 @@ main {
   background-repeat: no-repeat;
   -webkit-filter: opacity(0.75);
           filter: opacity(0.75);
+}
+
+/* 
+=======================================
+
+                Cards
+
+=======================================
+*/
+.fullheight {
+  min-height: 100vh;
+}
+
+/* 
+=======================================
+
+            Text Formatting
+
+=======================================
+*/
+.font {
+  font-family: Quicksand;
+  letter-spacing: 2px;
+}
+
+.heading {
+  margin-bottom: 4rem;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.text {
+  max-width: 300px;
+  line-height: 2em;
+}
+
+.link {
+  margin: 1rem;
+  color: #b32828;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover, .link:active {
+  -webkit-transform: translateX(1em);
+          transform: translateX(1em);
+}
+
+.link.darkmode {
+  color: #e43232;
+}
+
+.button {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  color: #b32828;
+  border: solid;
+  border-radius: 1rem;
+  border-color: #b32828;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.button:hover {
+  color: whitesmoke;
+  background-color: #b32828;
+}
+
+.button.darkmode {
+  color: #e43232;
+}
+
+.button.darkmode:hover {
+  color: whitesmoke;
+  background-color: #b32828;
+}
+
+/* 
+=======================================
+
+                Settings
+
+=======================================
+*/
+.bordertop {
+  border-top: solid;
+  border-color: #b32828;
 }
 /*# sourceMappingURL=styles.css.map */
