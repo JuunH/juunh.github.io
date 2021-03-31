@@ -63,6 +63,7 @@ $fonts: (
     1: 16px,
     2: 28px,
     3: 40px,
+    4: 52px,
     primary: Quicksand,
 );
 
@@ -115,7 +116,7 @@ nav {
         opacity: 0;
         transform: translateX(100%);
         &.darkmode {
-            background-image: linear-gradient(90deg, dm(4));
+            background-image: linear-gradient(90deg,  #0000008c, dm(4), dm(4), dm(4));
         }
 
         &.active {
@@ -132,6 +133,9 @@ nav {
         justify-content: center;
         margin-right: 1rem;
         height: 100%;
+        @include tablet() {
+            margin-right: 2em;
+        }
     }
 
     li {
@@ -144,6 +148,9 @@ nav {
         a {
             font-size: ff(2);
             text-decoration: none;
+            @include tablet() {
+                font-size: ff(3);
+            }
         }
         &:hover, &:active {
             transform: translateX(-25px);
@@ -163,6 +170,7 @@ nav {
         @include tablet() {
             width: 40px;
             height: 40px;
+            margin: 2rem;
         }
 
         &.darkmode {
@@ -190,6 +198,7 @@ nav {
         }
 
         @include tablet() {
+            margin: 2rem;
             width: 40px;
             height: 40px;
         }
@@ -255,12 +264,25 @@ main {
     &.title {
         margin: 5rem 0;
     }
+    @include tablet() {
+        font-size: ff(4);
+    }
 }
 
 
 .text {
     max-width: 300px;
     line-height: 2em;
+    @include tablet() {
+        max-width: 500px;
+        font-size: ff(2);
+    }
+    span {
+        color: lm(accent);
+        &.darkmode {
+            color: dm(accent);
+        }
+    }
 }
 
 
@@ -277,6 +299,11 @@ main {
 
     &.darkmode {
         color: dm(accent);
+    }
+    
+    @include tablet() {
+        margin: 1.5rem 0;
+        font-size: ff(2);
     }
 }
 
@@ -391,6 +418,9 @@ main {
         cursor: pointer;
         &.darkmode {
             filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
+        @include tablet() {
+            padding: 2rem;
         }
     }
 

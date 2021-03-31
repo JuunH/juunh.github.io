@@ -62,8 +62,8 @@ nav #menuBlock {
 }
 
 nav #menuBlock.darkmode {
-  background-image: -webkit-gradient(linear, left top, right top, from(#000000dc));
-  background-image: linear-gradient(90deg, #000000dc);
+  background-image: -webkit-gradient(linear, left top, right top, from(#0000008c), color-stop(#000000dc), color-stop(#000000dc), to(#000000dc));
+  background-image: linear-gradient(90deg, #0000008c, #000000dc, #000000dc, #000000dc);
 }
 
 nav #menuBlock.active {
@@ -92,6 +92,12 @@ nav #menu {
   height: 100%;
 }
 
+@media (min-width: 750px) {
+  nav #menu {
+    margin-right: 2em;
+  }
+}
+
 nav li {
   display: block;
   height: -webkit-max-content;
@@ -107,6 +113,12 @@ nav li {
 nav li a {
   font-size: 28px;
   text-decoration: none;
+}
+
+@media (min-width: 750px) {
+  nav li a {
+    font-size: 40px;
+  }
 }
 
 nav li:hover, nav li:active {
@@ -130,6 +142,7 @@ nav #menuIcon {
   nav #menuIcon {
     width: 40px;
     height: 40px;
+    margin: 2rem;
   }
 }
 
@@ -164,6 +177,7 @@ nav #darkmodeIcon.darkmode {
 
 @media (min-width: 750px) {
   nav #darkmodeIcon {
+    margin: 2rem;
     width: 40px;
     height: 40px;
   }
@@ -237,9 +251,30 @@ main {
   margin: 5rem 0;
 }
 
+@media (min-width: 750px) {
+  .heading {
+    font-size: 52px;
+  }
+}
+
 .text {
   max-width: 300px;
   line-height: 2em;
+}
+
+@media (min-width: 750px) {
+  .text {
+    max-width: 500px;
+    font-size: 28px;
+  }
+}
+
+.text span {
+  color: #b32828;
+}
+
+.text span.darkmode {
+  color: #e43232;
 }
 
 .link {
@@ -257,6 +292,13 @@ main {
 
 .link.darkmode {
   color: #e43232;
+}
+
+@media (min-width: 750px) {
+  .link {
+    margin: 1.5rem 0;
+    font-size: 28px;
+  }
 }
 
 /* 
@@ -394,6 +436,12 @@ main {
 #gallerylightbox #closeButton.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+}
+
+@media (min-width: 750px) {
+  #gallerylightbox #closeButton {
+    padding: 2rem;
+  }
 }
 
 #gallerylightbox .imagecontainer {

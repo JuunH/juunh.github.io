@@ -79,11 +79,8 @@ const lbImage = document.getElementById('imageClicked');
 
 
 function displayClickedImage(imageClicked) {
-  
   image = document.getElementById(imageClicked).src;
-  
   lightbox.classList.toggle('active');
-
   lbImage.src = image;
 }
 
@@ -95,12 +92,13 @@ function closeLightBox() {
 for (var i = 0 ; i < everyImg.length; i++) {
 
   everyImg[i].setAttribute('id', 'picture'+ i);
-
   let pictureID = `picture${i}`;
-  
+
   everyImg[i].addEventListener('click', function () {
-
       displayClickedImage(pictureID);
+  })
 
+  everyImg[i].addEventListener('touchstart', function () {
+    displayClickedImage(pictureID);
   })
 }
