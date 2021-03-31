@@ -103,7 +103,9 @@ body {
 
 
 nav {
+    position: relative;
     display: grid;
+    width: 100vw;
 
     #menuBlock {
         z-index: 2;
@@ -169,6 +171,7 @@ nav {
     }
 
     #menuIcon {
+        right: 0;
         position: fixed;
         z-index: 999;
         margin: 1rem;
@@ -361,7 +364,7 @@ main {
     &.show {
         z-index: 1;
         opacity: 1;
-        transform: scaleY(100%);
+        transform: scaleY(1);
     }
 }
 
