@@ -23,8 +23,6 @@ body {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
   min-height: 100vh;
   color: #1a1a1a;
 }
@@ -100,6 +98,12 @@ nav #menu {
   }
 }
 
+@media (min-width: 1080px) {
+  nav #menu {
+    margin-right: 3.5rem;
+  }
+}
+
 nav li {
   display: block;
   height: -webkit-max-content;
@@ -128,6 +132,14 @@ nav li:hover, nav li:active {
           transform: translateX(-25px);
 }
 
+nav #title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  width: 100%;
+}
+
 nav #menuIcon {
   position: fixed;
   z-index: 999;
@@ -153,14 +165,17 @@ nav #menuIcon.active {
   }
 }
 
+@media (min-width: 1080px) {
+  nav #menuIcon {
+    width: 40px;
+    height: 40px;
+    margin: 2rem 3rem;
+  }
+}
+
 nav #menuIcon.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-}
-
-nav #menuIcon.active {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 nav #darkmodeIcon {
@@ -190,18 +205,33 @@ nav #darkmodeIcon.darkmode {
   }
 }
 
+@media (min-width: 1080px) {
+  nav #darkmodeIcon {
+    margin: 2rem 3rem;
+  }
+}
+
 main {
   position: relative;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 1rem;
+  background-color: color(3);
 }
 
 /* 
-=======================================
+============================================
 
             Containers
 
-=======================================
+============================================
 */
 .con-1 {
   -ms-grid-column: 2;
@@ -313,11 +343,6 @@ main {
 
 =======================================
 */
-.bordertop {
-  border-top: solid;
-  border-color: #b32828;
-}
-
 .absolute {
   position: absolute;
 }
@@ -484,130 +509,5 @@ main {
 
 #gallerylightbox #gBackground.darkmode {
   background-color: #121212;
-}
-
-#gallery .imagecontainer {
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  margin-bottom: 24px;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-#gallery .imagecontainer img {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  width: 100%;
-  border-radius: 5px;
-}
-
-#gallery .imagecontainer:hover {
-  -webkit-transform: scale(95%);
-          transform: scale(95%);
-  cursor: pointer;
-}
-
-#gallerylightbox {
-  position: fixed;
-  z-index: 999;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-}
-
-#gallerylightbox.active {
-  opacity: 1;
-  -webkit-transform: scale(100%);
-          transform: scale(100%);
-}
-
-#gallerylightbox #topbar {
-  display: -ms-grid;
-  display: grid;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-#gallerylightbox #topbar img {
-  -ms-grid-column-align: end;
-      justify-self: end;
-  padding: 2rem;
-  width: 50px;
-  height: 50px;
-  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-}
-
-#gallerylightbox .imagecontainer {
-  z-index: 9999;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  display: -ms-grid;
-  display: grid;
-  width: 80vw;
-  height: 80vh;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-#gallerylightbox .imagecontainer #imageClicked {
-  z-index: 99999;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 5px;
-}
-
-#gallerylightbox #gBackground {
-  position: fixed;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  background-color: #141414;
-  opacity: 0.85;
-}
-
-/* Custom Borders */
-.border {
-  position: absolute;
-  background-color: #e43232;
-  border: solid 2px;
-  border-color: #e43232;
-}
-
-.borderTop {
-  width: 50%;
-}
-
-.borderLeft {
-  height: 20%;
-}
-
-.borderBottom {
-  width: 50%;
-  bottom: 0;
-  right: 0;
-}
-
-.borderRight {
-  height: 20%;
-  bottom: 0;
-  right: 0;
 }
 /*# sourceMappingURL=styles.css.map */

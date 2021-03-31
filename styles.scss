@@ -85,7 +85,6 @@ $fonts: (
 body {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     min-height: 100vh;
     color: lm(1);
 
@@ -137,6 +136,10 @@ nav {
         @include tablet() {
             margin-right: 2em;
         }
+
+        @include desktop() {
+            margin-right: 3.5rem;
+        }
     }
 
     li {
@@ -184,43 +187,14 @@ nav {
             margin: 2rem;
         }
 
+        @include desktop() {
+            width: 40px;
+            height: 40px;
+            margin: 2rem 3rem;
+        }
+
         &.darkmode {
             filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-        }
-    }
-
-    #menu {
-        position: absolute;
-        display: none;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-        z-index: 1;
-        background-color: color(2);
-        border-bottom: solid;
-
-        &.active {
-            display: grid;
-        }
-
-        ul, li, a {
-            display: grid;
-            justify-content: center;
-            align-self: center;
-            padding: 4px;
-            list-style: none;
-            font-size: ff(2);
-
-            @include tablet {
-                display: inline;
-            }
-        }
-
-        @include tablet {
-            position: relative;
-            display: grid;
-            justify-content: end;
-            border-bottom: none;
         }
     }
 
@@ -244,6 +218,10 @@ nav {
             width: 40px;
             height: 40px;
         }
+
+        @include desktop() {
+            margin: 2rem 3rem;
+        }
     }
 }
 
@@ -251,29 +229,11 @@ nav {
 main {
     position: relative;
     display: grid;
+    grid-template-columns: repeat(6, 1fr);
     justify-content: center;
     align-content: center;
     padding: 1rem;
     background-color: color(3);
-
-    p, ul, li {
-        margin: 1rem;
-    }
-
-    p {
-        font-size: ff(1);
-        text-align: center;
-    }
-    ul, li {
-        display: inline-block;
-        justify-self: center;
-        list-style: none;
-    }
-    img {
-        width: 50px;
-        height: auto;
-        filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-    }
 }
 
 
@@ -349,23 +309,6 @@ main {
     }
 }
 
-.c2 {
-    grid-column: 2 / span 4;
-    width: 100%;
-    max-width: 500px;
-    border-top: solid 2px;
-    border-color: color(accent);
-    h2, p, a {
-        margin-top: 2.5rem;
-    }
-    h2 {
-        font-size: ff(2);
-    }
-    p, a {
-        font-size: ff(1);
-        line-height: 2rem;
-    }
-}
 
 .link {
     margin: 1rem 0;
@@ -396,12 +339,6 @@ main {
 
 =======================================
 */
-
-
-.bordertop {
-    border-top: solid;
-    border-color: lm(accent);
-}
 
 
 .absolute {
