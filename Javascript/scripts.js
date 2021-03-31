@@ -2,19 +2,75 @@
 
 
 const menuicon = document.getElementById('menuIcon');
-const menu = document.getElementById('menu');
+const menu = document.getElementById('menuBlock');
+
+
+function toggleMenu() {
+  menuicon.classList.toggle('active');
+  menu.classList.toggle('active');
+}
 
 
 menuicon.addEventListener('click', () => {
-
-  menuicon.classList.toggle('active');
-  menu.classList.toggle('active');
-
+  toggleMenu()
 })
 
 
+//  Dark Mode Function  //
 
-//  Gallery Lightbox Function //
+
+const dmIcon = document.getElementById('darkmodeIcon');
+const allElements = document.getElementsByTagName('*')
+
+
+function toggleDarkmode (allElements) {
+  for (var i = 0 ; i < allElements.length; i++) {
+    allElements[i].classList.toggle('darkmode');
+  }
+}
+
+
+dmIcon.addEventListener('click', () => {
+  toggleDarkmode(allElements)
+  dmIcon.classList.toggle('active')
+})
+
+
+//  Switch Content Function  //
+
+
+const about = document.getElementById('about')
+const projects = document.getElementById('projects')
+const designs = document.getElementById('designs')
+const gallery = document.getElementById('gallery')
+const links = document.getElementsByClassName('link')
+
+function switchElements(element) {
+
+  let activeElement = document.getElementsByClassName('show')
+
+  for (var i = 0 ; i < activeElement.length; i++) {
+    activeElement[i].classList.toggle('show')
+  }
+
+  let showElement = document.getElementById(element)
+  showElement.classList.toggle('show')
+}
+
+
+for (var i = 0 ; i < links.length; i++) {
+
+  let pagename = links[i].getAttribute('page')
+
+  links[i].addEventListener('click', () => {
+
+    switchElements(pagename)
+
+  })
+}
+
+
+//  Gallery Lightbox Function   //
 
 
 const everyImg = document.getElementsByClassName('img');
@@ -23,11 +79,8 @@ const lbImage = document.getElementById('imageClicked');
 
 
 function displayClickedImage(imageClicked) {
-  
   image = document.getElementById(imageClicked).src;
-  
   lightbox.classList.toggle('active');
-
   lbImage.src = image;
 }
 
@@ -39,51 +92,13 @@ function closeLightBox() {
 for (var i = 0 ; i < everyImg.length; i++) {
 
   everyImg[i].setAttribute('id', 'picture'+ i);
-
   let pictureID = `picture${i}`;
-  
+
   everyImg[i].addEventListener('click', function () {
-
       displayClickedImage(pictureID);
+  })
 
+  everyImg[i].addEventListener('touchstart', function () {
+    displayClickedImage(pictureID);
   })
 }
-
-
-//  Darkmode Function  //
-
-
-const dmicon = document.getElementById('darkmodeIcon');
-const page = document.getElementsByTagName('*')
-let mode = localStorage.getItem("darkmode");
-
-
-if (mode == 'enabled') {
-  darkmode(page)
-}
-
-
-function darkmode(elements) {
-  for (var i = 0 ; i < elements.length; i++) {
-
-    elements[i].classList.toggle('darkmode');
-  
-  }
-}
-
-
-dmicon.addEventListener('click', () => {
-
-  darkmode(page)
-  dmicon.classList.toggle('active')
-
-  if (mode == 'disabled') {
-    localStorage.setItem("darkmode", "enabled")
-  }
-  else if (mode == 'enabled') {
-    localStorage.setItem("darkmode", "disabled")
-  }
-
-})
-
-

@@ -13,26 +13,22 @@ Settings, Variables and Functions Setup
 }
 
 /* 
-============================================
+=======================================
 
-    Body, Navigation and Footer setup
+Body, Header, Navigation and Footer
 
-============================================
+=======================================
 */
 body {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
   min-height: 100vh;
-  color: #292929;
-  background-color: #f0f0f0;
-  font-family: Quicksand;
-  font-size: 32px;
-  letter-spacing: 2px;
-  -webkit-transition: 250ms;
-  transition: 250ms;
+  color: #1a1a1a;
+}
+
+body a {
+  color: #1a1a1a;
 }
 
 body.darkmode {
@@ -40,121 +36,114 @@ body.darkmode {
   background-color: #1a1a1a;
 }
 
-nav {
-  position: relative;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  background-color: #f0f0f0;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-nav.darkmode {
-  background-color: #1a1a1a;
-}
-
-nav a {
-  margin: 1rem;
-  padding: 4px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  border-bottom: solid;
-  border-color: #f0f0f0;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #292929;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-nav a span {
-  font-size: 24px;
-  color: #ad2727;
-}
-
-nav a.darkmode {
+body.darkmode a {
   color: whitesmoke;
-  border-color: #1a1a1a;
 }
 
-nav a:hover, nav a:active {
-  border-color: #ad2727;
+nav {
+  display: -ms-grid;
+  display: grid;
 }
 
-nav #tContainer {
-  position: relative;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  display: block;
-  width: 100%;
+nav #menuBlock {
+  z-index: 2;
+  position: fixed;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+  width: 100vw;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff8c), color-stop(#ffffffdc), color-stop(#ffffffdc), to(#ffffffdc));
+  background-image: linear-gradient(90deg, #ffffff8c, #ffffffdc, #ffffffdc, #ffffffdc);
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
-@media (min-width: 1080px) {
-  nav #tContainer {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr auto;
-        grid-template-columns: 1fr auto;
+nav #menuBlock.darkmode {
+  background-image: -webkit-gradient(linear, left top, right top, from(#0000008c), color-stop(#000000dc), color-stop(#000000dc), to(#000000dc));
+  background-image: linear-gradient(90deg, #0000008c, #000000dc, #000000dc, #000000dc);
+}
+
+nav #menuBlock.active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+nav #menu {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 1rem;
+  height: 100%;
+}
+
+@media (min-width: 750px) {
+  nav #menu {
+    margin-right: 2em;
   }
 }
 
-nav #title {
-  position: relative;
-  z-index: 999;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto auto;
-      grid-template-columns: 1fr auto auto;
-  width: 100%;
-  background-color: #f0f0f0;
+nav li {
+  display: block;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  list-style: none;
+  margin: 2rem 0;
+  overflow: wrap;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-nav #title.darkmode {
-  background-color: #1a1a1a;
+nav li a {
+  font-size: 28px;
+  text-decoration: none;
 }
 
-nav #darkmodeIcon {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+@media (min-width: 750px) {
+  nav li a {
+    font-size: 40px;
+  }
+}
+
+nav li:hover, nav li:active {
+  -webkit-transform: translateX(-25px);
+          transform: translateX(-25px);
+}
+
+nav #menuIcon {
+  position: fixed;
+  z-index: 999;
+  margin: 1rem;
   width: 30px;
   height: 30px;
-  -webkit-transition: 250ms;
-  transition: 250ms;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  opacity: 1;
   cursor: pointer;
 }
 
 @media (min-width: 1080px) {
-  nav #darkmodeIcon {
-    margin-right: 1rem;
+  nav #menuIcon {
+    width: 40px;
+    height: 40px;
+    margin: 2rem;
   }
-}
-
-nav #darkmodeIcon.darkmode {
-  -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-          filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-}
-
-nav #darkmodeIcon.active {
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-nav #menuIcon {
-  margin: 1rem 0.75rem;
-  width: 30px;
-  -ms-grid-column-align: end;
-      justify-self: end;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -webkit-transition: 250ms;
-  transition: 250ms;
 }
 
 nav #menuIcon.darkmode {
@@ -167,329 +156,254 @@ nav #menuIcon.active {
           transform: rotate(180deg);
 }
 
-@media (min-width: 1080px) {
-  nav #menuIcon {
-    display: none;
-  }
+nav #darkmodeIcon {
+  margin: 2rem 1rem;
+  width: 30px;
+  height: 30px;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  cursor: pointer;
 }
 
-nav #menu {
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  z-index: 1;
-  background-color: #f0f0f0;
-  border-bottom: solid;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: 250ms;
-  transition: 250ms;
+nav #darkmodeIcon.active {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
-nav #menu.darkmode {
-  color: whitesmoke;
-  background-color: #1a1a1a;
-}
-
-nav #menu.active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-nav #menu ul, nav #menu li, nav #menu a {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  margin: 0;
-  padding: 4px;
-  list-style: none;
-  font-size: 24px;
-}
-
-@media (min-width: 1080px) {
-  nav #menu ul, nav #menu li, nav #menu a {
-    display: inline;
-  }
-}
-
-@media (min-width: 1080px) {
-  nav #menu {
-    position: relative;
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-    border-bottom: none;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-footer {
-  position: relative;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding: 1rem;
-  background-color: #e0e0e0;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-footer.darkmode {
-  color: whitesmoke;
-  background-color: #121212;
-}
-
-footer p, footer ul, footer li {
-  margin: 1rem;
-}
-
-footer p {
-  font-size: 18px;
-  text-align: center;
-}
-
-footer ul, footer li {
-  display: inline-block;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  list-style: none;
-}
-
-footer img {
-  width: 50px;
-  height: auto;
-}
-
-footer img.darkmode {
+nav #darkmodeIcon.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
 
-/* 
-============================================
+@media (min-width: 750px) {
+  nav #darkmodeIcon {
+    margin: 2rem;
+    width: 40px;
+    height: 40px;
+  }
+}
 
-                Page Content
-
-============================================
-*/
-/* 
-
-------------------------
-    Universal Styles 
-------------------------
-
-*/
-/* Card Containers */
-.card {
+main {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin-bottom: 2rem;
-  width: 100%;
-  min-width: 264px;
-  min-height: 264px;
-  font-size: 24px;
-}
-
-.card h1, .card h2, .card h3 {
-  font-size: 32px;
-  font-weight: 525;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-
-.card span {
-  color: #ad2727;
-}
-
-.c1 {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-column: 2 / span 4;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  max-width: 500px;
-  min-height: 400px;
-  max-height: 450px;
-  text-align: center;
-}
-
-.c1 h1 {
-  padding: 1em 0.5em;
-}
-
-.c2 {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-column: 2 / span 4;
-  width: 100%;
-  max-width: 500px;
-  border-top: solid 2px;
-  border-color: #ad2727;
-}
-
-.c2 h2, .c2 p, .c2 a {
-  margin-top: 2.5rem;
-}
-
-.c2 h2 {
-  font-size: 24px;
-}
-
-.c2 p, .c2 a {
-  font-size: 18px;
-  line-height: 2rem;
-}
-
-.c4 {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-column: 2 / span 4;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  max-width: 500px;
-  text-align: center;
-}
-
-.c4 p, .c4 a {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin: 2rem 0;
-}
-
-/* Buttons and Links */
-.button {
-  padding: 1rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  border: solid 4px;
-  border-color: #ad2727;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #ad2727;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-.button:hover,
-.button:active {
-  background-color: #ad2727;
-  color: #e0e0e0;
-}
-
-.link {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  padding: 4px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #ad2727;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-.link:hover,
-.link:active {
-  background-color: #ad2727;
-  color: #292929;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
 }
 
 /* 
+=======================================
 
-------------------------
-    Custom Styles 
-------------------------
+            Containers
 
+=======================================
 */
-/* Gallery Formatting */
-#gallery {
+.con-1 {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / span 4;
-  position: relative;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.con-image {
+  min-height: 50vh;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: opacity(0.75);
+          filter: opacity(0.75);
+}
+
+/* 
+=======================================
+
+            Text Formatting
+
+=======================================
+*/
+.font {
+  font-family: Quicksand;
+  letter-spacing: 2px;
+}
+
+.heading {
+  margin-bottom: 4rem;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.heading.title {
+  margin: 5rem 0;
+}
+
+@media (min-width: 750px) {
+  .heading {
+    font-size: 52px;
+  }
+}
+
+.text {
+  max-width: 300px;
+  line-height: 2em;
+}
+
+@media (min-width: 750px) {
+  .text {
+    max-width: 500px;
+    font-size: 28px;
+  }
+}
+
+.text span {
+  color: #b32828;
+}
+
+.text span.darkmode {
+  color: #e43232;
+}
+
+.link {
+  margin: 1rem 0;
+  color: #b32828;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.link:hover, .link:active {
+  -webkit-transform: translateX(1em);
+          transform: translateX(1em);
+}
+
+.link.darkmode {
+  color: #e43232;
+}
+
+@media (min-width: 750px) {
+  .link {
+    margin: 1.5rem 0;
+    font-size: 28px;
+  }
+}
+
+/* 
+=======================================
+
+                Settings
+
+=======================================
+*/
+.bordertop {
+  border-top: solid;
+  border-color: #b32828;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fullheight {
+  min-height: 100vh;
+}
+
+.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.display.show {
+  z-index: 1;
+  opacity: 1;
+  -webkit-transform: scaleY(100%);
+          transform: scaleY(100%);
+}
+
+.transition {
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+/* 
+=======================================
+
+                Gallery
+
+=======================================
+*/
+.gallery {
   -webkit-columns: 1;
           columns: 1;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: #c5c5c5;
+  margin: 4rem 0;
+  padding: 2rem 1rem;
+  background-color: #dadada;
   border-radius: 8px;
 }
 
-#gallery.darkmode {
+.gallery.darkmode {
   background-color: #121212;
 }
 
 @media (min-width: 750px) {
-  #gallery {
+  .gallery {
     -webkit-columns: 2;
             columns: 2;
   }
 }
 
 @media (min-width: 1080px) {
-  #gallery {
+  .gallery {
     -webkit-columns: 4;
             columns: 4;
   }
 }
 
-#gallery .imagecontainer {
+.gallery .imagecontainer {
   display: -ms-grid;
   display: grid;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-#gallery .imagecontainer img {
-  z-index: 500;
+.gallery .imagecontainer img {
   -ms-grid-column-align: center;
       justify-self: center;
   width: 100%;
   border-radius: 5px;
 }
 
-#gallery .imagecontainer:hover {
+.gallery .imagecontainer:hover {
   -webkit-transform: scale(95%);
           transform: scale(95%);
   cursor: pointer;
 }
 
 #gallerylightbox {
-  position: fixed;
   z-index: 999;
+  position: fixed;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto 1fr;
@@ -509,29 +423,28 @@ footer img.darkmode {
           transform: scale(100%);
 }
 
-#gallerylightbox #topbar {
-  display: -ms-grid;
-  display: grid;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-#gallerylightbox #topbar img {
+#gallerylightbox #closeButton {
+  z-index: 1;
   -ms-grid-column-align: end;
       justify-self: end;
-  padding: 2rem;
+  padding: 1rem;
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
 
-#gallerylightbox #topbar img.darkmode {
+#gallerylightbox #closeButton.darkmode {
   -webkit-filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
           filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
 }
 
+@media (min-width: 750px) {
+  #gallerylightbox #closeButton {
+    padding: 2rem;
+  }
+}
+
 #gallerylightbox .imagecontainer {
-  z-index: 9999;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row-align: center;
@@ -558,39 +471,14 @@ footer img.darkmode {
 
 #gallerylightbox #gBackground {
   position: fixed;
-  z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-color: #c5c5c5;
+  background-color: #dadada;
   opacity: 0.85;
 }
 
-/* Custom Borders */
-.border {
-  position: absolute;
-  background-color: #ad2727;
-  border: solid 2px;
-  border-color: #ad2727;
-}
-
-.borderTop {
-  width: 50%;
-}
-
-.borderLeft {
-  height: 20%;
-}
-
-.borderBottom {
-  width: 50%;
-  bottom: 0;
-  right: 0;
-}
-
-.borderRight {
-  height: 20%;
-  bottom: 0;
-  right: 0;
+#gallerylightbox #gBackground.darkmode {
+  background-color: #121212;
 }
 
 /* 
