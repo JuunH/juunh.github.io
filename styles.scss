@@ -28,16 +28,31 @@ Settings, Variables and Functions Setup
 }
 
 
-$colors: (
+$lightmode: (
+    1: #1a1a1a,
+    2: rgb(245, 245, 245),
+    3: #dadada,
+    4: #ffffffdc,
+    accent: rgb(179, 40, 40)
+);
+
+
+$darkmode: (
     1: rgb(245, 245, 245),
-    2: rgb(40, 40, 40),
-    3: rgb(20, 20, 20),
+    2: rgb(26, 26, 26),
+    3: rgb(18, 18, 18),
+    4: #000000dc,
     accent: rgb(228, 50, 50)
 );
 
 
-@function color($color-name) {
-    @return map-get($colors, $color-name);
+@function lm($color-name) {
+    @return map-get($lightmode, $color-name);
+}
+
+
+@function dm($color-name) {
+    @return map-get($darkmode, $color-name);
 }
 
 
@@ -45,9 +60,10 @@ $colors: (
 
 
 $fonts: (
-    1: 18px,
-    2: 24px,
-    3: 32px,
+    1: 16px,
+    2: 28px,
+    3: 40px,
+    4: 52px,
     primary: Quicksand,
 );
 
@@ -71,47 +87,74 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     min-height: 100vh;
-    color: color(1);
-    background-color: color(2);
-    font-family: ff(primary);
-    font-size: ff(3);
-    letter-spacing: 2px;
+    color: lm(1);
+
+    a {
+        color: lm(1);
+    }
+
+    &.darkmode {
+        color: dm(1);
+        background-color: dm(2);
+        a {
+            color: dm(1);
+        }
+    }
 }
 
 
 nav {
-    position: relative;
-    grid-column: 1 / span 6;
-    margin: 1rem;
-    background-color: color(2);
+    display: grid;
 
-    a {
-        padding: 4px;
-        border-bottom: solid;
-        border-color: color(2);
-        border-radius: 4px;
-        text-decoration: none;
-        color: color(1);
-        transition: 250ms;
-        span {
-            font-size: ff(2);
-            color: color(accent);
+    #menuBlock {
+        z-index: 2;
+        position: fixed;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(90deg, #ffffff8c, lm(4), lm(4), lm(4));
+        opacity: 0;
+        transform: translateX(100%);
+        &.darkmode {
+            background-image: linear-gradient(90deg,  #0000008c, dm(4), dm(4), dm(4));
+        }
+
+        &.active {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 
-    a:hover, a:active {
-        border-color: color(accent);
+    #menu {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-right: 1rem;
+        height: 100%;
+        @include tablet() {
+            margin-right: 2em;
+        }
     }
-    
-    #tContainer {
-        position: relative;
-        grid-column: 1 / span 6;
-        display: block;
-        width: 100%;
 
-        @include tablet {
-            display: grid;
-            grid-template-columns: auto 1fr;
+    li {
+        display: block;
+        height: max-content;
+        list-style: none;
+        margin: 2rem 0;
+        overflow: wrap;
+        transition: 250ms;
+        a {
+            font-size: ff(2);
+            text-decoration: none;
+            @include tablet() {
+                font-size: ff(3);
+            }
+        }
+        &:hover, &:active {
+            transform: translateX(-25px);
         }
     }
 
@@ -122,18 +165,27 @@ nav {
     }
 
     #menuIcon {
+        position: fixed;
+        z-index: 999;
+        margin: 1rem;
         width: 30px;
+        height: 30px;
         justify-self: end;
-        align-self: center;
-        filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
-        transition: 250ms;
+        opacity: 1;
+        cursor: pointer;
 
         &.active {
             transform: rotate(180deg);
         }
 
         @include tablet() {
-            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 2rem;
+        }
+
+        &.darkmode {
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
         }
     }
 
@@ -171,11 +223,33 @@ nav {
             border-bottom: none;
         }
     }
+
+    #darkmodeIcon {
+        margin: 2rem 1rem;
+        width: 30px;
+        height: 30px;
+        justify-self: end;
+        cursor: pointer;
+
+        &.active {
+            transform: scaleX(-1);
+        }
+
+        &.darkmode {
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
+
+        @include tablet() {
+            margin: 2rem;
+            width: 40px;
+            height: 40px;
+        }
+    }
 }
 
-footer {
+
+main {
     position: relative;
-    grid-column: 1 / span 6;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -206,64 +280,72 @@ footer {
 /* 
 ============================================
 
-                Page Content
+            Containers
 
 ============================================
 */
 
 
+.con-1 {
+    grid-column: 2 / span 4;
+    height: max-content;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.con-image {
+    min-height: 50vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: opacity(0.75);
+}
+
+
 /* 
+=======================================
 
-------------------------
-    Universal Styles 
-------------------------
+            Text Formatting
 
+=======================================
 */
 
 
-/* Card Containers */
+.font {
+    font-family: ff(primary);
+    letter-spacing: 2px;
+}
 
 
-.card {
-    position: relative;
-    display: grid;
-    justify-self: center;
-    margin-bottom: 2rem;
-    width: 100%;
-    min-width: 264px;
-    min-height: 264px;
-    font-size: ff(2);
-    h1, h2, h3 {
-        font-size: ff(3);
-        font-weight: 525;
-        height: max-content;
+.heading {
+    margin-bottom: 4rem;
+    font-size: ff(3);
+    font-weight: 400;
+    &.title {
+        margin: 5rem 0;
     }
-    ul {
-        justify-self: center;
-        margin-bottom: 1.5em;
-    }
-    li {
-        margin-top: 1rem;
-        list-style-position: inside;
-        list-style-type:circle;
-        font-size: ff(2);
-        text-align: start;
-    }
-    span {
-        color: color(accent);
+    @include tablet() {
+        font-size: ff(4);
     }
 }
 
 
-.c1 {
-    grid-column: 2 / span 4;
-    align-content: center;
-    max-width: 500px;
-    min-height: 400px;
-    max-height: 450px;
-    text-align: center;
-    h1 {
-        padding: 1em 0.5em;
+.text {
+    max-width: 300px;
+    line-height: 2em;
+    @include tablet() {
+        max-width: 500px;
+        font-size: ff(2);
+    }
+    span {
+        color: lm(accent);
+        &.darkmode {
+            color: dm(accent);
+        }
     }
 }
 
@@ -285,77 +367,90 @@ footer {
     }
 }
 
+.link {
+    margin: 1rem 0;
+    color: lm(accent);
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
 
-.c4 {
-    grid-column: 2 / span 4;
-    align-content: center;
-    max-width: 500px;
-    text-align: center;
-    p, a {
-        justify-self: center;
-        margin: 2rem 0;
+    &:hover, &:active {
+        transform: translateX(1em);
+    }
+
+    &.darkmode {
+        color: dm(accent);
+    }
+    
+    @include tablet() {
+        margin: 1.5rem 0;
+        font-size: ff(2);
     }
 }
 
 
-/* Buttons and Links */
+/* 
+=======================================
+
+                Settings
+
+=======================================
+*/
 
 
-.button {
-    padding: 1rem;
-    width: max-content;
-    height: max-content;
-    border: solid 4px;
-    border-color: color(accent);
-    border-radius: 8px;
-    text-decoration: none;
-    color: color(accent);
+.bordertop {
+    border-top: solid;
+    border-color: lm(accent);
+}
+
+
+.absolute {
+    position: absolute;
+}
+
+
+.fullheight {
+    min-height: 100vh;
+}
+
+
+.display {
+    display: flex;
+    opacity: 0;
+    z-index: -1;
     transition: 250ms;
+    transform: scaleY(0);
+    &.show {
+        z-index: 1;
+        opacity: 1;
+        transform: scaleY(100%);
+    }
 }
 
 
-.button:hover,
-.button:active {
-    background-color: color(accent);
-    color: color(1);
-}
-
-
-.link {
-    width: max-content;
-    height: max-content;
-    padding: 4px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: color(accent);
+.transition {
     transition: 250ms;
-}
-
-
-.link:hover, 
-.link:active {
-    background-color: color(accent);
-    color: color(1);
 }
 
 
 /* 
+=======================================
 
-------------------------
-    Custom Styles 
-------------------------
+                Gallery
 
+=======================================
 */
 
 
-/* Gallery Formatting */
-
-
-#gallery {
-    grid-column: 2 / span 4;
-    position: relative;
+.gallery {
     columns: 1;
-    margin-bottom: 2rem;
+    margin: 4rem 0;
+    padding: 2rem 1rem;
+    background-color: lm(3);
+    border-radius: 8px;
+    &.darkmode {
+        background-color: dm(3);
+    }
     @include tablet {
         columns: 2;
     }
@@ -365,7 +460,7 @@ footer {
     .imagecontainer {
         display: grid;
         width: 100%;
-        margin-bottom: 24px;
+        margin-bottom: 2rem;
         transition: 250ms;
         img {
             justify-self: center;
@@ -380,8 +475,8 @@ footer {
 }
 
 #gallerylightbox {
-    position: fixed;
     z-index: 999;
+    position: fixed;
     display: grid;
     grid-template-rows: auto 1fr;
     width: 100vw;
@@ -395,20 +490,22 @@ footer {
         transform: scale(100%);
     }
 
-    #topbar {
-        display: grid;
-        height: fit-content;
-        img {
-            justify-self: end;
-            padding: 2rem;
-            width: 50px;
-            height: 50px;
+    #closeButton {
+        z-index: 1;
+        justify-self: end;
+        padding: 1rem;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        &.darkmode {
             filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
+        @include tablet() {
+            padding: 2rem;
         }
     }
 
     .imagecontainer {
-        z-index: 9999;
         justify-self: center;
         align-self: center;
         display: grid;
@@ -426,47 +523,13 @@ footer {
     }
 
     #gBackground {
-    position: fixed;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background-color: color(3);
-    opacity: 0.85;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: lm(3);
+        opacity: 0.85;
+        &.darkmode {
+            background-color: dm(3);
+        }
     }
 }
-
-
-/* Custom Borders */
-
-
-.border {
-    position: absolute;
-    background-color: color(accent);
-    border: solid 2px;
-    border-color: color(accent);
-}
-
-
-.borderTop {
-    width: 50%;
-}
-
-
-.borderLeft {
-    height: 20%;
-}
-
-
-.borderBottom {
-    width: 50%;
-    bottom: 0;
-    right: 0;
-}
-
-
-.borderRight {
-    height: 20%;
-    bottom: 0;
-    right: 0;
-}
-

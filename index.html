@@ -1,64 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="Javascript/scripts.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>JUUN</title>
 </head>
-<body>
+<body class="font transition">  
     <nav>
-        <div id="tContainer">
-            <div id="title">
-                <a href="index.html">JUUN</a>
-                <img id="menuIcon" src="Social Icons/Menu Icon.svg" alt="menu icon">
-            </div>
-            <div id="menu">
-                <ul>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="projects.html">Projects</a>
-                    </li>
-                    <li>
-                        <a href="webdes.html">Designs</a>
-                    </li>
-                    <li>
-                        <a href="gallery.html">Gallery</a>
-                    </li>
-                </ul>
-            </div>
+        <img id="menuIcon" class="transition" src="Social Icons/Menu Icon.svg" alt="Menu Icon">
+        <div id="menuBlock" class="transition">
+            <ul id="menu" class="transition">
+                <li><a href="#" class="transition" onclick="switchElements('home'), toggleMenu()">Home</a></li>
+                <li><a href="#" class="transition" onclick="switchElements('about'), toggleMenu()">About</a></li>
+                <li><a href="#" class="transition" onclick="switchElements('projects'), toggleMenu()">Projects</a></li>
+                <li><a href="#" class="transition" onclick="switchElements('designs'), toggleMenu()">Designs</a></li>
+                <li><a href="#" class="transition" onclick="switchElements('gallery'), toggleMenu()">Gallery</a></li>
+            </ul>
+            <img id="darkmodeIcon" class="transition" src="Social Icons/Darkmode Icon.svg" alt="Darkmode Icon">
         </div>
     </nav>
-    <div class="card c1" style="margin-top: 2rem;">
-        <div class="border borderTop"></div>
-        <div class="border borderBottom"></div>
-        <div class="border borderLeft"></div>
-        <div class="border borderRight"></div>
-        <h1>Welcome to my <span>Portfolio</span></h1>
-    </div>
-    <div class="card c4" style="max-height: none;">
-        <p>Learn about me here</p>
-        <a class="button" href="about.html">About Me</a>
-        <p>Or take a look at some of my work down below</p>
-    </div>
-    <div class="card c2">
-        <h2>Projects</h2>
-        <p>By educating myself in fields such as Web Development, and related topics like databases, I have created some basic starter projects that allowed me to develop my skills along the way.</p>
-        <a class="button" href="projects.html">Learn More</a>
-    </div>
-    <div class="card c2">
-        <h2>Designs</h2>
-        <p>During lockdown, I started learning web development using basic HTML and CSS. I took a liking to it, and from then on, I set up my own local web server, and created various websites to practise my newly learned skill. In the future, I want to take it a step further to become a front-end web developer.</p>
-        <a class="button" href="design.html">Learn More</a>
-    </div>
-    <div class="card c2">
-        <h2>Gallery</h2>
-        <p>Photography has been a favourite hobby of mine for a while. Shooting at different angles while adjusting specific settings, almost gives a new perspective everytime. Along with this hobby, I learned to edit my results using Adobe Lightroom to bring my photos to life.</p>
-        <a class="button" href="gallery.html">Learn More</a>
-    </div>
+
+    <main>
+        <div id="home" class="con-1 fullheight switch display show">
+            <h1 class="heading">Welcome</h1>
+            <p class="text">My name is <span>Nicholas.</span><br> Take a look at my Portfolio and see what I've been up to.</p>
+            <a class="link transition" page='about'>About</a>
+            <a class="link transition" page='projects'>Projects</a>
+            <a class="link transition" page='designs'>Designs</a>
+            <a class="link transition" page='gallery'>Gallery</a>
+        </div>
+        <div id="about" class="con-1 absolute display">
+            <h1 class="heading title">About</h1>
+            <p class="text">
+                My name is Nicholas and Juun is my other nickname. I am currently a college student aiming to enroll into Newcastle University to study Cyber Security. <br><br>
+
+                I am primarily focusing on building my knowledge foundation on various IT fields from Web development to Database management to help me prepare for my uni course. <br><br>
+                
+                To put my knowledge to practise, I have set up my own local web server on a Raspberry Pi to create and secure my own website. In the future I am hoping to include PHP for dynamic content and a MYSQL database for future projects. <br><br>
+                
+                Learning these skills will help me understand how certain systems work, what security vulnerabilties could be exploited, and how to prevent or counter them. <br><br>
+            </p>
+        </div>
+        <div id="projects" class="con-1 absolute display">
+            <h1 class="heading title">Projects</h1>
+            <p class="text">By educating myself in fields such as Web Development, and related topics like databases, I have created some basic starter projects that allowed me to develop my skills along the way.</p>
+        </div>
+        <div id="designs" class="con-1 absolute display">
+            <h1 class="heading title">Designs</h1>
+            <p class="text">During lockdown, I started learning web development using basic HTML and CSS. I took a liking to it, and from then on, I set up my own local web server, and created various websites to practise my newly learned skill. In the future, I want to take it a step further to become a front-end web developer.</p>
+        </div>
+        <div id="gallery" class="con-1 absolute display">
+            <h1 class="heading title">Gallery</h1>
+            <p class="text">Photography has been a favourite hobby of mine for a while. Shooting at different angles while adjusting specific settings, almost gives a new perspective everytime. Along with this hobby, I learned to edit my results using Adobe Lightroom to bring my photos to life.</p>
+            <div class="gallery">
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Contrast.jpeg" alt="Contrast Image" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Hut.jpeg" alt="Beach Hut" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/London Bridge.jpeg" alt="London Bridge" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Chandelier.jpeg" alt="Chandelier" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Curves.jpeg" alt="Southhampton Curve Architecture" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Piano Wire.jpeg" alt="Piano Wire" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Edges.jpeg" alt="Line photography" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Bus seats.jpeg" alt="Bus seats" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Metro.jpeg" alt="Metro Station" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Carpark.jpeg" alt="Carpark" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/White Blossom.jpeg" alt="" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Pho.jpeg" alt="Pho store" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Bomb.png" alt="Bombs" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/Carpark2.jpg" alt="Carpark image 2" >
+                </div>
+                <div class="imagecontainer">
+                    <img class="img" src="Gallery Compressed/arc.jpeg" alt="Arcs" >
+                </div>
+            </div>
+        </div>
+        <div id="gallerylightbox">
+            <img id="closeButton" onclick="closeLightBox()" src="Social Icons/close icon.png" alt="Close Button">
+            <div class="imagecontainer">
+                <img id='imageClicked' src="Gallery Compressed/Contrast.jpeg" alt="Contrast Image">
+            </div>
+            <div id="gBackground"></div>
+        </div>
+    </main>
+
     <footer>
         <p>Marked up by Nicholas Ho</p>
         <ul>
