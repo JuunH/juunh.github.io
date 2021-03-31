@@ -2,12 +2,17 @@
 
 
 const menuicon = document.getElementById('menuIcon');
-const menu = document.getElementById('menu');
+const menu = document.getElementById('menuBlock');
+
+
+function toggleMenu() {
+  menuicon.classList.toggle('active');
+  menu.classList.toggle('active');
+}
 
 
 menuicon.addEventListener('click', () => {
-  menuicon.classList.toggle('active');
-  menu.classList.toggle('active');
+  toggleMenu()
 })
 
 
@@ -34,3 +39,68 @@ dmIcon.addEventListener('click', () => {
 //  Switch Content Function  //
 
 
+const about = document.getElementById('about')
+const projects = document.getElementById('projects')
+const designs = document.getElementById('designs')
+const gallery = document.getElementById('gallery')
+const links = document.getElementsByClassName('link')
+
+function switchElements(element) {
+
+  let activeElement = document.getElementsByClassName('show')
+
+  for (var i = 0 ; i < activeElement.length; i++) {
+    activeElement[i].classList.toggle('show')
+  }
+
+  let showElement = document.getElementById(element)
+  showElement.classList.toggle('show')
+}
+
+
+for (var i = 0 ; i < links.length; i++) {
+
+  let pagename = links[i].getAttribute('page')
+
+  links[i].addEventListener('click', () => {
+
+    switchElements(pagename)
+
+  })
+}
+
+
+//  Gallery Lightbox Function   //
+
+
+const everyImg = document.getElementsByClassName('img');
+const lightbox = document.getElementById('gallerylightbox');
+const lbImage = document.getElementById('imageClicked');
+
+
+function displayClickedImage(imageClicked) {
+  
+  image = document.getElementById(imageClicked).src;
+  
+  lightbox.classList.toggle('active');
+
+  lbImage.src = image;
+}
+
+function closeLightBox() {
+  lightbox.classList.toggle('active');
+}
+
+
+for (var i = 0 ; i < everyImg.length; i++) {
+
+  everyImg[i].setAttribute('id', 'picture'+ i);
+
+  let pictureID = `picture${i}`;
+  
+  everyImg[i].addEventListener('click', function () {
+
+      displayClickedImage(pictureID);
+
+  })
+}

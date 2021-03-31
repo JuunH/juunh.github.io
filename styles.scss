@@ -31,8 +31,8 @@ Settings, Variables and Functions Setup
 $lightmode: (
     1: #1a1a1a,
     2: rgb(245, 245, 245),
-    3: rgb(255, 255, 255),
-    4: #a1a1a1,
+    3: #dadada,
+    4: #ffffffdc,
     accent: rgb(179, 40, 40)
 );
 
@@ -41,6 +41,7 @@ $darkmode: (
     1: rgb(245, 245, 245),
     2: rgb(26, 26, 26),
     3: rgb(18, 18, 18),
+    4: #000000dc,
     accent: rgb(228, 50, 50)
 );
 
@@ -85,11 +86,9 @@ body {
     display: grid;
     min-height: 100vh;
     color: lm(1);
-    transition: 350ms;
 
     a {
         color: lm(1);
-        transition: 250ms;
     }
 
     &.darkmode {
@@ -103,20 +102,21 @@ body {
 
 
 nav {
-    position: fixed;
-    z-index: 2;
-    justify-self: end;
     display: grid;
-    grid-template-columns: max-content max-content;
-    margin: 1rem;
-    width: max-content;
-    overflow: hidden;
 
-    #menu {
-        align-self: center;
+    #menuBlock {
+        z-index: 2;
+        position: fixed;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(90deg, #ffffff8c, lm(4), lm(4), lm(4));
         opacity: 0;
-        transform: translateX(110%);
-        transition: 250ms;
+        transform: translateX(100%);
+        &.darkmode {
+            background-image: linear-gradient(90deg, dm(4));
+        }
 
         &.active {
             opacity: 1;
@@ -124,27 +124,41 @@ nav {
         }
     }
 
+    #menu {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-right: 1rem;
+        height: 100%;
+    }
+
     li {
-        display: inline;
+        display: block;
         height: max-content;
         list-style: none;
-        margin: 0 0.1rem;
+        margin: 2rem 0;
         overflow: wrap;
-        @include tablet() {
-            margin: 0 0.5rem;
-            font-size: ff(1);
-        }
+        transition: 250ms;
         a {
+            font-size: ff(2);
             text-decoration: none;
+        }
+        &:hover, &:active {
+            transform: translateX(-25px);
         }
     }
 
     #menuIcon {
+        position: fixed;
+        z-index: 999;
+        margin: 1rem;
         width: 30px;
         height: 30px;
+        justify-self: end;
         opacity: 1;
         cursor: pointer;
-        transition: 250ms;
 
         @include tablet() {
             width: 40px;
@@ -161,12 +175,10 @@ nav {
     }
 
     #darkmodeIcon {
-        grid-column: 2;
-        justify-self: center;
-        margin-top: 1rem;
+        margin: 2rem 1rem;
         width: 30px;
         height: 30px;
-        transition: 250ms;
+        justify-self: end;
         cursor: pointer;
 
         &.active {
@@ -203,16 +215,11 @@ main {
 
 .con-1 {
     grid-column: 2 / span 4;
-    display: none;
+    height: max-content;
     flex-flow: column;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    transition: 1s;
-
-    &.display {
-        display: flex;
-    }
 }
 
 
@@ -223,20 +230,6 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     filter: opacity(0.75);
-}
-
-
-/* 
-=======================================
-
-                Cards
-
-=======================================
-*/
-
-
-.fullheight {
-    min-height: 100vh;
 }
 
 
@@ -259,6 +252,9 @@ main {
     margin-bottom: 4rem;
     font-size: ff(3);
     font-weight: 400;
+    &.title {
+        margin: 5rem 0;
+    }
 }
 
 
@@ -269,10 +265,11 @@ main {
 
 
 .link {
-    margin: 1rem;
+    margin: 1rem 0;
     color: lm(accent);
     text-decoration: none;
     font-weight: 500;
+    cursor: pointer;
 
     &:hover, &:active {
         transform: translateX(1em);
@@ -280,31 +277,6 @@ main {
 
     &.darkmode {
         color: dm(accent);
-    }
-}
-
-
-.button {
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    color: lm(accent);
-    border: solid;
-    border-radius: 1rem;
-    border-color: lm(accent);
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-        color: lm(2);
-        background-color: lm(accent);
-    }
-
-    &.darkmode {
-        color: dm(accent);
-        &:hover {
-            color: dm(1);
-            background-color: lm(accent);
-        }
     }
 }
 
@@ -321,4 +293,132 @@ main {
 .bordertop {
     border-top: solid;
     border-color: lm(accent);
+}
+
+
+.absolute {
+    position: absolute;
+}
+
+
+.fullheight {
+    min-height: 100vh;
+}
+
+
+.display {
+    display: flex;
+    opacity: 0;
+    z-index: -1;
+    transition: 250ms;
+    transform: scaleY(0);
+    &.show {
+        z-index: 1;
+        opacity: 1;
+        transform: scaleY(100%);
+    }
+}
+
+
+.transition {
+    transition: 250ms;
+}
+
+
+/* 
+=======================================
+
+                Gallery
+
+=======================================
+*/
+
+
+.gallery {
+    columns: 1;
+    margin: 4rem 0;
+    padding: 2rem 1rem;
+    background-color: lm(3);
+    border-radius: 8px;
+    &.darkmode {
+        background-color: dm(3);
+    }
+    @include tablet {
+        columns: 2;
+    }
+    @include desktop {
+        columns: 4;
+    }
+    .imagecontainer {
+        display: grid;
+        width: 100%;
+        margin-bottom: 2rem;
+        transition: 250ms;
+        img {
+            justify-self: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .imagecontainer:hover {
+        transform: scale(95%);
+        cursor: pointer;
+    }
+}
+
+#gallerylightbox {
+    z-index: 999;
+    position: fixed;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: 250ms;
+    transform: scaleY(0);
+
+    &.active {
+        opacity: 1;
+        transform: scale(100%);
+    }
+
+    #closeButton {
+        z-index: 1;
+        justify-self: end;
+        padding: 1rem;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        &.darkmode {
+            filter: invert(100%) sepia(23%) saturate(113%) hue-rotate(204deg) brightness(111%) contrast(92%);
+        }
+    }
+
+    .imagecontainer {
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        width: 80vw;
+        height: 80vh;
+        transition: 250ms;
+        #imageClicked {
+            z-index: 99999;
+            justify-self: center;
+            align-self: center;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    #gBackground {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: lm(3);
+        opacity: 0.85;
+        &.darkmode {
+            background-color: dm(3);
+        }
+    }
 }
