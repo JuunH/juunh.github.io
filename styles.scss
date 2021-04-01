@@ -87,8 +87,9 @@ body {
     display: grid;
     grid-template-rows: auto 1fr;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     color: lm(1);
+    overflow: hidden;
 
     a {
         color: lm(1);
@@ -240,8 +241,9 @@ main {
     justify-content: center;
     align-content: center;
     width: 100%;
-    height: max-content;
+    height: 100%;
     background-color: color(3);
+    overflow: scroll;
     &.center {
         @include tablet() {
             align-self: center;
@@ -365,13 +367,14 @@ main {
     opacity: 0;
     z-index: -1;
     transition: 250ms;
-    top: -100%;
-    transform: scaleY(0);
+    transform: scaleX(0);
+    transform: translateX(-100%);
     &.show {
         z-index: 1;
         top: 0;
         opacity: 1;
-        transform: scaleY(1);
+        transform: scaleX(1);
+        transform: translateX(0);
     }
 }
 

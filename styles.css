@@ -26,8 +26,9 @@ body {
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   color: #1a1a1a;
+  overflow: hidden;
 }
 
 body a {
@@ -234,10 +235,9 @@ main {
   -ms-flex-line-pack: center;
       align-content: center;
   width: 100%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  height: 100%;
   background-color: color(3);
+  overflow: scroll;
 }
 
 @media (min-width: 750px) {
@@ -378,17 +378,20 @@ main {
   z-index: -1;
   -webkit-transition: 250ms;
   transition: 250ms;
-  top: -100%;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .display.show {
   z-index: 1;
   top: 0;
   opacity: 1;
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .transition {
