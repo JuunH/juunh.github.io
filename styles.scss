@@ -85,6 +85,8 @@ $fonts: (
 body {
     position: relative;
     display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
     min-height: 100vh;
     color: lm(1);
 
@@ -105,7 +107,8 @@ body {
 nav {
     position: relative;
     display: grid;
-    width: 100vw;
+    width: 100%;
+    height: max-content;
 
     #menuBlock {
         z-index: 2;
@@ -236,8 +239,14 @@ main {
     grid-template-columns: repeat(6, 1fr);
     justify-content: center;
     align-content: center;
-    padding: 1rem;
+    width: 100%;
+    height: max-content;
     background-color: color(3);
+    &.center {
+        @include tablet() {
+            align-self: center;
+        }
+    }
 }
 
 
@@ -257,6 +266,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 
@@ -350,19 +360,16 @@ main {
 }
 
 
-.fullheight {
-    min-height: 100vh;
-}
-
-
 .display {
     display: flex;
     opacity: 0;
     z-index: -1;
     transition: 250ms;
+    top: -100%;
     transform: scaleY(0);
     &.show {
         z-index: 1;
+        top: 0;
         opacity: 1;
         transform: scaleY(1);
     }
@@ -420,7 +427,7 @@ main {
     position: fixed;
     display: grid;
     grid-template-rows: auto 1fr;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     opacity: 0;
     transition: 250ms;
