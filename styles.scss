@@ -208,7 +208,7 @@ main {
         width: max-content;
         height: max-content;
         text-align: left;
-        word-break: break-all;
+        hyphens: auto;
     }
 }
 
@@ -293,6 +293,10 @@ main {
 
 .transition {
     transition: 250ms;
+}
+
+.bottomElement {
+    padding-bottom: 4rem;
 }
 
 
