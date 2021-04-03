@@ -11,20 +11,10 @@
 <body class="font transition">  
     <nav>
         <img id="menuIcon" class="transition" src="Social Icons/Menu Icon.svg" alt="Menu Icon">
-        <div id="menuBlock" class="transition">
-            <ul id="menu" class="transition">
-                <li><a href="#" class="transition" onclick="switchElements('home'), toggleMenu()">Home</a></li>
-                <li><a href="#" class="transition" onclick="switchElements('about'), toggleMenu()">About</a></li>
-                <li><a href="#" class="transition" onclick="switchElements('projects'), toggleMenu()">Projects</a></li>
-                <li><a href="#" class="transition" onclick="switchElements('designs'), toggleMenu()">Designs</a></li>
-                <li><a href="#" class="transition" onclick="switchElements('gallery'), toggleMenu()">Gallery</a></li>
-            </ul>
-            <img id="darkmodeIcon" class="transition" src="Social Icons/Darkmode Icon.svg" alt="Darkmode Icon">
-        </div>
     </nav>
 
-    <main class="center">
-        <div id="home" class="con-1 center switch display show">
+    <main>
+        <div id="home" class="con-1 switch display show">
             <h1 class="heading title">Welcome</h1>
             <p class="text">My name is <span>Nicholas.</span><br> Take a look at my Portfolio and see what I've been up to.</p>
             <a class="link transition" page='about'>About</a>
@@ -110,6 +100,16 @@
             <img id='imageClicked' src="Gallery Compressed/Contrast.jpeg" alt="Contrast Image">
         </div>
         <div id="gBackground"></div>
+    </div>
+    <div id="menuBlock" class="transition">
+        <ul id="menu" class="transition">
+            <li><a href="#" class="transition" onclick="switchElements('home'), toggleMenu()">Home</a></li>
+            <li><a href="#" class="transition" onclick="switchElements('about'), toggleMenu()">About</a></li>
+            <li><a href="#" class="transition" onclick="switchElements('projects'), toggleMenu()">Projects</a></li>
+            <li><a href="#" class="transition" onclick="switchElements('designs'), toggleMenu()">Designs</a></li>
+            <li><a href="#" class="transition" onclick="switchElements('gallery'), toggleMenu()">Gallery</a></li>
+        </ul>
+        <img id="darkmodeIcon" class="transition" src="Social Icons/Darkmode Icon.svg" alt="Darkmode Icon">
     </div>
 </body>
 <script src="/Javascript/scripts.js"></script>
