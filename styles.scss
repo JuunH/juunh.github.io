@@ -33,15 +33,17 @@ $lightmode: (
     2: rgb(245, 245, 245),
     3: #dadada,
     4: #ffffffdc,
+    5: rgb(58, 58, 58),
     accent: rgb(179, 40, 40)
 );
 
 
 $darkmode: (
-    1: rgb(245, 245, 245),
+    1: rgb(243, 243, 243),
     2: rgb(26, 26, 26),
     3: rgb(18, 18, 18),
     4: #000000dc,
+    5: #b9b9b9dc,
     accent: rgb(228, 50, 50)
 );
 
@@ -210,6 +212,12 @@ main {
         text-align: left;
         hyphens: auto;
     }
+    p {
+        color: lm(5);
+        &.darkmode {
+            color: dm(5);
+        }
+    }
 }
 
 
@@ -244,13 +252,22 @@ main {
 
 .link {
     margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    width: fit-content;
     color: lm(accent);
+    border-left: solid;
+    border-color: lm(accent);
     text-decoration: none;
     font-weight: 500;
+    background: lm(accent);
+    background: linear-gradient(to left, lm(4) 50%, lm(accent) 50%) right;
+    background-size: 200%;
     cursor: pointer;
 
     &:hover, &:active {
-        transform: translateX(1em);
+        color: lm(2);
+        background-position: left;
+        border-radius: 12px;
     }
 
     &.darkmode {

@@ -35,12 +35,12 @@ body a {
 }
 
 body.darkmode {
-  color: whitesmoke;
+  color: #f3f3f3;
   background-color: #1a1a1a;
 }
 
 body.darkmode a {
-  color: whitesmoke;
+  color: #f3f3f3;
 }
 
 nav {
@@ -178,6 +178,14 @@ main {
           hyphens: auto;
 }
 
+.font p {
+  color: #3a3a3a;
+}
+
+.font p.darkmode {
+  color: #b9b9b9dc;
+}
+
 .heading {
   margin-bottom: 4rem;
   font-size: 40px;
@@ -216,15 +224,26 @@ main {
 
 .link {
   margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #b32828;
+  border-left: solid;
+  border-color: #b32828;
   text-decoration: none;
   font-weight: 500;
+  background: #b32828;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #ffffffdc), color-stop(50%, #b32828)) right;
+  background: linear-gradient(to left, #ffffffdc 50%, #b32828 50%) right;
+  background-size: 200%;
   cursor: pointer;
 }
 
 .link:hover, .link:active {
-  -webkit-transform: translateX(1em);
-          transform: translateX(1em);
+  color: whitesmoke;
+  background-position: left;
+  border-radius: 12px;
 }
 
 .link.darkmode {
