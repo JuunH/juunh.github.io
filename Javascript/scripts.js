@@ -44,6 +44,7 @@ const projects = document.getElementById('projects')
 const designs = document.getElementById('designs')
 const gallery = document.getElementById('gallery')
 const links = document.getElementsByClassName('link')
+const returnIcon = document.getElementById('returnIcon')
 
 function switchElements(element) {
 
@@ -54,6 +55,12 @@ function switchElements(element) {
   }
 
   let showElement = document.getElementById(element)
+  if (showElement.id == 'home') {
+    returnIcon.classList.remove('active')
+  }
+  else {
+    returnIcon.classList.add('active')
+  }
   showElement.classList.toggle('show')
 }
 
