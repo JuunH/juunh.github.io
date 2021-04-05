@@ -78,7 +78,7 @@ $fonts: (
 /* 
 ============================================
 
-    Body, Navigation and Footer setup
+        Body, Navigation and Footer
 
 ============================================
 */
@@ -166,7 +166,7 @@ main {
 /* 
 ============================================
 
-            Containers
+                Containers
 
 ============================================
 */
@@ -174,6 +174,7 @@ main {
 
 .con-1 {
     grid-column: 1 / span 6;
+    position: absolute;
     display: grid;
     width: 100%;
     height: 100vh;
@@ -254,11 +255,12 @@ main {
     margin: 1rem 0;
     padding: 0.5rem 1rem;
     width: fit-content;
-    color: lm(accent);
     border-left: solid;
     border-color: lm(accent);
+    color: lm(accent);
     text-decoration: none;
     font-weight: 500;
+    
     background: lm(accent);
     background: linear-gradient(to left, lm(4) 50%, lm(accent) 50%) right;
     background-size: 200%;
@@ -292,15 +294,10 @@ main {
 /* 
 =======================================
 
-                Settings
+            Element Settings
 
 =======================================
 */
-
-
-.absolute {
-    position: absolute;
-}
 
 
 .display {
@@ -391,7 +388,7 @@ main {
 }
 
 #gallerylightbox {
-    z-index: 4;
+    z-index: -1;
     top: 0;
     position: fixed;
     display: grid;
@@ -400,14 +397,14 @@ main {
     height: 100vh;
     opacity: 0;
     transition: 250ms;
-    transform: scaleY(0);
 
     &.active {
+        z-index: 4;
         opacity: 1;
-        transform: scale(100%);
     }
 
     #closeButton {
+        z-index: 5;
         justify-self: end;
         padding: 1rem;
         width: 50px;
@@ -422,6 +419,7 @@ main {
     }
 
     .imagecontainer {
+        z-index: 5;
         justify-self: center;
         align-self: center;
         display: grid;

@@ -15,7 +15,7 @@ Settings, Variables and Functions Setup
 /* 
 ============================================
 
-    Body, Navigation and Footer setup
+        Body, Navigation and Footer
 
 ============================================
 */
@@ -121,7 +121,7 @@ main {
 /* 
 ============================================
 
-            Containers
+                Containers
 
 ============================================
 */
@@ -129,6 +129,7 @@ main {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
+  position: absolute;
   display: -ms-grid;
   display: grid;
   width: 100%;
@@ -228,9 +229,9 @@ main {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  color: #b32828;
   border-left: solid;
   border-color: #b32828;
+  color: #b32828;
   text-decoration: none;
   font-weight: 500;
   background: #b32828;
@@ -270,14 +271,10 @@ main {
 /* 
 =======================================
 
-                Settings
+            Element Settings
 
 =======================================
 */
-.absolute {
-  position: absolute;
-}
-
 .display {
   opacity: 0;
   z-index: -1;
@@ -388,7 +385,7 @@ main {
 }
 
 #gallerylightbox {
-  z-index: 4;
+  z-index: -1;
   top: 0;
   position: fixed;
   display: -ms-grid;
@@ -400,17 +397,15 @@ main {
   opacity: 0;
   -webkit-transition: 250ms;
   transition: 250ms;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
 }
 
 #gallerylightbox.active {
+  z-index: 4;
   opacity: 1;
-  -webkit-transform: scale(100%);
-          transform: scale(100%);
 }
 
 #gallerylightbox #closeButton {
+  z-index: 5;
   -ms-grid-column-align: end;
       justify-self: end;
   padding: 1rem;
@@ -431,6 +426,7 @@ main {
 }
 
 #gallerylightbox .imagecontainer {
+  z-index: 5;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-grid-row-align: center;
