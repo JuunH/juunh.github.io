@@ -41,7 +41,7 @@ dmIcon.addEventListener('click', () => {
 
 const about = document.getElementById('about')
 const projects = document.getElementById('projects')
-const designs = document.getElementById('designs')
+const designs = document.getElementById('cert')
 const gallery = document.getElementById('gallery')
 const links = document.getElementsByClassName('link')
 const returnIcon = document.getElementById('returnIcon')
@@ -83,6 +83,7 @@ for (var i = 0 ; i < links.length; i++) {
 const everyImg = document.getElementsByClassName('img');
 const lightbox = document.getElementById('gallerylightbox');
 const lbImage = document.getElementById('imageClicked');
+var scrolling;
 
 
 function displayClickedImage(imageClicked) {

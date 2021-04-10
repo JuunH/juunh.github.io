@@ -177,7 +177,7 @@ main {
     position: absolute;
     display: grid;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     align-content: start;
     overflow: scroll;
@@ -236,6 +236,7 @@ main {
 
 
 .text {
+    margin-bottom: 2rem;
     max-width: 300px;
     line-height: 2em;
     @include tablet() {
@@ -527,5 +528,39 @@ main {
         &:hover, &:active {
             transform: translateX(-25px);
         }
+    }
+}
+
+
+/* 
+=======================================
+
+                Cert List
+
+=======================================
+*/
+
+
+.courseCard {
+    display: grid;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    max-width: 300px;
+    background-color: lm(3);
+    border-radius: 8px;
+    h2 {
+        font-size: ff(1);
+        margin-bottom: 1rem;
+    }
+    ul {
+        list-style-position: inside;
+        list-style-type: circle;
+        li {
+            margin-bottom: 0.5em;
+        }
+    }
+    a {
+        margin: 1rem 0;
+        color: lm(accent);
     }
 }
