@@ -545,12 +545,15 @@ main {
     display: grid;
     margin-bottom: 1rem;
     padding: 1rem;
-    max-width: 300px;
+    width: max-content;
     background-color: lm(3);
     border-radius: 8px;
     h2 {
         font-size: ff(1);
         margin-bottom: 1rem;
+    }
+    p {
+        font-size: ff(1);
     }
     ul {
         list-style-position: inside;
