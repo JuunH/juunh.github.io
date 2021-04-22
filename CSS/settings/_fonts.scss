@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+/*
+########################################
+
+                Font Sizes
+
+########################################
+*/
+
+
+$fonts: (
+    1: 24px,
+    primary: Quicksand,
+);
+
+
+/*
+########################################
+
+                Functions
+
+########################################
+*/
+
+
+@function ff($ff) {
+    @return map-get($fonts, $ff);
+}
