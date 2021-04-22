@@ -7,3 +7,26 @@
     scroll-behavior: smooth;
 }
 
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+    > * {
+        height: 100%;
+    }
+}
+
+.container {
+    padding: 1rem;
+    background-color: dm(primary);
+    border-bottom: solid;
+    border-color: rgb(15, 15, 15);
+    border-width: 1px;
+}
+
+p {
+    color: lm(primary);
+}

@@ -1,34 +1,29 @@
-/*
-########################################
-
-            Colour Pallettes
-
-########################################
-*/
-/*
-########################################
-
-                Functions
-
-########################################
-*/
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-/*
-########################################
-
-                Font Sizes
-
-########################################
-*/
-/*
-########################################
-
-                Functions
-
-########################################
-*/
 * {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+}
+body > * {
+  height: 100%;
+}
+
+.container {
+  padding: 1rem;
+  background-color: black;
+  border-bottom: solid;
+  border-color: #0f0f0f;
+  border-width: 1px;
+}
+
+p {
+  color: white;
 }/*# sourceMappingURL=main.css.map */
