@@ -22,7 +22,8 @@ Settings, Variables and Functions Setup
 body {
   position: relative;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -67,7 +68,7 @@ nav #menuIcon.active {
     margin-right: 2rem;
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 1000px) {
   nav #menuIcon {
     width: 40px;
     height: 40px;
@@ -111,6 +112,31 @@ main {
   justify-content: center;
   align-content: start;
   overflow: scroll;
+}
+
+#home {
+  grid-column: 1/span 6;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  justify-content: center;
+  align-content: start;
+}
+#home h1 {
+  margin-top: 0;
+  font-weight: 600;
+}
+@media (min-width: 1000px) {
+  #home {
+    display: inline-block;
+  }
 }
 
 .con-image {
@@ -161,11 +187,6 @@ main {
 .heading.title {
   margin: 5rem 0;
 }
-@media (min-width: 750px) {
-  .heading {
-    font-size: 52px;
-  }
-}
 
 .text {
   margin-bottom: 2rem;
@@ -197,7 +218,7 @@ main {
   text-decoration: none;
   font-weight: 500;
   background: #b32828;
-  background: linear-gradient(to left, #ffffffdc 50%, #b32828 50%) right;
+  background: linear-gradient(to left, whitesmoke 50%, #b32828 50%) right;
   background-size: 200%;
   cursor: pointer;
 }
@@ -221,6 +242,11 @@ main {
   .link {
     margin: 1.5rem 0;
     font-size: 28px;
+  }
+}
+@media (min-width: 1000px) {
+  .link {
+    margin-right: 1rem;
   }
 }
 
@@ -300,7 +326,7 @@ main {
          columns: 2;
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 1000px) {
   .gallery {
     -moz-columns: 4;
          columns: 4;
@@ -419,7 +445,7 @@ main {
     height: 40px;
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 1000px) {
   #menuBlock #darkmodeIcon {
     margin: 2rem 3rem;
   }
@@ -438,7 +464,7 @@ main {
     margin-right: 2em;
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 1000px) {
   #menuBlock #menu {
     margin-right: 3.5rem;
   }
