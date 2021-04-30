@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20%);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20%);
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -8,22 +24,87 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 100vw;
-  height: 100vh;
-}
-body > * {
-  height: 100%;
+  background-color: #ffffff;
+  font-family: Quicksand;
+  letter-spacing: 2px;
 }
 
-.container {
-  padding: 1rem;
-  background-color: black;
+nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  place-items: center;
+  background-color: #ffffff;
   border-bottom: solid;
-  border-color: #0f0f0f;
   border-width: 1px;
+  border-color: #9DA2A5;
+}
+nav > * {
+  margin: 1rem;
+}
+nav #name {
+  z-index: 1;
+  color: #0B0C0E;
+  text-decoration: none;
+  font-size: 20px;
+}
+nav #menuicon {
+  z-index: 1;
+  width: 25px;
+  justify-self: end;
+  transition: 250ms;
+}
+nav #menuicon.active {
+  transform: rotate(180deg);
+}
+nav ul {
+  position: absolute;
+  top: calc(100%);
+  grid-column: 1/3;
+  margin: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #9DA2A5;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 250ms;
+}
+nav ul.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+nav ul li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+  text-align: center;
+}
+nav ul a {
+  text-decoration: none;
+  color: #0B0C0E;
 }
 
-p {
-  color: white;
+#welcome {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+#welcome p {
+  margin-top: 1rem;
+}
+#welcome #pp {
+  width: 80%;
+  margin: 1rem;
+  border-radius: 8px;
+}
+#welcome #arrow {
+  margin: 2rem;
+  width: 25px;
+  -webkit-animation: bounce 350ms infinite alternate;
+          animation: bounce 350ms infinite alternate;
 }/*# sourceMappingURL=main.css.map */
