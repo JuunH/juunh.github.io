@@ -16,6 +16,19 @@ menuicon.addEventListener('click', () => {
 })
 
 
+document.addEventListener('scroll', function(e) {
+  var topWindow = document.documentElement.clientHeight
+  var botWindow = document.documentElement.scrollTop + topWindow
+  list = document.getElementById('list').offsetTop
+  listClass = document.getElementById('list')
+  if (list < botWindow) {
+    listClass.classList.add('fadein')
+  } else {
+    listClass.classList.remove('fadein')
+  }
+});
+
+
 // //  Dark Mode Function  //
 
 
