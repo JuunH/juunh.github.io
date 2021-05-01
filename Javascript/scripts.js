@@ -17,14 +17,15 @@ menuicon.addEventListener('click', () => {
 
 
 document.addEventListener('scroll', function(e) {
-  var topWindow = document.documentElement.clientHeight
-  var botWindow = document.documentElement.scrollTop + topWindow
-  list = document.getElementById('list').offsetTop
-  listClass = document.getElementById('list')
-  if (list < botWindow) {
-    listClass.classList.add('fadein')
-  } else {
-    listClass.classList.remove('fadein')
+  const cardArray = document.getElementsByClassName('card')
+  for (var i = 0 ; i < cardArray.length; i++) {
+    var topWindow = document.documentElement.clientHeight
+    var botWindow = document.documentElement.scrollTop + topWindow
+    if (cardArray[i].offsetTop < botWindow) {
+      cardArray[i].classList.add('fadein')
+    } else {
+      cardArray[i].classList.remove('fadein')
+    }
   }
 });
 
@@ -37,9 +38,9 @@ document.addEventListener('scroll', function(e) {
 
 
 // function toggleDarkmode (allElements) {
-//   for (var i = 0 ; i < allElements.length; i++) {
-//     allElements[i].classList.toggle('darkmode');
-//   }
+  // for (var i = 0 ; i < allElements.length; i++) {
+  //   allElements[i].classList.toggle('darkmode');
+  // }
 // }
 
 
