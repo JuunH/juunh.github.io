@@ -15,6 +15,26 @@
     transform: translateY(-20%);
   }
 }
+@-webkit-keyframes fadein {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -27,6 +47,8 @@ body {
   background-color: #ffffff;
   font-family: Quicksand;
   letter-spacing: 2px;
+  -webkit-animation: fadein 500ms 250ms both;
+          animation: fadein 500ms 250ms both;
 }
 
 nav {
@@ -112,6 +134,13 @@ nav ul a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-items: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 1s;
+}
+#list.fadein {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #welcome {
