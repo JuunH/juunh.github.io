@@ -53,7 +53,8 @@ body {
 }
 
 nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 2;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -86,10 +87,10 @@ nav #menuicon.active {
     display: none;
   }
 }
-
-ul {
-  position: fixed;
+nav ul {
+  position: absolute;
   z-index: -1;
+  top: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -100,13 +101,13 @@ ul {
   transform: translateY(-20px);
   transition: 500ms;
 }
-ul.active {
+nav ul.active {
   z-index: 1;
   opacity: 1;
   transform: translateY(0);
 }
 @media (min-width: 600px) {
-  ul {
+  nav ul {
     position: relative;
     top: 0;
     justify-self: end;
@@ -118,19 +119,19 @@ ul.active {
     opacity: 1;
   }
 }
-ul li {
+nav ul li {
   margin-bottom: 0.5rem;
   list-style: none;
   text-align: center;
   font-size: 24px;
 }
 @media (min-width: 600px) {
-  ul li {
+  nav ul li {
     display: inline;
     margin-left: 1rem;
   }
 }
-ul a {
+nav ul a {
   text-decoration: none;
   color: #242424;
 }
