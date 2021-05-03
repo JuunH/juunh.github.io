@@ -43,9 +43,6 @@ body {
   background-color: #ffffff;
   font-family: Quicksand;
   letter-spacing: 2px;
-  -webkit-animation: fadein 500ms 250ms both;
-          animation: fadein 500ms 250ms both;
-  transition: 250ms;
 }
 
 nav {
@@ -139,6 +136,8 @@ ul a {
   justify-content: center;
   height: 100vh;
   text-align: center;
+  -webkit-animation: fadein 500ms 250ms both;
+          animation: fadein 500ms 250ms both;
 }
 @media (min-width: 600px) {
   #welcome h2 {
@@ -192,6 +191,8 @@ ul a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-items: center;
+  -webkit-animation: fadein 500ms 250ms both;
+          animation: fadein 500ms 250ms both;
 }
 
 .card {

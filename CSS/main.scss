@@ -14,8 +14,6 @@ body {
     background-color: lm(2);
     font-family: ff(primary);
     letter-spacing: 2px;
-    animation: fadein 500ms 250ms both;
-    transition: 250ms;
 }
 
 nav {
@@ -105,6 +103,7 @@ ul {
     justify-content: center;
     height: 100vh;
     text-align: center;
+    animation: fadein 500ms 250ms both;
     @include tablet {
         h2 {
             font-size: ff(1);
@@ -149,6 +148,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     justify-items: center;
+    animation: fadein 500ms 250ms both;
 }
 
 .card {
