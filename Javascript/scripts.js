@@ -23,8 +23,6 @@ document.addEventListener('scroll', function(e) {
     var botWindow = document.documentElement.scrollTop + topWindow
     if (cardArray[i].offsetTop < botWindow) {
       cardArray[i].classList.add('fadein')
-    } else {
-      cardArray[i].classList.remove('fadein')
     }
   }
 });
