@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @-webkit-keyframes bounce {
   0% {
     transform: translateY(0);
@@ -31,6 +32,63 @@
     opacity: 1;
   }
 }
+.fadein {
+  -webkit-animation: fadein 500ms 250ms both;
+          animation: fadein 500ms 250ms both;
+}
+
+.alltext {
+  font-family: Quicksand;
+  letter-spacing: 2px;
+}
+
+.menu {
+  font-size: 24px;
+}
+
+.pagename {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+.text {
+  margin: 1rem;
+  width: 80%;
+  max-width: 300px;
+}
+@media (min-width: 600px) {
+  .text {
+    font-size: 24px;
+  }
+}
+
+span {
+  color: #e23d3d;
+}
+
+.background {
+  background-color: #ffffff;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.514) 5px 5px 5px 0px, 0px 0px 4px 2px rgba(0, 0, 0, 0);
+}
+
+.gridCenter {
+  place-items: center;
+  align-content: center;
+}
+
+.bradius {
+  border-radius: 8px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -40,9 +98,6 @@
 body {
   position: relative;
   display: grid;
-  background-color: #ffffff;
-  font-family: Quicksand;
-  letter-spacing: 2px;
 }
 
 nav {
@@ -52,7 +107,6 @@ nav {
   display: grid;
   grid-template-columns: auto 1fr;
   place-items: center;
-  background-color: #ffffff;
   border-bottom: solid;
   border-width: 1px;
   border-color: #9DA2A5;
@@ -62,8 +116,6 @@ nav #name {
   margin: 1rem;
   color: #242424;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
 }
 nav #menuicon {
   z-index: 1;
@@ -87,11 +139,9 @@ ul {
   right: 0;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
-  place-items: center;
   z-index: 0;
   width: 100%;
   height: calc(100vh - 58px);
-  background-color: #ffffff;
   opacity: 0;
   transition: 250ms;
 }
@@ -117,13 +167,11 @@ ul li {
   margin-bottom: 0.5rem;
   list-style: none;
   text-align: center;
-  font-size: 24px;
 }
 @media (min-width: 600px) {
   ul li {
     display: inline;
     margin-left: 1rem;
-    font-size: 20px;
   }
 }
 ul a {
@@ -132,19 +180,9 @@ ul a {
 }
 
 #welcome {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   height: 100vh;
   text-align: center;
-  -webkit-animation: fadein 500ms 250ms both;
-          animation: fadein 500ms 250ms both;
-}
-@media (min-width: 600px) {
-  #welcome h2 {
-    font-size: 48px;
-  }
 }
 @media (min-width: 992px) {
   #welcome {
@@ -156,21 +194,8 @@ ul a {
     background-repeat: no-repeat;
   }
 }
-#welcome p {
-  margin-top: 1rem;
-  width: 80%;
-  max-width: 300px;
-}
-@media (min-width: 600px) {
-  #welcome p {
-    font-size: 24px;
-  }
-}
 #welcome #pp {
   width: 250px;
-  margin: 1rem;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.514) 5px 5px 5px 0px, 0px 0px 4px 2px rgba(0, 0, 0, 0);
 }
 @media (min-width: 600px) {
   #welcome #pp {
@@ -183,7 +208,7 @@ ul a {
   }
 }
 #welcome #arrow {
-  margin: 2rem;
+  margin: 1rem;
   width: 25px;
   -webkit-animation: bounce 350ms ease-out infinite alternate;
           animation: bounce 350ms ease-out infinite alternate;
@@ -192,21 +217,15 @@ ul a {
 #list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  justify-items: center;
-  -webkit-animation: fadein 500ms 250ms both;
-          animation: fadein 500ms 250ms both;
 }
 
 .card {
-  align-self: center;
   margin-bottom: 2rem;
   width: 300px;
   height: 400px;
-  border-radius: 8px;
   background-color: #52575A;
   opacity: 0;
   transform: translateY(-20px);
-  box-shadow: rgba(0, 0, 0, 0.514) 5px 5px 5px 0px, 0px 0px 4px 2px rgba(0, 0, 0, 0);
   overflow: hidden;
   cursor: pointer;
   transition: 1.25s;
@@ -220,14 +239,11 @@ ul a {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
-.card h2, .card p {
-  margin: 0 1rem 1rem 1rem;
+.card h2 {
   color: #e4e4e4;
+  margin: 0 1rem;
 }
-.card span {
-  color: #e23d3d;
-}
-
-span {
-  color: #e23d3d;
+.card p {
+  margin: 1rem;
+  color: #e4e4e4;
 }/*# sourceMappingURL=main.css.map */

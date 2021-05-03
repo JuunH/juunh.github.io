@@ -1,0 +1,18 @@
+@import '../settings/colours';
+
+.background {
+    background-color: lm(2);
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.514) 5px 5px 5px 0px, 0px 0px 4px 2px rgba(0,0,0,0);
+}
+
+.gridCenter {
+    place-items: center;
+    align-content: center;
+}
+
+.bradius {
+    border-radius: 8px;
+}

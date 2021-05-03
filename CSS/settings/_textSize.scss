@@ -1,0 +1,36 @@
+@import '../settings/fonts';
+
+
+.alltext {
+    font-family: ff(primary);
+    letter-spacing: 2px;    
+}
+
+
+.menu {
+    font-size: ff(2);
+}
+
+.pagename {
+    font-size: ff(name);
+    font-weight: 600;
+}
+
+.title {
+    @include tablet {
+        font-size: ff(1);
+    }
+}
+
+.text {
+    margin: 1rem;
+    width: 80%;
+    max-width: 300px;
+    @include tablet {
+        font-size: ff(2);
+    }
+}
+
+span {
+    color: lm(5);
+}
