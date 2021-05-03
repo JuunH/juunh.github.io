@@ -43,7 +43,7 @@
 }
 
 .menu {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .pagename {
@@ -61,6 +61,7 @@
   margin: 1rem;
   width: 80%;
   max-width: 300px;
+  word-wrap: break-word;
 }
 @media (min-width: 600px) {
   .text {
@@ -87,6 +88,40 @@ span {
 
 .bradius {
   border-radius: 8px;
+}
+
+#about {
+  display: grid;
+  width: 100%;
+}
+#about img {
+  margin: 4rem 1rem 1rem 1rem;
+  width: 50%;
+  max-width: 200px;
+  border-radius: 50%;
+  border: solid;
+  color: #9DA2A5;
+}
+
+#projects {
+  display: grid;
+}
+#projects h2 {
+  margin-top: 4rem;
+}
+
+#experience {
+  display: grid;
+}
+#experience h2 {
+  margin-top: 4rem;
+}
+
+#gallery {
+  display: grid;
+}
+#gallery h2 {
+  margin-top: 4rem;
 }
 
 * {

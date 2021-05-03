@@ -1,0 +1,14 @@
+@import '../settings/colours';
+
+#about {
+    display: grid;
+    width: 100%;
+    img {
+        margin: 4rem 1rem 1rem 1rem;
+        width: 50%;
+        max-width: 200px;
+        border-radius: 50%;
+        border: solid;
+        color: lm(3);
+    }
+}
