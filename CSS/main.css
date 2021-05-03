@@ -17,21 +17,17 @@
 }
 @-webkit-keyframes fadein {
   0% {
-    transform: translateY(-20px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes fadein {
   0% {
-    transform: translateY(-20px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -42,8 +38,8 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: grid;
   background-color: #ffffff;
   font-family: Quicksand;
   letter-spacing: 2px;
@@ -87,27 +83,26 @@ nav #menuicon.active {
     display: none;
   }
 }
-nav ul {
-  position: absolute;
+
+ul {
+  position: fixed;
+  top: 58px;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   place-items: center;
   z-index: -1;
-  top: 100%;
   width: 100%;
-  height: calc(-100% + 100vh);
+  height: calc(100vh - 58px);
   background-color: #ffffff;
   opacity: 0;
-  transform: translateY(-20px);
   transition: 250ms;
 }
-nav ul.active {
-  z-index: 0;
+ul.active {
+  z-index: 1;
   opacity: 1;
-  transform: translateY(1px);
 }
 @media (min-width: 600px) {
-  nav ul {
+  ul {
     position: relative;
     top: 0;
     display: block;
@@ -119,20 +114,20 @@ nav ul.active {
     opacity: 1;
   }
 }
-nav ul li {
+ul li {
   margin-bottom: 0.5rem;
   list-style: none;
   text-align: center;
   font-size: 24px;
 }
 @media (min-width: 600px) {
-  nav ul li {
+  ul li {
     display: inline;
     margin-left: 1rem;
     font-size: 20px;
   }
 }
-nav ul a {
+ul a {
   text-decoration: none;
   color: #242424;
 }

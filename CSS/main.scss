@@ -9,8 +9,8 @@
 
 
 body {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: grid;
     background-color: lm(2);
     font-family: ff(primary);
     letter-spacing: 2px;
@@ -52,50 +52,49 @@ nav {
             display: none
         };
     }
-    ul {
-        position: absolute;
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        place-items: center;
-        z-index: -1;
-        top: 100%;
-        width: 100%;
-        height: calc(-100% + 100vh);
-        background-color: lm(2);
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: 250ms;
-        &.active {
-            z-index: 0;
-            opacity: 1;
-            transform: translateY(1px);
-        }
-        @include tablet {
-            position: relative;
-            top: 0;
-            display: block;
-            justify-self: end;
-            margin: 1rem;
-            width: auto;
-            height: auto;
-            transform: none;
-            opacity: 1;
+}
+
+ul {
+    position: fixed;
+    top: 58px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    place-items: center;
+    z-index: -1;
+    width: 100%;
+    height: calc(100vh - 58px);
+    background-color: lm(2);
+    opacity: 0;
+    transition: 250ms;
+    &.active {
+        z-index: 1;
+        opacity: 1;
+    }
+    @include tablet {
+        position: relative;
+        top: 0;
+        display: block;
+        justify-self: end;
+        margin: 1rem;
+        width: auto;
+        height: auto;
+        transform: none;
+        opacity: 1;
+    };
+    li {
+        margin-bottom: .5rem;
+        list-style: none;
+        text-align: center;
+        font-size: ff(2);
+        @include tablet() {
+            display: inline;
+            margin-left: 1rem;
+            font-size: ff(name);
         };
-        li {
-            margin-bottom: .5rem;
-            list-style: none;
-            text-align: center;
-            font-size: ff(2);
-            @include tablet() {
-                display: inline;
-                margin-left: 1rem;
-                font-size: ff(name);
-            };
-        }
-        a {
-            text-decoration: none;
-            color: lm(1);
-        }
+    }
+    a {
+        text-decoration: none;
+        color: lm(1);
     }
 }
 
