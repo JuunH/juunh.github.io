@@ -46,7 +46,7 @@
     transition: 250ms;
 
     &.active {
-        z-index: 4;
+        z-index: 10;
         opacity: 1;
     }
 

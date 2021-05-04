@@ -33,8 +33,8 @@
   }
 }
 .fadein {
-  -webkit-animation: fadein 500ms 250ms both;
-          animation: fadein 500ms 250ms both;
+  -webkit-animation: fadein 500ms 350ms both;
+          animation: fadein 500ms 350ms both;
 }
 
 .alltext {
@@ -60,7 +60,7 @@
 .text {
   margin: 1rem;
   width: 80%;
-  max-width: 300px;
+  max-width: 450px;
   word-wrap: break-word;
 }
 @media (min-width: 600px) {
@@ -172,7 +172,7 @@ span {
   transition: 250ms;
 }
 #gallerylightbox.active {
-  z-index: 4;
+  z-index: 10;
   opacity: 1;
 }
 #gallerylightbox #closeButton {
@@ -271,7 +271,7 @@ ul {
   transition: 250ms;
 }
 ul.active {
-  z-index: 1;
+  z-index: 5;
   opacity: 1;
 }
 @media (min-width: 600px) {

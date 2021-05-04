@@ -4,17 +4,17 @@
 const menuicon = document.getElementById('menuicon');
 const options = document.getElementById('options');
 
-
 function toggleOptions() {
   menuicon.classList.toggle('active');
   options.classList.toggle('active');
 }
 
-
 menuicon.addEventListener('click', () => {
   toggleOptions()
 })
 
+
+//  Fade in on scroll animation  //
 
 document.addEventListener('scroll', function(e) {
   const cardArray = document.getElementsByClassName('card')
@@ -23,6 +23,14 @@ document.addEventListener('scroll', function(e) {
     var botWindow = document.documentElement.scrollTop + topWindow
     if (cardArray[i].offsetTop < botWindow) {
       cardArray[i].classList.add('fadein')
+    }
+  }
+  const galleryArray = document.getElementsByClassName('imagecontainer')
+  for (var i = 0 ; i < galleryArray.length; i++) {
+    var topWindow = document.documentElement.clientHeight
+    var botWindow = document.documentElement.scrollTop + topWindow
+    if (galleryArray[i].offsetTop < botWindow) {
+      galleryArray[i].classList.add('fadein')
     }
   }
 });
