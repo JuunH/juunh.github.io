@@ -28,6 +28,37 @@ document.addEventListener('scroll', function(e) {
 });
 
 
+// //  Gallery Lightbox Function   //
+
+
+const everyImg = document.getElementsByClassName('img');
+const lightbox = document.getElementById('gallerylightbox');
+const lbImage = document.getElementById('imageClicked');
+var scrolling;
+
+
+function displayClickedImage(imageClicked) {
+  image = document.getElementById(imageClicked).src;
+  lightbox.classList.toggle('active');
+  lbImage.src = image;
+}
+
+function closeLightBox() {
+  lightbox.classList.toggle('active');
+}
+
+
+for (var i = 0 ; i < everyImg.length; i++) {
+
+  everyImg[i].setAttribute('id', 'picture'+ i);
+  let pictureID = `picture${i}`;
+
+  everyImg[i].addEventListener('click', function () {
+      displayClickedImage(pictureID);
+  })
+}
+
+
 // //  Dark Mode Function  //
 
 
@@ -46,79 +77,3 @@ document.addEventListener('scroll', function(e) {
 //   toggleDarkmode(allElements)
 //   dmIcon.classList.toggle('active')
 // })
-
-
-// //  Switch Content Function  //
-
-
-// const about = document.getElementById('about')
-// const projects = document.getElementById('projects')
-// const designs = document.getElementById('cert')
-// const gallery = document.getElementById('gallery')
-// const links = document.getElementsByClassName('link')
-// const returnIcon = document.getElementById('returnIcon')
-
-// function switchElements(element) {
-
-//   let activeElement = document.getElementsByClassName('show')
-
-//   for (var i = 0 ; i < activeElement.length; i++) {
-//     activeElement[i].classList.toggle('show')
-//   }
-
-//   let showElement = document.getElementById(element)
-//   if (showElement.id == 'home') {
-//     returnIcon.classList.remove('active')
-//   }
-//   else {
-//     returnIcon.classList.add('active')
-//   }
-//   showElement.classList.toggle('show')
-// }
-
-
-// for (var i = 0 ; i < links.length; i++) {
-
-//   let pagename = links[i].getAttribute('page')
-
-//   links[i].addEventListener('click', () => {
-
-//     switchElements(pagename)
-
-//   })
-// }
-
-
-// //  Gallery Lightbox Function   //
-
-
-// const everyImg = document.getElementsByClassName('img');
-// const lightbox = document.getElementById('gallerylightbox');
-// const lbImage = document.getElementById('imageClicked');
-// var scrolling;
-
-
-// function displayClickedImage(imageClicked) {
-//   image = document.getElementById(imageClicked).src;
-//   lightbox.classList.toggle('active');
-//   lbImage.src = image;
-// }
-
-// function closeLightBox() {
-//   lightbox.classList.toggle('active');
-// }
-
-
-// for (var i = 0 ; i < everyImg.length; i++) {
-
-//   everyImg[i].setAttribute('id', 'picture'+ i);
-//   let pictureID = `picture${i}`;
-
-//   everyImg[i].addEventListener('click', function () {
-//       displayClickedImage(pictureID);
-//   })
-
-//   everyImg[i].addEventListener('touchstart', function () {
-//     displayClickedImage(pictureID);
-//   })
-// }
