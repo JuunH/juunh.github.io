@@ -16,8 +16,10 @@ menuicon.addEventListener('click', () => {
 
 //  Fade in on scroll animation  //
 
+const cardArray = document.getElementsByClassName('card')
+const galleryArray = document.getElementsByClassName('imagecontainer')
+
 document.addEventListener('scroll', function(e) {
-  const cardArray = document.getElementsByClassName('card')
   for (var i = 0 ; i < cardArray.length; i++) {
     var topWindow = document.documentElement.clientHeight
     var botWindow = document.documentElement.scrollTop + topWindow
@@ -25,7 +27,6 @@ document.addEventListener('scroll', function(e) {
       cardArray[i].classList.add('fadein')
     }
   }
-  const galleryArray = document.getElementsByClassName('imagecontainer')
   for (var i = 0 ; i < galleryArray.length; i++) {
     var topWindow = document.documentElement.clientHeight
     var botWindow = document.documentElement.scrollTop + topWindow
