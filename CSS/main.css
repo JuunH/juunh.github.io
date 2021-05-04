@@ -238,16 +238,17 @@ span {
 
 #gallery {
   display: grid;
-}
-#gallery h2 {
   margin-top: 4rem;
+  margin-bottom: 1rem;
 }
 
 .gallery {
+  justify-self: center;
   -moz-columns: 1;
        columns: 1;
-  margin: 1rem 2rem;
+  margin: 0rem 2rem;
   padding: 2rem 1rem;
+  max-width: 1000px;
   background-color: #9DA2A5;
   border-radius: 8px;
 }
@@ -268,11 +269,17 @@ span {
   width: 100%;
   margin-bottom: 2rem;
   transition: 250ms;
+  opacity: 0;
+  transform: translateY(-20px);
 }
 .gallery .imagecontainer img {
   justify-self: center;
   width: 100%;
   border-radius: 5px;
+}
+.gallery .imagecontainer.fadein {
+  opacity: 1;
+  transform: translateY(0);
 }
 .gallery .imagecontainer:hover {
   transform: scale(95%);
@@ -467,7 +474,7 @@ nav #menuicon.active {
 .card {
   margin-bottom: 2rem;
   width: 300px;
-  height: 400px;
+  height: 425px;
   background-color: #52575A;
   opacity: 0;
   transform: translateY(-20px);
