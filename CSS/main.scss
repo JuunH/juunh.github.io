@@ -103,6 +103,7 @@ nav {
     }
     #pp {
         width: 250px;
+        border-radius: 30% 70% 46% 54% / 66% 25% 75% 34%;
         @include tablet {
             width: 400px;
         }

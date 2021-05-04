@@ -1,26 +1,68 @@
 @import '../settings/colours';
+@import '../settings/fonts';
 
 #about {
+    position: relative;
     display: grid;
+    margin-top: 4rem;
     width: 100%;
-    img {
-        margin: 4rem 1rem 1rem 1rem;
+    #profilepicture {
+        margin: 1rem;
         width: 50%;
         max-width: 200px;
         border-radius: 50%;
         border: solid;
         color: lm(3);
+        @include desktop {
+            max-width: 500px;
+        }
     }
     p {
         padding: 2rem 0;
-        border-bottom: solid;
-        border-color: lm(5);
+    }
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.links {
-    margin: 1rem 0;
+#aboutCon {
+    display: grid;
+    justify-items: center;
+    @include desktop {
+        align-self: start;
+    }
+}
+
+#aboutTitle {
+    display: none;
+    margin-left: 1rem;
+    @include desktop {
+        display: block;
+    }
+}
+
+#profileContainer {
+    align-self: start;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    border-radius: 25px;
     width: 80%;
+    @include desktop {
+        position: sticky;
+        top: 150px;
+        justify-self: center;
+        border: solid;
+        border-color: lm(3);
+    }
+}
+
+.moreInfo {
+    place-items: center;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: solid;
+    border-color: lm(5);
     h2 {
         margin-bottom: 1rem;
     }
@@ -32,5 +74,44 @@
     a {
         // text-decoration: none;
         color: lm(5);
+    }
+}
+
+#miMobile {
+    display: grid;
+    width: 80%;
+    a {
+        color: lm(5);
+    }
+    @include desktop {
+        display: none;
+    }
+}
+
+#miDesktop {
+    display: none;
+    padding-bottom: 2rem;
+    width: 80%;
+    max-width: 300px;
+    a {
+        font-size: ff(3);
+    }
+    @include desktop {
+        display: grid;
+    }
+}
+
+#aboutimages {
+    display: none;
+    align-self: start;
+    width: 80%;
+    @include desktop {
+        display: grid;
+    }
+    img {
+        width: 100%;
+        max-width: 450px;
+        margin-bottom: 2rem;
+        border-radius: 8px;
     }
 }

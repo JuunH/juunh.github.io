@@ -3,7 +3,8 @@
 
 .alltext {
     font-family: ff(primary);
-    letter-spacing: 2px;    
+    letter-spacing: 2px;
+    line-height: 1.5;   
 }
 
 
@@ -27,9 +28,6 @@
     width: 80%;
     max-width: 450px;
     word-wrap: break-word;
-    @include tablet {
-        font-size: ff(2);
-    }
 }
 
 span {
