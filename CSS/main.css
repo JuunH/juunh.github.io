@@ -147,11 +147,12 @@ span {
   align-content: center;
   border-radius: 25px;
   width: 80%;
+  max-width: 350px;
 }
 @media (min-width: 992px) {
   #profileContainer {
     position: sticky;
-    top: 150px;
+    top: 125px;
     justify-self: center;
     border: solid;
     border-color: #9DA2A5;
@@ -174,7 +175,7 @@ span {
   list-style-position: inside;
 }
 .moreInfo a {
-  color: #e23d3d;
+  color: #242424;
 }
 
 #miMobile {
@@ -183,6 +184,10 @@ span {
 }
 #miMobile a {
   color: #e23d3d;
+}
+#miMobile ul {
+  justify-self: center;
+  width: 230px;
 }
 @media (min-width: 992px) {
   #miMobile {
@@ -194,10 +199,14 @@ span {
   display: none;
   padding-bottom: 2rem;
   width: 80%;
-  max-width: 300px;
+  max-width: 340px;
 }
 #miDesktop a {
-  font-size: 20px;
+  font-size: 18px;
+  word-break: break-all;
+}
+#miDesktop ul {
+  justify-self: start;
 }
 @media (min-width: 992px) {
   #miDesktop {
@@ -207,6 +216,7 @@ span {
 
 #aboutimages {
   display: none;
+  justify-items: center;
   align-self: start;
   width: 80%;
 }
