@@ -25,11 +25,25 @@ nav {
     border-width: 1px;
     border-color: lm(3);
 
-    #name {
+    #namemobile {
         z-index: 1;
         margin: 1rem;
         color: lm(1);
         text-decoration: none;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    #namedesktop {
+        display: none;
+        z-index: 1;
+        margin: 1rem;
+        color: lm(1);
+        text-decoration: none;
+        @include desktop {
+            display: block;
+        }
     }
 
     #menuicon {

@@ -547,11 +547,28 @@ nav {
   border-width: 1px;
   border-color: #9DA2A5;
 }
-nav #name {
+nav #namemobile {
   z-index: 1;
   margin: 1rem;
   color: #242424;
   text-decoration: none;
+}
+@media (min-width: 992px) {
+  nav #namemobile {
+    display: none;
+  }
+}
+nav #namedesktop {
+  display: none;
+  z-index: 1;
+  margin: 1rem;
+  color: #242424;
+  text-decoration: none;
+}
+@media (min-width: 992px) {
+  nav #namedesktop {
+    display: block;
+  }
 }
 nav #menuicon {
   z-index: 1;
