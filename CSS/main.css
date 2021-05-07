@@ -393,8 +393,37 @@ span {
 }
 
 #gallery {
+  position: relative;
   display: grid;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  #gallery {
+    grid-template-columns: 40vw 1fr;
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+}
+
+#galleryDesc {
+  justify-self: center;
+  width: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  #galleryDesc {
+    position: sticky;
+    top: 125px;
+    margin-left: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+#galleryDesc h2 {
   margin-bottom: 1rem;
 }
 

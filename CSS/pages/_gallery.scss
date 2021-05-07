@@ -1,7 +1,30 @@
 #gallery {
+    position: relative;
     display: grid;
+    height: 100%;
+    @include desktop {
+        grid-template-columns: 40vw 1fr;
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+}
+
+#galleryDesc {
+    justify-self: center;
+    width: 80%;
+    height: max-content;
     margin-top: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    @include desktop {
+        position: sticky;
+        top: 125px;
+        margin-left: 2rem;
+        width: 100%;
+        max-width: 600px;
+    }
+    h2 {
+        margin-bottom: 1rem;
+    }
 }
 
 .gallery {
