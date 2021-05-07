@@ -233,10 +233,81 @@ span {
 }
 
 #projects {
+  position: relative;
+  display: grid;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  #projects {
+    grid-template-columns: 40vw 1fr;
+  }
+}
+
+#projectsDesc {
+  justify-self: center;
+  width: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  #projectsDesc {
+    position: sticky;
+    top: 150px;
+    margin-left: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+#projectsDesc h2 {
+  margin-bottom: 1rem;
+}
+
+#projectslist {
   display: grid;
 }
-#projects h2 {
-  margin-top: 4rem;
+
+.projectcard {
+  justify-self: center;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  width: 80%;
+  border-top: solid;
+  border-color: #e23d3d;
+}
+@media (min-width: 992px) {
+  .projectcard {
+    width: 90%;
+    max-width: 700px;
+  }
+}
+.projectcard h2, .projectcard p, .projectcard ul {
+  margin-bottom: 1rem;
+}
+.projectcard li {
+  list-style-position: inside;
+}
+.projectcard a {
+  color: #e23d3d;
+}
+.projectcard p {
+  max-width: 650px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.projectcard img {
+  justify-self: start;
+  width: 100%;
+  border-radius: 8px;
+}
+@media (min-width: 992px) {
+  .projectcard img {
+    margin: 0;
+    width: 60%;
+  }
 }
 
 #experience {
