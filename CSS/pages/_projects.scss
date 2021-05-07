@@ -4,6 +4,8 @@
     height: 100%;
     @include desktop {
         grid-template-columns: 40vw 1fr;
+        margin-top: 2rem;
+        padding: 0 2rem;
     }
 }
 
@@ -15,7 +17,7 @@
     margin-bottom: 2rem;
     @include desktop {
         position: sticky;
-        top: 150px;
+        top: 125px;
         margin-left: 2rem;
         width: 100%;
         max-width: 600px;
