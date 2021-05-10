@@ -1,126 +1,83 @@
-@import '../settings/colours';
-@import '../settings/fonts';
-
 #about {
     position: relative;
     display: grid;
-    margin-top: 4rem;
-    width: 100%;
-    #profilepicture {
-        margin: 1rem;
-        width: 50%;
-        max-width: 200px;
-        border-radius: 50%;
-        border: solid;
-        color: lm(3);
-        @include desktop {
-            max-width: 500px;
-        }
-    }
-    p {
-        padding: 2rem 0;
-    }
+    height: 100%;
     @include desktop {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 40vw 1fr;
+        margin-top: 2rem;
+        padding: 0 2rem;
     }
 }
 
-#aboutCon {
+#aboutProfile {
+    justify-self: center;
     display: grid;
-    justify-items: center;
-    @include desktop {
-        align-self: start;
-    }
-}
-
-#aboutTitle {
-    display: none;
-    margin-left: 1rem;
-    @include desktop {
-        display: block;
-    }
-}
-
-#profileContainer {
-    align-self: start;
-    display: grid;
-    place-items: center;
-    align-content: center;
-    border-radius: 25px;
     width: 80%;
-    max-width: 350px;
+    height: max-content;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
     @include desktop {
         position: sticky;
         top: 125px;
-        justify-self: center;
-        border: solid;
-        border-color: lm(3);
+        margin-left: 2rem;
+        width: 100%;
+        max-width: 600px;
     }
-}
-
-.moreInfo {
-    place-items: center;
-    margin: 1rem 0;
-    padding: 1rem 0;
-    border-top: solid;
-    border-color: lm(5);
     h2 {
         margin-bottom: 1rem;
     }
-    li {
-        margin-bottom: 0.5rem;
-        text-decoration: none;
-        list-style-position: inside;
-    }
-    a {
-        color: lm(1);
+}
+
+#aboutDesc {
+    justify-self: center;
+    display: grid;
+    @include desktop {
+        margin: 2rem;
+        padding: 2rem 0;
     }
 }
 
-#miMobile {
+#aboutCard {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    width: 100%;
+    #propic {
+        justify-self: center;
+        width: 200px;
+        border-radius: 50%;
+    }
+    ul {
+        margin: 2rem;
+        li {
+            margin: 0.5rem 0;
+            list-style-position: inside;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: lm(1);
+        text-decoration: underline;
+    }
+}
+
+#ADContainer {
     display: grid;
     width: 80%;
-    a {
-        color: lm(5);
-    }
-    ul {
-        justify-self: center;
-        width: 230px;
-    }
     @include desktop {
-        display: none;
+        width: 90%;
+        max-width: 700px;
     }
-}
-
-#miDesktop {
-    display: none;
-    padding-bottom: 2rem;
-    width: 80%;
-    max-width: 340px;
-    a {
-        font-size: ff(4);
-        word-break: break-all;
-    }
-    ul {
-        justify-self: start;
-    }
-    @include desktop {
-        display: grid;
-    }
-}
-
-#aboutimages {
-    display: none;
-    justify-items: center;
-    align-self: start;
-    width: 80%;
-    @include desktop {
-        display: grid;
+    p {
+        margin: 1rem 0;
+        max-width: 650px;
+        height: max-content;
     }
     img {
+        justify-self: start;
         width: 100%;
-        max-width: 450px;
-        margin-bottom: 2rem;
         border-radius: 8px;
+        @include desktop {
+            width: 60%;
+        }
     }
 }

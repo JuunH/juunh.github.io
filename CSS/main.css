@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @-webkit-keyframes bounce {
   0% {
     transform: translateY(0);
@@ -95,141 +94,100 @@ span {
 #about {
   position: relative;
   display: grid;
-  margin-top: 4rem;
-  width: 100%;
-}
-#about #profilepicture {
-  margin: 1rem;
-  width: 50%;
-  max-width: 200px;
-  border-radius: 50%;
-  border: solid;
-  color: #9DA2A5;
-}
-@media (min-width: 992px) {
-  #about #profilepicture {
-    max-width: 500px;
-  }
-}
-#about p {
-  padding: 2rem 0;
+  height: 100%;
 }
 @media (min-width: 992px) {
   #about {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 40vw 1fr;
+    margin-top: 2rem;
+    padding: 0 2rem;
   }
 }
 
-#aboutCon {
+#aboutProfile {
+  justify-self: center;
   display: grid;
-  justify-items: center;
-}
-@media (min-width: 992px) {
-  #aboutCon {
-    align-self: start;
-  }
-}
-
-#aboutTitle {
-  display: none;
-  margin-left: 1rem;
-}
-@media (min-width: 992px) {
-  #aboutTitle {
-    display: block;
-  }
-}
-
-#profileContainer {
-  align-self: start;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  border-radius: 25px;
   width: 80%;
-  max-width: 350px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 992px) {
-  #profileContainer {
+  #aboutProfile {
     position: sticky;
     top: 125px;
-    justify-self: center;
-    border: solid;
-    border-color: #9DA2A5;
+    margin-left: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+#aboutProfile h2 {
+  margin-bottom: 1rem;
+}
+
+#aboutDesc {
+  justify-self: center;
+  display: grid;
+}
+@media (min-width: 992px) {
+  #aboutDesc {
+    margin: 2rem;
+    padding: 2rem 0;
   }
 }
 
-.moreInfo {
-  place-items: center;
-  margin: 1rem 0;
-  padding: 1rem 0;
-  border-top: solid;
-  border-color: #e23d3d;
+#aboutCard {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  width: 100%;
 }
-.moreInfo h2 {
-  margin-bottom: 1rem;
+#aboutCard #propic {
+  justify-self: center;
+  width: 200px;
+  border-radius: 50%;
 }
-.moreInfo li {
-  margin-bottom: 0.5rem;
-  text-decoration: none;
+#aboutCard ul {
+  margin: 2rem;
+}
+#aboutCard ul li {
+  margin: 0.5rem 0;
   list-style-position: inside;
 }
-.moreInfo a {
+#aboutCard a {
+  text-decoration: none;
   color: #242424;
+  text-decoration: underline;
 }
 
-#miMobile {
+#ADContainer {
   display: grid;
   width: 80%;
 }
-#miMobile a {
-  color: #e23d3d;
-}
-#miMobile ul {
-  justify-self: center;
-  width: 230px;
-}
 @media (min-width: 992px) {
-  #miMobile {
-    display: none;
+  #ADContainer {
+    width: 90%;
+    max-width: 700px;
   }
 }
-
-#miDesktop {
-  display: none;
-  padding-bottom: 2rem;
-  width: 80%;
-  max-width: 340px;
+#ADContainer p {
+  margin: 1rem 0;
+  max-width: 650px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
-#miDesktop a {
-  font-size: 18px;
-  word-break: break-all;
-}
-#miDesktop ul {
+#ADContainer img {
   justify-self: start;
-}
-@media (min-width: 992px) {
-  #miDesktop {
-    display: grid;
-  }
-}
-
-#aboutimages {
-  display: none;
-  justify-items: center;
-  align-self: start;
-  width: 80%;
-}
-@media (min-width: 992px) {
-  #aboutimages {
-    display: grid;
-  }
-}
-#aboutimages img {
   width: 100%;
-  max-width: 450px;
-  margin-bottom: 2rem;
   border-radius: 8px;
+}
+@media (min-width: 992px) {
+  #ADContainer img {
+    width: 60%;
+  }
 }
 
 #projects {
