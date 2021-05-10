@@ -1,0 +1,166 @@
+@import 'settings/settings-dir';
+@import 'pages/pages-dir';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    position: relative;
+    display: grid;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: lm(3);
+
+    #namemobile {
+        z-index: 1;
+        margin: 1rem;
+        color: lm(1);
+        text-decoration: none;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    #namedesktop {
+        display: none;
+        z-index: 1;
+        margin: 1rem;
+        color: lm(1);
+        text-decoration: none;
+        @include desktop {
+            display: block;
+        }
+    }
+
+    #menuicon {
+        z-index: 1;
+        margin: 1rem;
+        width: 25px;
+        justify-self: end;
+        transition: 250ms;
+        &.active {
+            transform: rotate(180deg);
+        }
+        @include tablet() {
+            display: none
+        };
+    }
+}
+
+#options {
+    position: fixed;
+    top: 58px;
+    right: 0;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    z-index: -1;
+    width: 100%;
+    height: calc(100vh - 58px);
+    opacity: 0;
+    transition: 250ms;
+    &.active {
+        z-index: 5;
+        opacity: 1;
+    }
+    @include tablet {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        display: block;
+        justify-self: end;
+        margin: 1rem;
+        width: auto;
+        height: auto;
+        transform: none;
+        opacity: 1;
+    };
+    li {
+        margin-bottom: .5rem;
+        list-style: none;
+        text-align: center;
+        @include tablet() {
+            display: inline;
+            margin-left: 1rem;
+        };
+    }
+    a {
+        text-decoration: none;
+        color: lm(1);
+    }
+}
+
+#welcome {
+    display: grid;
+    height: 100vh;
+    text-align: center;
+    @include desktop {
+        margin-bottom: 4rem;
+        height: 100vh;
+        background-image: linear-gradient(to right, g(4), g(4)), url('/Resources/Images/PP\ Desktop.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #pp {
+        width: 250px;
+        border-radius: 30% 70% 46% 54% / 66% 25% 75% 34%;
+        @include tablet {
+            width: 400px;
+        }
+        @include desktop {
+            display: none;
+        }
+    }
+    #arrow {
+        margin: 1rem;
+        width: 25px;
+        animation: bounce 350ms ease-out infinite alternate;
+    }
+}
+
+#list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card {
+    margin-bottom: 2rem;
+    width: 300px;
+    height: 425px;
+    background-color: lm(4);
+    opacity: 0;
+    transform: translateY(-20px);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1.25s;
+    &.fadein {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    img {
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    }
+    h2 {
+        color: lm(6);
+        margin: 0 1rem;
+    }
+    p {
+        margin: 1rem;
+        color: lm(6);
+    }
+}

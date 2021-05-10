@@ -1,0 +1,34 @@
+$lightmode: (
+    1: #242424,
+    2: #ffffff,
+    3: #9DA2A5,
+    4: #52575A,
+    5: #e23d3d,
+    6: #e4e4e4
+);
+
+$gradients: (
+    1: #272729a1,
+    2: #ffffff00,
+    3: #00000042,
+    4: #c5c5c538,
+);
+
+
+$darkmode: (
+    primary: black,
+);
+
+
+@function lm($color-name) {
+    @return map-get($lightmode, $color-name);
+}
+
+
+@function dm($color-name) {
+    @return map-get($darkmode, $color-name);
+}
+
+@function g($color-name) {
+    @return map-get($gradients, $color-name);
+}

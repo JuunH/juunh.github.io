@@ -1,83 +1,43 @@
 //  Menu Icon Function  //
 
 
-const menuicon = document.getElementById('menuIcon');
-const menu = document.getElementById('menuBlock');
+const menuicon = document.getElementById('menuicon');
+const options = document.getElementById('options');
 
-
-function toggleMenu() {
+function toggleOptions() {
   menuicon.classList.toggle('active');
-  menu.classList.toggle('active');
+  options.classList.toggle('active');
 }
-
 
 menuicon.addEventListener('click', () => {
-  toggleMenu()
+  toggleOptions()
 })
 
 
-//  Dark Mode Function  //
+//  Fade in on scroll animation  //
 
+const cardArray = document.getElementsByClassName('card')
+const galleryArray = document.getElementsByClassName('imagecontainer')
 
-const dmIcon = document.getElementById('darkmodeIcon');
-const allElements = document.getElementsByTagName('*')
-
-
-function toggleDarkmode (allElements) {
-  for (var i = 0 ; i < allElements.length; i++) {
-    allElements[i].classList.toggle('darkmode');
+document.addEventListener('scroll', function(e) {
+  for (var i = 0 ; i < cardArray.length; i++) {
+    var topWindow = document.documentElement.clientHeight
+    var botWindow = document.documentElement.scrollTop + topWindow
+    if (cardArray[i].offsetTop < botWindow) {
+      cardArray[i].classList.add('fadein')
+    }
   }
-}
-
-
-dmIcon.addEventListener('click', () => {
-  toggleDarkmode(allElements)
-  dmIcon.classList.toggle('active')
-})
-
-
-//  Switch Content Function  //
-
-
-const about = document.getElementById('about')
-const projects = document.getElementById('projects')
-const designs = document.getElementById('cert')
-const gallery = document.getElementById('gallery')
-const links = document.getElementsByClassName('link')
-const returnIcon = document.getElementById('returnIcon')
-
-function switchElements(element) {
-
-  let activeElement = document.getElementsByClassName('show')
-
-  for (var i = 0 ; i < activeElement.length; i++) {
-    activeElement[i].classList.toggle('show')
+  for (var i = 0 ; i < galleryArray.length; i++) {
+    var topWindow = document.documentElement.clientHeight
+    var botWindow = document.documentElement.scrollTop + topWindow
+    if (galleryArray[i].offsetTop < botWindow) {
+      galleryArray[i].classList.add('fadein')
+    }
   }
-
-  let showElement = document.getElementById(element)
-  if (showElement.id == 'home') {
-    returnIcon.classList.remove('active')
-  }
-  else {
-    returnIcon.classList.add('active')
-  }
-  showElement.classList.toggle('show')
-}
+});
 
 
-for (var i = 0 ; i < links.length; i++) {
-
-  let pagename = links[i].getAttribute('page')
-
-  links[i].addEventListener('click', () => {
-
-    switchElements(pagename)
-
-  })
-}
-
-
-//  Gallery Lightbox Function   //
+// //  Gallery Lightbox Function   //
 
 
 const everyImg = document.getElementsByClassName('img');
@@ -105,8 +65,24 @@ for (var i = 0 ; i < everyImg.length; i++) {
   everyImg[i].addEventListener('click', function () {
       displayClickedImage(pictureID);
   })
-
-  everyImg[i].addEventListener('touchstart', function () {
-    displayClickedImage(pictureID);
-  })
 }
+
+
+// //  Dark Mode Function  //
+
+
+// const dmIcon = document.getElementById('darkmodeIcon');
+// const allElements = document.getElementsByTagName('*')
+
+
+// function toggleDarkmode (allElements) {
+  // for (var i = 0 ; i < allElements.length; i++) {
+  //   allElements[i].classList.toggle('darkmode');
+  // }
+// }
+
+
+// dmIcon.addEventListener('click', () => {
+//   toggleDarkmode(allElements)
+//   dmIcon.classList.toggle('active')
+// })
