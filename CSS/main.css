@@ -130,6 +130,7 @@ span {
 #aboutDesc {
   justify-self: center;
   display: grid;
+  justify-items: center;
 }
 @media (min-width: 992px) {
   #aboutDesc {
@@ -140,9 +141,13 @@ span {
 
 #aboutCard {
   display: grid;
-  grid-template-columns: -webkit-max-content 1fr;
-  grid-template-columns: max-content 1fr;
   width: 100%;
+}
+@media (min-width: 600px) {
+  #aboutCard {
+    grid-template-columns: -webkit-max-content 1fr;
+    grid-template-columns: max-content 1fr;
+  }
 }
 #aboutCard #propic {
   justify-self: center;
@@ -164,7 +169,10 @@ span {
 
 #ADContainer {
   display: grid;
+  padding: 2rem 0;
   width: 80%;
+  border-top: solid;
+  border-color: #e23d3d;
 }
 @media (min-width: 992px) {
   #ADContainer {
