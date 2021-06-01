@@ -1,0 +1,15 @@
+$color: (
+  1: rgb(255, 255, 255),
+);
+
+$gradients: (
+  1: rgba(255, 255, 255, 0.5),
+);
+
+@function c($color-name) {
+  @return map-get($color, $color-name);
+}
+
+@function g($color-name) {
+  @return map-get($gradients, $color-name);
+}
