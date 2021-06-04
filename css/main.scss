@@ -1,0 +1,133 @@
+@import "settings/settings-dir";
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: ff(primary);
+  letter-spacing: 1px;
+}
+
+body {
+  @extend %display-grid-center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, c(4) 1%, transparent 1%) 1px 0, c(2);
+  background-size: 16.66vw 1px;
+}
+
+nav {
+  @extend %display-flex-center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  .nav {
+    @extend %display-grid-center;
+    grid-template-columns: 1fr max-content;
+    padding: 1.5rem 2rem;
+    width: 80%;
+  }
+  #name {
+    justify-self: start;
+    font-size: 32px;
+    font-weight: 600;
+    transition: 250ms;
+    transform: translateY(2px);
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+  ul {
+    display: none;
+    justify-self: end;
+    height: max-content;
+    transform: scale(1, 1);
+    transition: 250ms;
+    &.active {
+      transform: scale(0, -0.5);
+    }
+    @include tablet {
+      display: block;
+    }
+  }
+  li {
+    display: inline;
+    margin-left: 1.5rem;
+  }
+  a {
+    width: max-content;
+    color: c(1);
+    font-size: 16px;
+    text-decoration: none;
+  }
+}
+
+main {
+  @extend %display-grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+
+.landing {
+  @extend %display-grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-column: 1 / span 7;
+  height: 100vh;
+  div:nth-child(1) {
+    @extend %display-flex;
+    flex-direction: column;
+    justify-self: end;
+    margin-right: 1vw;
+    width: max-content;
+    height: max-content;
+    h1 {
+      @extend %colour-text;
+      font-size: 6vw;
+      transform: translateX(-5px);
+    }
+    p {
+      @extend %colour-text;
+      font-size: 1.5vw;
+      line-height: 1.5;
+    }
+  }
+  div:nth-child(2) {
+    @extend %display-grid;
+    grid-template-columns: 26vw max-content;
+    position: relative;
+    margin-left: 4vw;
+    width: 26vw;
+    transform: translateY(1rem);
+    img {
+      width: 100%;
+    }
+    p {
+      @extend %colour-text;
+      justify-self: end;
+      grid-column: 1;
+      margin-top: 1rem;
+      font-size: 1.25vw;
+    }
+    ul {
+      grid-row: 1;
+      grid-column: 2;
+      align-self: end;
+      width: max-content;
+      height: max-content;
+      list-style-type: none;
+      transform: translateY(calc(1rem + 5px));
+      li {
+        margin: 1rem 0.5rem;
+      }
+      a {
+        @extend %colour-text;
+        font-size: 1.25vw;
+        writing-mode: vertical-lr;
+        text-decoration: none;
+        text-orientation: sideways-right;
+      }
+    }
+  }
+}

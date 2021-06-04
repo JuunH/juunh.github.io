@@ -1,0 +1,31 @@
+@mixin tablet {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+//  Flex Displays
+%display-flex {
+  display: flex;
+}
+%display-flex-center {
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+
+//  Grid Displays
+%display-grid {
+  display: grid;
+}
+%display-grid-center {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}

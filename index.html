@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="Javascript/scripts.js" defer></script>
+    <script src="js/scripts.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="Resources/Images/favicon.jpeg"/>
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Nicholas' Portfolio</title>
 </head>
-<body class="alltext background">
-    <nav class="background">
-        <a id="namemobile" class="pagename" href="index.html">NH</a>
-        <a id="namedesktop" class="pagename" href="index.html">Nicholas Ho</a>
-        <img id="menuicon" src="Resources/icons/Menu Icon.svg" alt="Menu Icon">
+<body>
+    <nav>
+        <div class="nav container-nav">
+            <a id="name" href="index.html">Nicholas Ho</a>
+            <ul>
+                <li>
+                    <a href="#" class="link">About</a>
+                </li>
+                <li>
+                    <a href="#" class="link">Work</a>
+                </li>
+                <li>
+                    <a href="#" class="link">Gallery</a>
+                </li>
+            </ul>
+            <div class="menu-icon">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </div>
     </nav>
-    <div id="welcome" class="fadein gridCenter">
-        <h2 class="title">Hi, I'm <span>Nicholas.</span></h2>
-        <p class="text">A college student aspiring to enter the Computer Science or IT sector.</p>
-        <img id="pp" class="shadow bradius" src="Resources/Images/PP Mobile.jpeg" alt="Picture of Nicholas">
-        <p class="text">Learn more about me</p>
-        <img id="arrow" src="/Resources/icons/arrow.svg" alt="Arrow indicator">
-    </div>
-    <div id="list" class="fadein gridCenter">
-        <div class="card shadow bradius" onclick="location.href = 'about.html';">
-            <img src="Resources/Images/CP1.jpeg" alt="Nicholas">
-            <h2>About Me <span>></span></h2>
-            <p>Find my CV here and see what I'm currently doing and my future goals.</p>
+    <main>
+        <div class="landing">
+            <div>
+                <h1>Portfolio</h1>
+                <p>Hi, I'm a student heading into Software Engineering</p>
+            </div>
+            <div>
+                <img src="resources/Images/p-2.jpeg" alt="">
+                <p>Available for work.</p>
+                <ul>
+                    <li>
+                        <a href="#" class="link-contacts">Email</a>
+                    </li>
+                    <li>
+                        <a href="#" class="link-contacts">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="#" class="link-contacts">CV</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="card shadow bradius" onclick="location.href = 'projects.html';">
-            <img src="Resources/Images/CP2.png" alt="Python code">
-            <h2>Projects <span>></span></h2>
-            <p>Look through the projects I'm working on to practise my skills and develop my understanding.</p>
-        </div>
-        <div class="card shadow bradius" onclick="location.href = 'experience.html';">
-            <img src="Resources/Images/CP3.jpg" alt="Certificate">
-            <h2>Experience <span>></span></h2>
-            <p>See my past education, course completions, professional certifications, and work experience.</p>
-        </div>
-        <div class="card shadow bradius" onclick="location.href = 'gallery.html';">
-            <img src="Resources/Images/CP4.jpeg" alt="Empty Tunnel">
-            <h2>Gallery <span>></span></h2>
-            <p>Explore my gallery of personally shot and editied photos that I do for a hobby.</p>
-        </div>
-    </div>
-    <ul id="options" class="background gridCenter">
-        <li class="menu"><a href="index.html">Home</a></li>
-        <li class="menu"><a href="about.html">About</a></li>
-        <li class="menu"><a href="projects.html">Projects</a></li>
-        <li class="menu"><a href="experience.html">Experience</a></li>
-        <li class="menu"><a href="gallery.html">Gallery</a></li>
-    </ul>
+    </main>
 </body>
 </html>

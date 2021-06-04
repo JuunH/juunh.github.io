@@ -1,0 +1,23 @@
+$colours: (
+  1: #434343,
+  2: #ffffff,
+  3: #c53838,
+  4: #eeeeee,
+);
+
+$gradients: (
+  1: #272729a1,
+);
+
+@function c($color-name) {
+  @return map-get($colours, $color-name);
+}
+
+@function g($color-name) {
+  @return map-get($gradients, $color-name);
+}
+
+//  Text colour
+%colour-text {
+  color: c(1);
+}
