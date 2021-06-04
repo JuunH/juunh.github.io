@@ -134,8 +134,8 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #eeeeee), color-stop(1%, transparent)) 1px 0, #ffffff;
-  background: linear-gradient(90deg, #eeeeee 1%, transparent 1%) 1px 0, #ffffff;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #eeeeee80), color-stop(1%, transparent)) 1px 0, #ffffff;
+  background: linear-gradient(90deg, #eeeeee80 1%, transparent 1%) 1px 0, #ffffff;
   background-size: 16.66vw 1px;
 }
 
@@ -273,7 +273,7 @@ main {
   -ms-grid-column: 1;
   grid-column: 1;
   margin-top: 1rem;
-  font-size: 1.25vw;
+  font-size: 1vw;
 }
 
 .landing div:nth-child(2) ul {
@@ -300,7 +300,7 @@ main {
 }
 
 .landing div:nth-child(2) ul a {
-  font-size: 1.25vw;
+  font-size: 1vw;
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;

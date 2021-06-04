@@ -108,7 +108,7 @@ main {
       justify-self: end;
       grid-column: 1;
       margin-top: 1rem;
-      font-size: 1.25vw;
+      font-size: 1vw;
     }
     ul {
       grid-row: 1;
@@ -123,7 +123,7 @@ main {
       }
       a {
         @extend %colour-text;
-        font-size: 1.25vw;
+        font-size: 1vw;
         writing-mode: vertical-lr;
         text-decoration: none;
         text-orientation: sideways-right;
