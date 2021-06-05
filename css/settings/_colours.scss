@@ -9,6 +9,8 @@ $gradients: (
   1: #272729a1,
 );
 
+// ------------------------------
+
 @function c($color-name) {
   @return map-get($colours, $color-name);
 }
@@ -17,7 +19,14 @@ $gradients: (
   @return map-get($gradients, $color-name);
 }
 
+// ------------------------------
+
 //  Text colour
 %colour-text {
   color: c(1);
+}
+
+//  Background colour
+%colour-background {
+  background-color: c(2);
 }

@@ -10,6 +10,8 @@
   }
 }
 
+// ------------------------------
+
 //  Flex Displays
 %display-flex {
   display: flex;
@@ -19,6 +21,8 @@
   place-content: center;
   align-items: center;
 }
+
+// ------------------------------
 
 //  Grid Displays
 %display-grid {

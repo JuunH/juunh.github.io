@@ -1,5 +1,7 @@
 @use 'colours';
 
+// ------------------------------
+
 //  Menu Icon
 .menu-icon {
   justify-self: end;
@@ -36,9 +38,14 @@
   }
 }
 
+// ------------------------------
+
 //  Links
 %link {
+  @extend %colour-text;
   position: relative;
+  width: max-content;
+  text-decoration: none;
   &::after {
     content: "";
     position: absolute;
@@ -76,6 +83,13 @@
     transform: translateX(-5px);
   }
 }
+.link-list {
+  width: max-content;
+  height: max-content;
+  list-style: none;
+}
+
+// ------------------------------
 
 //  Custom Border
 %border {
@@ -86,6 +100,8 @@
     background: c(1);
   }
 }
+
+// ------------------------------
 
 //  A literal Line
 .line {
@@ -98,5 +114,53 @@
   }
   &.two {
     margin-top: 35vh;
+  }
+}
+
+// ------------------------------
+
+//  Text Styles
+.text-name {
+  @extend %transition;
+  justify-self: start;
+  font-size: 32px;
+  font-weight: 600;
+}
+.text-nav-desktop {
+  font-size: 16px;
+}
+.text-nav-mobile {
+  font-size: 8vw;
+}
+.text-caption {
+  font-size: 3.5vw;
+  @include desktop {
+    font-size: 1vw;
+  }
+}
+p {
+  @extend %colour-text;
+  font-size: 5vw;
+  line-height: 1.5;
+  @include desktop {
+    font-size: 1.5vw;
+  }
+}
+h1 {
+  @extend %colour-text;
+  font-size: 15vw;
+  @include desktop {
+    font-size: 6vw;
+  }
+}
+
+// ------------------------------
+
+//  Backgrounds
+%background-stripe {
+  background: linear-gradient(90deg, c(4) 1%, transparent 1%) 1px 0, c(2);
+  background-size: 20vw 2px;
+  @include desktop {
+    background-size: 16.66vw 1px;
   }
 }
