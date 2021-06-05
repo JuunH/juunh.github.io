@@ -14,7 +14,11 @@ body {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(90deg, c(4) 1%, transparent 1%) 1px 0, c(2);
-  background-size: 16.66vw 1px;
+  background-size: 20vw 2px;
+  @include desktop {
+    background: linear-gradient(90deg, c(4) 1%, transparent 1%) 1px 0, c(2);
+    background-size: 16.66vw 1px;
+  }
 }
 
 nav {
