@@ -1,7 +1,7 @@
 //  Menu Icon Function  //
 
 const icon = document.querySelector(".menu-icon");
-const options = document.getElementById('options');
+const options = document.getElementById('nav-mobile');
 
 icon.addEventListener("click", () => {
   icon.classList.toggle("clicked");
