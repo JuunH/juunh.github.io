@@ -86,3 +86,17 @@
     background: c(1);
   }
 }
+
+//  A literal Line
+.line {
+  width: 2px;
+  height: 30vh;
+  justify-self: center;
+  background-color: c(1);
+  &.one {
+    margin-top: 15vh;
+  }
+  &.two {
+    margin-top: 35vh;
+  }
+}
