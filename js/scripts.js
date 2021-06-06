@@ -10,7 +10,7 @@ icon.addEventListener("click", () => {
   //  Play animation to change menu icon state.
   icon.classList.toggle("clicked");
   //  Display the mobile navigation menu.
-  options.classList.toggle("active");
+  options.classList.toggle("show");
 });
 
 
@@ -33,6 +33,9 @@ function switchElements(element) {
     //  Hide the current active element.
     activeElement[i].classList.toggle('active')
   }
+  //  Toggle menu icon state and hide mobile nav ( From Prev Function )
+  icon.classList.toggle("clicked");
+  options.classList.toggle("show");
   //  Put received page attribute to showElement.
   let showElement = document.getElementById(element)
   //  Show the element with the input atrribute name.
