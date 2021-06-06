@@ -2,3 +2,69 @@
 %transition {
   transition: 250ms;
 }
+
+// ------------------------------
+
+//  Fade in animation
+@keyframes fadein {
+  0% {
+    transform: translateY(-2vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadein-up {
+  0% {
+    opacity: 0;
+    transform: translateY(2.5vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadein-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadein-left {
+  0% {
+    opacity: 0;
+    transform: translateX(3vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadein {
+  animation: fadein 500ms linear 0.25ms 1 alternate both;
+}
+
+.fadein-up {
+  animation: fadein-up 750ms cubic-bezier(0.37, 1.07, 0.51, 1.31) 0.25ms 1
+    alternate both;
+}
+
+.fadein-right {
+  animation: fadein-right 750ms cubic-bezier(0.37, 1.07, 0.51, 1.31) 1 alternate
+    both;
+}
+
+.fadein-left {
+  animation: fadein-left 750ms cubic-bezier(0.37, 1.07, 0.51, 1.31) 1 alternate
+    both;
+}

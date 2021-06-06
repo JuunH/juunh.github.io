@@ -50,6 +50,26 @@ nav {
     display: inline;
     margin-left: 1.5rem;
   }
+  li:nth-child(1) {
+    a {
+      animation-delay: 2.75s;
+    }
+  }
+  li:nth-child(2) {
+    a {
+      animation-delay: 2.85s;
+    }
+  }
+  li:nth-child(3) {
+    a {
+      animation-delay: 2.95s;
+    }
+  }
+  li:nth-child(4) {
+    a {
+      animation-delay: 3.05s;
+    }
+  }
 }
 
 #nav-mobile {
@@ -65,9 +85,6 @@ nav {
   &.active {
     right: 0;
   }
-  @include desktop {
-    display: none;
-  }
   ul {
     margin: 0 1rem 15vh 0;
     align-self: end;
@@ -75,6 +92,10 @@ nav {
   }
   li {
     margin: 2rem 0 0 0;
+  }
+  //  ----
+  @include desktop {
+    display: none;
   }
 }
 
@@ -109,6 +130,10 @@ main {
   //  ----
   h1 {
     transform: translateX(-5px);
+    animation-delay: 0.25s;
+  }
+  p {
+    animation-delay: 1.25s;
   }
   //  ----
   @include desktop {
@@ -129,11 +154,13 @@ main {
   //  ----
   img {
     width: 100%;
+    animation-delay: 2.25s;
   }
   p {
     justify-self: end;
     grid-column: 1;
     margin-top: 1rem;
+    animation-delay: 2.8s;
   }
   ul {
     grid-row: 1;
@@ -143,12 +170,27 @@ main {
       margin-top: 1rem;
       margin-left: 0.5rem;
     }
-    a {
-      @extend %colour-text;
-      text-decoration: none;
-      writing-mode: vertical-rl;
-      text-orientation: sideways-right;
+    li:nth-child(1) {
+      a {
+        animation-delay: 2.35s;
+      }
     }
+    li:nth-child(2) {
+      a {
+        animation-delay: 2.45s;
+      }
+    }
+    li:nth-child(3) {
+      a {
+        animation-delay: 2.55s;
+      }
+    }
+  }
+  a {
+    @extend %colour-text;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
   }
   //  ----
   @include desktop {
