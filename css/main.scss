@@ -155,6 +155,12 @@ main {
   img {
     width: 100%;
     animation-delay: 2.25s;
+    @include tablet {
+      width: 60vw;
+    }
+    @include desktop {
+      width: 100%;
+    }
   }
   p {
     justify-self: end;
@@ -193,10 +199,15 @@ main {
     text-orientation: sideways-right;
   }
   //  ----
+  @include tablet {
+    grid-template-columns: max-content max-content;
+    transform: translateX(6vw);
+  }
   @include desktop {
     grid-template-columns: 26vw max-content;
     justify-self: start;
     margin-left: 4vw;
     width: auto;
+    transform: none;
   }
 }

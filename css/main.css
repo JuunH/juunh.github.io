@@ -536,6 +536,18 @@ main {
           animation-delay: 2.25s;
 }
 
+@media (min-width: 700px) {
+  .landing div:nth-child(2) img {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .landing div:nth-child(2) img {
+    width: 100%;
+  }
+}
+
 .landing div:nth-child(2) p {
   -ms-grid-column-align: end;
       justify-self: end;
@@ -584,6 +596,16 @@ main {
   text-orientation: sideways-right;
 }
 
+@media (min-width: 700px) {
+  .landing div:nth-child(2) {
+    -ms-grid-columns: max-content max-content;
+        grid-template-columns: -webkit-max-content -webkit-max-content;
+        grid-template-columns: max-content max-content;
+    -webkit-transform: translateX(6vw);
+            transform: translateX(6vw);
+  }
+}
+
 @media (min-width: 1000px) {
   .landing div:nth-child(2) {
     -ms-grid-columns: 26vw max-content;
@@ -593,6 +615,8 @@ main {
         justify-self: start;
     margin-left: 4vw;
     width: auto;
+    -webkit-transform: none;
+            transform: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
