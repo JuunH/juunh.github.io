@@ -50,3 +50,7 @@ for (var i = 0 ; i < everyImg.length; i++) {
       displayClickedImage(pictureID);
   })
 }
+
+
+// ----------------------------------------------------------
+
