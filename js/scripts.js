@@ -17,6 +17,44 @@ icon.addEventListener("click", () => {
 // ----------------------------------------------------------
 
 
+//  Change page function
+
+
+//  Get all link elements.
+const links = document.getElementsByClassName('link')
+console.log(links)
+
+//  Main switch page function.
+function switchElements(element) {
+  //  Get current active page.
+  let activeElement = document.getElementsByClassName('active')
+  //  For every active element ( If more than one ).
+  for (var i = 0 ; i < activeElement.length; i++) {
+    //  Hide the current active element.
+    activeElement[i].classList.toggle('active')
+  }
+  //  Put received page attribute to showElement.
+  let showElement = document.getElementById(element)
+  //  Show the element with the input atrribute name.
+  showElement.classList.toggle('active')
+}
+
+//  For every link element.
+for (var i = 0 ; i < links.length; i++) {
+  //  Get the set page name attribute from the link element.
+  let pagename = links[i].getAttribute('page')
+  //  Add an event listener with the attribute as an arguement.
+  links[i].addEventListener('click', () => {
+    //  Execute the function on click.
+    switchElements(pagename)
+  })
+}
+
+
+
+// ----------------------------------------------------------
+
+
 //  Gallery Lightbox Function
 
 
