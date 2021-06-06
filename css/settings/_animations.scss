@@ -58,8 +58,8 @@
 }
 
 .fadein-up {
-  animation: fadein-up 750ms cubic-bezier(0.37, 1.07, 0.51, 1.31) 0.25ms 1
-    alternate both;
+  animation: fadein-up 750ms cubic-bezier(0.37, 1.07, 0.51, 1.31) 1 alternate
+    both;
 }
 
 .fadein-right {
