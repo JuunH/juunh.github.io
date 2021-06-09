@@ -5,7 +5,6 @@
   margin: 0;
   scroll-behavior: smooth;
   font-family: ff(primary);
-  letter-spacing: 1px;
 }
 
 // ------------------------------
@@ -99,14 +98,6 @@ nav {
   @include desktop {
     display: none;
   }
-}
-
-// ------------------------------
-
-main {
-  @extend %display-grid;
-  grid-template-columns: repeat(6, 1fr);
-  width: 100%;
 }
 
 // ------------------------------
@@ -216,6 +207,8 @@ main {
 // ------------------------------
 
 .container-page {
+  @extend %display-grid-center;
+  justify-self: center;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -229,7 +222,7 @@ main {
 }
 
 .container {
-  grid-column: 1 / span 4;
+  @extend %display-grid;
   //  ----
   h1,
   p {
@@ -243,5 +236,11 @@ main {
     width: 100%;
     min-height: 100vh;
   }
-  //  ----
+  &.description {
+    @extend %display-grid;
+    align-content: center;
+    width: 100%;
+    max-width: 1080px;
+    height: 100vh;
+  }
 }
