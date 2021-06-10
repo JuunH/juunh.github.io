@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-.link, .link-contacts, p, h1, h2, .landing div:nth-child(2) a {
+.link, .link-contacts, h1, h2, p, .landing div:nth-child(2) a {
   color: #434343;
 }
 
@@ -258,6 +258,8 @@ body, #nav-mobile, .landing, .landing div:nth-child(2), .container, .container.d
   font-weight: 600;
   -webkit-animation-delay: 2.65s;
           animation-delay: 2.65s;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
 }
 
 .text-nav-desktop {
@@ -266,6 +268,16 @@ body, #nav-mobile, .landing, .landing div:nth-child(2), .container, .container.d
 
 .text-nav-mobile {
   font-size: 8vw;
+}
+
+.text-landing {
+  font-size: 5vw;
+}
+
+@media (min-width: 1000px) {
+  .text-landing {
+    font-size: 1.55vw;
+  }
 }
 
 .text-caption {
@@ -282,35 +294,33 @@ body, #nav-mobile, .landing, .landing div:nth-child(2), .container, .container.d
   margin-top: 8vw;
 }
 
-p {
-  font-size: 5vw;
-  line-height: 1.75;
-}
-
-@media (min-width: 1000px) {
-  p {
-    font-size: 1.5vw;
-  }
-}
-
 h1 {
   font-size: 15vw;
 }
 
 @media (min-width: 1000px) {
   h1 {
-    font-size: 6vw;
+    font-size: 4.75vw;
   }
 }
 
 h2 {
   font-size: 5vw;
-  line-height: 1.5;
 }
 
 @media (min-width: 1000px) {
   h2 {
-    font-size: 1.5vw;
+    font-size: 1.55vw;
+  }
+}
+
+p {
+  font-size: 3.5vw;
+}
+
+@media (min-width: 1000px) {
+  p {
+    font-size: 1vw;
   }
 }
 
@@ -347,6 +357,7 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-family: Helvetica;
+  line-height: 1.5;
 }
 
 body {
@@ -610,6 +621,7 @@ nav {
 .container-page {
   -ms-grid-column-align: center;
       justify-self: center;
+  justify-items: center;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -632,19 +644,23 @@ nav {
 .container.description {
   margin-top: 20vh;
   width: 100%;
-  max-width: 800px;
+  max-width: 90vw;
   height: 100vh;
+}
+
+@media (min-width: 1000px) {
+  .container.description {
+    max-width: 800px;
+  }
 }
 
 .card h2 {
   margin: 4rem 0 1rem 0;
-  line-height: 1;
 }
 
 .card ul,
 .card h3,
 .card p {
-  font-size: 1vw;
   margin-left: 2rem;
   color: #434343;
 }

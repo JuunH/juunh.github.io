@@ -120,6 +120,7 @@
   font-size: 32px;
   font-weight: 600;
   animation-delay: 2.65s;
+  transform: translateY(3px);
 }
 
 .text-nav-desktop {
@@ -130,10 +131,17 @@
   font-size: 8vw;
 }
 
-.text-caption {
-  font-size: 3.5vw;
+.text-landing {
+  font-size: fsm(h2);
   @include desktop {
-    font-size: 1vw;
+    font-size: fsd(h2);
+  }
+}
+
+.text-caption {
+  font-size: fsm(p);
+  @include desktop {
+    font-size: fsd(p);
   }
 }
 
@@ -141,29 +149,27 @@
   margin-top: 8vw;
 }
 
-p {
-  @extend %colour-text;
-  font-size: 5vw;
-  line-height: 1.75;
-  @include desktop {
-    font-size: 1.5vw;
-  }
-}
-
 h1 {
   @extend %colour-text;
-  font-size: 15vw;
+  font-size: fsm(h1);
   @include desktop {
-    font-size: 6vw;
+    font-size: fsd(h1);
   }
 }
 
 h2 {
   @extend %colour-text;
-  font-size: 5vw;
-  line-height: 1.5;
+  font-size: fsm(h2);
   @include desktop {
-    font-size: 1.5vw;
+    font-size: fsd(h2);
+  }
+}
+
+p {
+  @extend %colour-text;
+  font-size: fsm(p);
+  @include desktop {
+    font-size: fsd(p);
   }
 }
 

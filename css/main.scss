@@ -5,6 +5,7 @@
   margin: 0;
   scroll-behavior: smooth;
   font-family: ff(primary);
+  line-height: 1.5;
 }
 
 // ------------------------------
@@ -209,6 +210,7 @@ nav {
 .container-page {
   @extend %display-grid-center;
   justify-self: center;
+  justify-items: center;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -233,20 +235,21 @@ nav {
     @extend %display-grid;
     margin-top: 20vh;
     width: 100%;
-    max-width: 800px;
+    max-width: 90vw;
     height: 100vh;
+    @include desktop {
+      max-width: 800px;
+    }
   }
 }
 
 .card {
   h2 {
     margin: 4rem 0 1rem 0;
-    line-height: 1;
   }
   ul,
   h3,
   p {
-    font-size: 1vw;
     margin-left: 2rem;
     color: c(1);
   }

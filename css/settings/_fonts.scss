@@ -6,8 +6,28 @@ $fonts: (
   primary: Helvetica,
 );
 
+$fs-mobile: (
+  h1: 15vw,
+  h2: 5vw,
+  p: 3.5vw,
+);
+
+$fs-desktop: (
+  h1: 4.75vw,
+  h2: 1.55vw,
+  p: 1vw,
+);
+
 // ------------------------------
 
 @function ff($ff) {
   @return map-get($fonts, $ff);
+}
+
+@function fsm($fs) {
+  @return map-get($fs-mobile, $fs);
+}
+
+@function fsd($fs) {
+  @return map-get($fs-desktop, $fs);
 }
