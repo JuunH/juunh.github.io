@@ -165,9 +165,18 @@ h2 {
   }
 }
 
+h3 {
+  @extend %colour-text;
+  font-size: fsm(h3);
+  @include desktop {
+    font-size: fsd(h3);
+  }
+}
+
 p {
   @extend %colour-text;
   font-size: fsm(p);
+  line-height: 1.5;
   @include desktop {
     font-size: fsd(p);
   }

@@ -5,7 +5,6 @@
   margin: 0;
   scroll-behavior: smooth;
   font-family: ff(primary);
-  line-height: 1.5;
 }
 
 // ------------------------------
@@ -243,20 +242,18 @@ nav {
 }
 
 .card {
-  h2 {
-    margin: 4rem 0 1rem 0;
-  }
-  ul,
-  h3,
-  p {
-    margin-left: 2rem;
-    color: c(1);
-  }
   li {
     list-style: inside;
   }
+  h2 {
+    margin: 5vh 0;
+  }
   h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5vh;
+  }
+  h3,
+  p {
+    margin-left: 2vw;
   }
 }
 
@@ -269,9 +266,10 @@ nav {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 2px;
-    height: 100%;
-    opacity: 0.25;
+    width: 3px;
+    height: 94%;
     background: c(1);
+    border-radius: 4px;
+    opacity: 0.8;
   }
 }

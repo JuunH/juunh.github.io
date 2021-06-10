@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-.link, .link-contacts, h1, h2, p, .landing div:nth-child(2) a {
+.link, .link-contacts, h1, h2, h3, p, .landing div:nth-child(2) a {
   color: #434343;
 }
 
@@ -314,8 +314,19 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 4vw;
+}
+
+@media (min-width: 1000px) {
+  h3 {
+    font-size: 1.2vw;
+  }
+}
+
 p {
   font-size: 3.5vw;
+  line-height: 1.5;
 }
 
 @media (min-width: 1000px) {
@@ -357,7 +368,6 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-family: Helvetica;
-  line-height: 1.5;
 }
 
 body {
@@ -655,23 +665,21 @@ nav {
   }
 }
 
-.card h2 {
-  margin: 4rem 0 1rem 0;
-}
-
-.card ul,
-.card h3,
-.card p {
-  margin-left: 2rem;
-  color: #434343;
-}
-
 .card li {
   list-style: inside;
 }
 
+.card h2 {
+  margin: 5vh 0;
+}
+
 .card h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5vh;
+}
+
+.card h3,
+.card p {
+  margin-left: 2vw;
 }
 
 .indent {
@@ -685,9 +693,10 @@ nav {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px;
-  height: 100%;
-  opacity: 0.25;
+  width: 3px;
+  height: 94%;
   background: #434343;
+  border-radius: 4px;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=main.css.map */
