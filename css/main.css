@@ -621,7 +621,6 @@ nav {
 .container-page {
   -ms-grid-column-align: center;
       justify-self: center;
-  justify-items: center;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -642,10 +641,12 @@ nav {
 }
 
 .container.description {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   margin-top: 20vh;
   width: 100%;
   max-width: 90vw;
-  height: 100vh;
 }
 
 @media (min-width: 1000px) {

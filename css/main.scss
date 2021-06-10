@@ -210,7 +210,6 @@ nav {
 .container-page {
   @extend %display-grid-center;
   justify-self: center;
-  justify-items: center;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -233,10 +232,10 @@ nav {
   }
   &.description {
     @extend %display-grid;
+    align-self: start;
     margin-top: 20vh;
     width: 100%;
     max-width: 90vw;
-    height: 100vh;
     @include desktop {
       max-width: 800px;
     }
