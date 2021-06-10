@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-.link, .link-contacts, p, h1, .landing div:nth-child(2) a {
+.link, .link-contacts, p, h1, h2, .landing div:nth-child(2) a {
   color: #434343;
 }
 
@@ -251,22 +251,6 @@ body, #nav-mobile, .landing, .landing div:nth-child(2), .container, .container.d
   list-style: none;
 }
 
-.line {
-  width: 2px;
-  height: 30vh;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  background-color: #434343;
-}
-
-.line.one {
-  margin-top: 15vh;
-}
-
-.line.two {
-  margin-top: 35vh;
-}
-
 .text-name {
   -ms-grid-column-align: start;
       justify-self: start;
@@ -300,7 +284,7 @@ body, #nav-mobile, .landing, .landing div:nth-child(2), .container, .container.d
 
 p {
   font-size: 5vw;
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
 @media (min-width: 1000px) {
@@ -317,6 +301,33 @@ h1 {
   h1 {
     font-size: 6vw;
   }
+}
+
+h2 {
+  font-size: 5vw;
+  line-height: 1.5;
+}
+
+@media (min-width: 1000px) {
+  h2 {
+    font-size: 1.5vw;
+  }
+}
+
+.line {
+  width: 2px;
+  height: 30vh;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #434343;
+}
+
+.line.one {
+  margin-top: 15vh;
+}
+
+.line.two {
+  margin-top: 35vh;
 }
 
 body {
@@ -612,15 +623,6 @@ nav {
   opacity: 1;
 }
 
-.container h1,
-.container p {
-  margin-left: 4vw;
-}
-
-.container p {
-  margin-top: 2rem;
-}
-
 .container.full {
   margin: 0;
   width: 100%;
@@ -628,10 +630,47 @@ nav {
 }
 
 .container.description {
-  -ms-flex-line-pack: center;
-      align-content: center;
+  margin-top: 20vh;
   width: 100%;
-  max-width: 1080px;
+  max-width: 800px;
   height: 100vh;
+}
+
+.card h2 {
+  margin: 4rem 0 1rem 0;
+  line-height: 1;
+}
+
+.card ul,
+.card h3,
+.card p {
+  font-size: 1vw;
+  margin-left: 2rem;
+  color: #434343;
+}
+
+.card li {
+  list-style: inside;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.indent {
+  position: relative;
+}
+
+.indent::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  opacity: 0.25;
+  background: #434343;
 }
 /*# sourceMappingURL=main.css.map */

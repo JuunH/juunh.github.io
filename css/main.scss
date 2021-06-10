@@ -224,13 +224,6 @@ nav {
 .container {
   @extend %display-grid;
   //  ----
-  h1,
-  p {
-    margin-left: 4vw;
-  }
-  p {
-    margin-top: 2rem;
-  }
   &.full {
     margin: 0;
     width: 100%;
@@ -238,9 +231,45 @@ nav {
   }
   &.description {
     @extend %display-grid;
-    align-content: center;
+    margin-top: 20vh;
     width: 100%;
-    max-width: 1080px;
+    max-width: 800px;
     height: 100vh;
+  }
+}
+
+.card {
+  h2 {
+    margin: 4rem 0 1rem 0;
+    line-height: 1;
+  }
+  ul,
+  h3,
+  p {
+    font-size: 1vw;
+    margin-left: 2rem;
+    color: c(1);
+  }
+  li {
+    list-style: inside;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.indent {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    opacity: 0.25;
+    background: c(1);
   }
 }
