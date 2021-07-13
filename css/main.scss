@@ -123,9 +123,12 @@ nav {
   h1 {
     transform: translateX(-5px);
     animation-delay: 0.25s;
+    align-self: center;
   }
   p {
     animation-delay: 1.25s;
+    max-width: 84vw;
+    align-self: center;
   }
   //  ----
   @include desktop {
@@ -133,6 +136,10 @@ nav {
     margin-right: 1vw;
     width: max-content;
     transform: translateY(0);
+    h1,
+    p {
+      align-self: flex-start;
+    }
   }
 }
 

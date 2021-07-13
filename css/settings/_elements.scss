@@ -1,6 +1,8 @@
 @use 'colours';
 
+
 // ------------------------------
+
 
 //  Menu Icon
 .menu-icon {
@@ -41,7 +43,9 @@
   }
 }
 
+
 // ------------------------------
+
 
 //  Buttons
 .button-cta {
@@ -68,7 +72,9 @@
   border-color: c(3);
 }
 
+
 // ------------------------------
+
 
 //  Links
 a {
@@ -132,9 +138,12 @@ a {
 
 .link-hyperlink {
   color: c(3);
+  cursor: pointer;
 }
 
+
 // ------------------------------
+
 
 //  Custom Border
 %border {
@@ -146,7 +155,9 @@ a {
   }
 }
 
+
 // ------------------------------
+
 
 //  Text Styles
 .text-name {
@@ -154,6 +165,7 @@ a {
   justify-self:     start;
   font-size:        32px;
   font-weight:      600;
+  text-decoration:  none;
   animation-delay:  2.65s;
   transform:        translateY(3px);
 }
@@ -221,46 +233,9 @@ p {
   }
 }
 
-// ------------------------------
-
-//  Skill Pill
-
-.pill-list {
-  margin-bottom:    3vh;
-  list-style:       none;
-  li {
-    display: inline-block;
-  }
-}
-
-.pill {
-  margin-bottom:    1vh;
-  margin-right:     1vh;
-  padding:          1vh 0;
-  width:            24vw;
-  height:           max-content;
-  color:            c(1);
-  font-size:        fsm(pill);
-  font-weight:      600;
-  text-align:       center;
-  border-radius:    25px;
-  border:           2px solid c(1);
-  transition:       250ms;
-  @include desktop {
-    margin-bottom:    1vh;
-    padding:          1vh 0;
-    width:            8vw;
-    font-size:        fsd(pill);
-  }
-}
-
-.pill:hover {
-  color:            c(2);
-  background-color: c(3);
-  border-color:     c(3);
-}
 
 // ------------------------------
+
 
 .line {
   width:            2px;
@@ -275,7 +250,9 @@ p {
   }
 }
 
+
 // ------------------------------
+
 
 //  Backgrounds
 %background-stripe {

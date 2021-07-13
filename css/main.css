@@ -290,6 +290,7 @@ a {
 
 .link-hyperlink {
   color: #c53838;
+  cursor: pointer;
 }
 
 .text-name {
@@ -297,6 +298,7 @@ a {
       justify-self: start;
   font-size: 32px;
   font-weight: 600;
+  text-decoration: none;
   -webkit-animation-delay: 2.65s;
           animation-delay: 2.65s;
   -webkit-transform: translateY(3px);
@@ -378,48 +380,6 @@ p {
   p {
     font-size: 1vw;
   }
-}
-
-.pill-list {
-  margin-bottom: 3vh;
-  list-style: none;
-}
-
-.pill-list li {
-  display: inline-block;
-}
-
-.pill {
-  margin-bottom: 1vh;
-  margin-right: 1vh;
-  padding: 1vh 0;
-  width: 24vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  color: #434343;
-  font-size: 2.5vw;
-  font-weight: 600;
-  text-align: center;
-  border-radius: 25px;
-  border: 2px solid #434343;
-  -webkit-transition: 250ms;
-  transition: 250ms;
-}
-
-@media (min-width: 1000px) {
-  .pill {
-    margin-bottom: 1vh;
-    padding: 1vh 0;
-    width: 8vw;
-    font-size: 0.75vw;
-  }
-}
-
-.pill:hover {
-  color: #ffffff;
-  background-color: #c53838;
-  border-color: #c53838;
 }
 
 .line {
@@ -593,11 +553,18 @@ nav {
           transform: translateX(-5px);
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .landing div:nth-child(1) p {
   -webkit-animation-delay: 1.25s;
           animation-delay: 1.25s;
+  max-width: 84vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media (min-width: 1000px) {
@@ -610,6 +577,11 @@ nav {
     width: max-content;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+  .landing div:nth-child(1) h1,
+  .landing div:nth-child(1) p {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 }
 

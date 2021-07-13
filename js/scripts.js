@@ -34,6 +34,16 @@ function switchElements(element) {
   showElement.classList.toggle('active')
 }
 
+//  Change page without displaying mobile nav menu.
+function hyperlinkSwitch(element) {
+  let activeElement = document.getElementsByClassName('active')
+  for (var i = 0 ; i < activeElement.length; i++) {
+    activeElement[i].classList.toggle('active')
+  }
+  let showElement = document.getElementById(element)
+  showElement.classList.toggle('active')
+}
+
 
 for (var i = 0 ; i < links.length; i++) {
   let pagename = links[i].getAttribute('page')
