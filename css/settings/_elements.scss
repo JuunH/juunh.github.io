@@ -43,7 +43,38 @@
 
 // ------------------------------
 
+//  Buttons
+.button-cta {
+  @extend %colour-text;
+  align-self: center;
+  margin-top: 4vh;
+  padding: 1.5vh 6vw;
+  width: max-content;
+  border: solid c(1);
+  font-size: fsm(h3);
+  transition: 250ms;
+  cursor: pointer;
+  @include desktop {
+    align-self: start;
+    margin: 1.5rem 0;
+    padding: 1.5vh 2vw;
+    font-size: fsd(h3);
+  }
+}
+
+.button-cta:hover {
+  color: c(4);
+  background-color: c(3);
+  border-color: c(3);
+}
+
+// ------------------------------
+
 //  Links
+a {
+  color: c(1);
+}
+
 %link {
   @extend %colour-text;
   position: relative;
@@ -99,15 +130,19 @@
   list-style: none;
 }
 
+.link-hyperlink {
+  color: c(3);
+}
+
 // ------------------------------
 
 //  Custom Border
 %border {
   &::after {
-    content: "";
-    position: absolute;
-    margin: auto;
-    background: c(1);
+    content:        "";
+    position:       absolute;
+    margin:         auto;
+    background:     c(1);
   }
 }
 
@@ -115,12 +150,12 @@
 
 //  Text Styles
 .text-name {
-  @extend %transition;
-  justify-self: start;
-  font-size: 32px;
-  font-weight: 600;
-  animation-delay: 2.65s;
-  transform: translateY(3px);
+  @extend           %transition;
+  justify-self:     start;
+  font-size:        32px;
+  font-weight:      600;
+  animation-delay:  2.65s;
+  transform:        translateY(3px);
 }
 
 .text-nav-desktop {
@@ -149,6 +184,10 @@
   margin-top: 8vw;
 }
 
+.date {
+  opacity: 0.5;
+}
+
 h1 {
   @extend %colour-text;
   font-size: fsm(h1);
@@ -175,8 +214,8 @@ h3 {
 
 p {
   @extend %colour-text;
-  font-size: fsm(p);
-  line-height: 1.5;
+  font-size:        fsm(p);
+  line-height:      1.35;
   @include desktop {
     font-size: fsd(p);
   }
@@ -184,16 +223,55 @@ p {
 
 // ------------------------------
 
+//  Skill Pill
+
+.pill-list {
+  margin-bottom:    3vh;
+  list-style:       none;
+  li {
+    display: inline-block;
+  }
+}
+
+.pill {
+  margin-bottom:    1vh;
+  margin-right:     1vh;
+  padding:          1vh 0;
+  width:            24vw;
+  height:           max-content;
+  color:            c(1);
+  font-size:        fsm(pill);
+  font-weight:      600;
+  text-align:       center;
+  border-radius:    25px;
+  border:           2px solid c(1);
+  transition:       250ms;
+  @include desktop {
+    margin-bottom:    1vh;
+    padding:          1vh 0;
+    width:            8vw;
+    font-size:        fsd(pill);
+  }
+}
+
+.pill:hover {
+  color:            c(2);
+  background-color: c(3);
+  border-color:     c(3);
+}
+
+// ------------------------------
+
 .line {
-  width: 2px;
-  height: 30vh;
-  justify-self: center;
+  width:            2px;
+  height:           30vh;
+  justify-self:     center;
   background-color: c(1);
   &.one {
-    margin-top: 15vh;
+    margin-top:     15vh;
   }
   &.two {
-    margin-top: 35vh;
+    margin-top:     35vh;
   }
 }
 
@@ -201,8 +279,8 @@ p {
 
 //  Backgrounds
 %background-stripe {
-  background: linear-gradient(90deg, c(4) 1%, transparent 1%) 1px 0, c(2);
-  background-size: 20vw 2px;
+  background:       linear-gradient(90deg, c(4) 1%, transparent 1%) 1px 0, c(2);
+  background-size:  20vw 2px;
   @include desktop {
     background-size: 16.66vw 1px;
   }
