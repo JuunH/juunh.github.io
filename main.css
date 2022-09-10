@@ -8,17 +8,7 @@ h1 {
 
 @media (min-width: 1000px) {
   h1 {
-    font-size: 48px;
-  }
-}
-
-h4 {
-  font-size: 17px;
-}
-
-@media (min-width: 1000px) {
-  h4 {
-    font-size: 20px;
+    font-size: 42px;
   }
 }
 
@@ -26,9 +16,15 @@ p {
   font-size: 14px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
   p {
     font-size: 17px;
+  }
+}
+
+@media (min-width: 700px) {
+  p {
+    font-size: 20px;
   }
 }
 
@@ -251,12 +247,6 @@ Fade in classes .fadein {
   text-decoration: none;
 }
 
-@media (min-width: 1000px) {
-  .text-name {
-    font-size: 36px;
-  }
-}
-
 .text-nav-desktop {
   font-size: 18px;
 }
@@ -347,8 +337,8 @@ main {
 .container-page.active {
   z-index: 1;
   opacity: 1;
-  -webkit-transition-delay: .18s;
-          transition-delay: .18s;
+  -webkit-transition-delay: .20s;
+          transition-delay: .20s;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
@@ -364,6 +354,8 @@ main {
   .container-page {
     -ms-grid-columns: auto (minmax(0, 1fr))[8] auto;
         grid-template-columns: auto repeat(8, minmax(0, 1fr)) auto;
+    -webkit-column-gap: 36px;
+            column-gap: 36px;
   }
 }
 
@@ -591,9 +583,26 @@ nav {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-column: 2 / 6;
+  -ms-grid-column-align: center;
+      justify-self: center;
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+}
+
+@media (min-width: 700px) {
+  .text-container {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .text-container {
+    max-width: 1080px;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 6;
+    grid-column: 3 / 9;
+  }
 }
 /*# sourceMappingURL=main.css.map */
