@@ -39,7 +39,7 @@ function loadPage(url, selector) {
         addLinkListener(links);
 
         currentContent.classList.remove('hidden');
-      }, 250); // 250ms timeout
+      }, 300); // 300ms timeout
     })
 
     .catch(error => console.error(error));
