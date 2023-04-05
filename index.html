@@ -6,65 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=”robots” content="index, nofollow">
-    <link rel="icon" type="image/png" href="Resources/Images/favicon.jpeg"/>
+    <!-- <link rel="icon" type="image/png" href="resources/Images/favicon.jpeg"/> -->
     <link rel="stylesheet" href="main.css">
     <title>Nicholas Ho</title>
 </head>
 <body>
+    <div class="border-container">
+        <div class="border"></div>
+    </div>
     <nav>
-        <div class="nav fadein-up">
-            <a class="text-name fadein-up" href="#Home" page='home' onclick="hyperlinkSwitch('home')">Nicholas Ho</a>
-            <ul class="link-list">
-                <li><a href="#Home" class="link text-nav-desktop fadein-up" page='home'>Home</a></li>
-                <li><a href="#Contact" class="link text-nav-desktop fadein-up" page='contact'>Contact</a></li>
-                <li><a href="#Photo Collection" class="link text-nav-desktop fadein-up" page='gallery'>Photo Collection</a></li>
+        <div class="nav">
+            <a href="index.html"><h3>Nicholas Ho</h3></a>
+            <ul class="nav-desktop">
+                <li><a href="index.html" class="link nav-hover">Home</a></li>
+                <li><a href="contacts.html" class="link nav-hover">Contact</a></li>
+                <li><a href="gallery.html" class="link nav-hover">Photo Collection</a></li>
             </ul>
-            <div class="menu-icon fadein">
+            <div class="menu-icon">
                 <span class="one"></span>
                 <span class="two"></span>
             </div>
         </div>
-        <div id="nav-mobile">
-            <div class="line one"></div>
-            <div class="line two"></div>
-            <ul class="link-list">
-                <li><a href="#Home" class="link text-nav-mobile" page='home'>Home</a></li>
-                <li><a href="#Contact" class="link text-nav-mobile" page='contact'>Contact</a>
-                </li>
-                <li><a href="#Photo Collection" class="link text-nav-mobile" page='gallery'>Photo Collection</a>
-                </li>
+
+        <div id="nav-mobile" class="nav-mobile">
+            <div class="vertical-line one"></div>
+            <div class="vertical-line two"></div>
+            <ul>
+                <li><a href="index.html" class="link nav-hover">Home</a></li>
+                <li><a href="contacts.html" class="link nav-hover">Contact</a></li>
+                <li><a href="gallery.html" class="link nav-hover">Photo Collection</a></li>
             </ul>
         </div>
     </nav>
     <main>
-        <div id="home" class="container-page home active">
-            <div class="hometext-container">
-                <h1 class="fadein-right">Undergradute</h1>
-                <p class="fadein-up">BSc Software Engineering - Yr 2 <br>
-                Photography <br>
-                Badminton</p>
-            </div>
-            <span class="button-cta-home fadein-up" onclick="hyperlinkSwitch('gallery')">View Gallery</span>
-            <img srcset="resources/Images/sg-low.jpg 800w,
-                        resources/Images/sg-med.jpg 2000w,
-                        resources/Images/sg-high.jpg 4000w" src="resources/Images/sg-med.jpg" alt="Sky Garden Building" class="homepic fadein-up">
-        </div>
-        <div id="contact" class="container-page">
-            <div class="text-container">
-                <h1>Contact</h1>
-                <p>Instagram Photo Account:</p>
-            </div>
-            <div class="container">
-                <span class="button-cta fadein-up" onClick="parent.open('https://www.instagram.com/jinghun_')">Visit Photography Profile</span>
-            </div>
-            <div class="text-container">
-                <p><i>Wow so empty...</i></p>
-            </div>
-        </div>
-        <div id="gallery" class="container-page">
-            <div class="text-container">
-                <h1>Photo Collections</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt possimus autem provident alias modi quisquam repellat voluptate nisi quo nobis iusto culpa, facilis nostrum laudantium molestias sint quaerat inventore ducimus libero quidem exercitationem aperiam. Obcaecati, accusamus esse. Accusamus tenetur ipsum, deserunt magnam maxime incidunt quidem magni? Velit assumenda temporibus cupiditate, ea aperiam libero laboriosam deserunt saepe molestias natus atque esse dolores perspiciatis? Consequatur hic neque minus, alias facere cupiditate perferendis repudiandae, assumenda dolorum error veniam officia perspiciatis ad, adipisci earum. Minus rerum deserunt, perspiciatis laboriosam ab voluptates aut vitae libero eos obcaecati. Ipsum ut reiciendis iusto veniam ipsam deserunt vitae?</p>
+        <div class="gr-container horizontal">
+            <div class="adaptive-img" style="background-image: url('resources/img.jpg');"></div>
+            <div class="flex-end">
+                <h1>Undergraduate</h1>
+                <p>
+                    BSc Software Engineering<br>
+                    Photography <br>
+                    Badminton
+                </p>
+                <a href="contacts.html" class="link button">Contact Me</a>
             </div>
         </div>
     </main>
