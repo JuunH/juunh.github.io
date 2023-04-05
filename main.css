@@ -21,13 +21,13 @@
 }
 
 .flex-end {
-  padding: 1rem 0;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .flex-end a {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 @media (min-width: 700px) {
   .flex-end {
@@ -61,8 +61,8 @@
 .menu-icon {
   position: relative;
   z-index: 2;
-  height: 15px;
-  width: 20px;
+  height: 20px;
+  width: 30px;
   justify-self: end;
   align-self: center;
   transition: 250ms;
@@ -71,7 +71,7 @@
 .menu-icon .one, .menu-icon .two {
   position: absolute;
   display: block;
-  width: 20px;
+  width: 30px;
   height: 5px;
   background-color: #c29df1;
   border-radius: 2px;
@@ -84,10 +84,10 @@
   bottom: 0;
 }
 .menu-icon.clicked .one {
-  transform: translateY(5px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 .menu-icon.clicked .two {
-  transform: translateY(-5px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 @media (min-width: 700px) {
   .menu-icon {
@@ -186,7 +186,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0 0.75rem;
 }
 .border-container .border {
   width: 100%;
@@ -215,7 +215,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0 0.75rem;
   background-color: #131020;
   display: grid;
   grid-template-rows: max-content 1fr;
@@ -234,16 +234,15 @@ nav {
   background-color: #131020;
   display: flex;
   justify-content: center;
+  border: 1px dashed hsla(266, 75%, 78%, 0.499);
+  border-top: none;
+  transition: border-bottom 250ms;
 }
 nav .nav {
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  border-bottom: 1px dashed;
-  border-left: 1px dashed;
-  border-right: 1px dashed;
-  border-color: hsla(266, 75%, 78%, 0.499);
 }
 @media (min-width: 700px) {
   nav .nav {
@@ -306,7 +305,7 @@ nav a {
 }
 
 main {
-  padding: 0.5rem;
+  padding: 0.75rem;
   width: 100%;
   display: block;
   opacity: 1;
@@ -323,4 +322,8 @@ main.hidden {
 
 h1, h2, h3, h4, p {
   color: #c29df1;
+}
+
+p {
+  font-size: 0.75rem;
 }/*# sourceMappingURL=main.css.map */
